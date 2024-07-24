@@ -62,7 +62,7 @@
     <div class="e-content entry" itemprop="articleBody">
       
         <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>html是一种超文本标记语言。下面这张图简单诠释了html、css和js的关系和区别。    </p>
-<p>![](&#x2F;MIT&#x2F;html &amp; js &amp; css.png)    </p>
+<p><img src="/MIT%20web.lab/html%20&%20js%20&%20css.png" alt="html vs. js vs. css">    </p>
 <p>html由一系列“box”组成。以下是一个html框架：  </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Heading!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>Paragraph!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -88,6 +88,7 @@
 </li>
 <li><p>列表  </p>
   <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+  <br>
 
 <ul>
 <li><code>&lt;ul&gt;</code> 是无序号列表， <code>&lt;ol&gt;</code> 是有序号列表  </li>
@@ -100,7 +101,28 @@
 <li><code>span</code> ：内联元素，用于在文本中进行小范围样式修改。</li>
 </ul>
 <p><del>看不懂，待补充</del></p>
+<h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>ppt上的原文是，html是 <strong>the language your web browser use to describe the content and structure of web pages</strong>，而css是 <strong>the rules that tell your web browser how stuff looks</strong>。<br>更言简意赅的，总结中提到<strong>html &#x3D; nested boxes</strong>，<strong>css &#x3D; a list of descriptions</strong>。  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    <span class="attribute">font-family</span>: Arial;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">24pt</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>将这段代码写在style.css中，则对应html文件中所有 <code>&lt;div&gt;</code> 部分会变成style.css中的格式。  </p>
+<h3 id="id-与-class"><a href="#id-与-class" class="headerlink" title="id 与 class"></a><code>id</code> 与 <code>class</code></h3><p>先介绍一下 <code>id</code> 和 <code>class</code> 的用法。  </p>
+<ul>
+<li>id</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;unique&quot;</span>&gt;</span>Content<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#unique</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    <span class="attribute">font-family</span>: Arial;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">24pt</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>class</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;info&quot;</span>&gt;</span>Content<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.info</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    <span class="attribute">font-family</span>: Arial;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">24pt</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一个元素只能拥有一个 <code>id</code> ，但是可以拥有多个 <code>class</code> 。另外，所有 <code>id</code> 不能重名，但 <code>class</code> 可以。<br>这门课中的建议是只用 <code>class</code> 。</p>
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>css的优先级可参考下面这张图：  </p>
+<h3 id="结合-html-与-css"><a href="#结合-html-与-css" class="headerlink" title="结合 html 与 css"></a>结合 html 与 css</h3>
       
     </div>
     <footer>
