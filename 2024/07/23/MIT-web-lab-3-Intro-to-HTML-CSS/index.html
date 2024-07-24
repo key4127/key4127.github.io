@@ -7,9 +7,9 @@
   <meta name="author" content="Keyist">
   
   <meta name="description" content="HTML介绍html是一种超文本标记语言。下面这张图简单诠释了html、css和js的关系和区别。    
-    
+![](&amp;#x2F;MIT&amp;#x2F;html &amp;amp; js &amp;amp; css.png)    
 html由一系列“box”组成。以下是一个html框架：  
-12345678910&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;    &amp;lt;head&amp;gt;">
+12345678910&amp;l">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -66,7 +66,7 @@ html由一系列“box”组成。以下是一个html框架：
     <div class="e-content entry" itemprop="articleBody">
       
         <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>html是一种超文本标记语言。下面这张图简单诠释了html、css和js的关系和区别。    </p>
-<p><img src="/MIT/1.png">    </p>
+<p>![](&#x2F;MIT&#x2F;html &amp; js &amp; css.png)    </p>
 <p>html由一系列“box”组成。以下是一个html框架：  </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Heading!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>Paragraph!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -74,7 +74,36 @@ html由一系列“box”组成。以下是一个html框架：
 <p>搭建好的网页效果如下图：  </p>
 <h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tagname</span> <span class="attr">abc</span>=<span class="string">&quot;xyz&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tagname</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>其中，上面一行为开场标签（opening tag），下一行为结束标签（closing tag）。 <code>abc</code> 为属性（attribute）， <code>xyz</code> 为这个属性的值（value）。</p>
-<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>以下列出了各种常用的html标签。具体使用及效果见GitHub。</p>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>以下列出了各种常用的html标签。具体使用见GitHub。</p>
+<ul>
+<li><p>链接  </p>
+<ul>
+<li><code>&lt;a href=&quot;http://weblab.mit.edu&quot;&gt;Link to web.lab!&lt;/a&gt;</code>  </li>
+<li><code>href</code> 后边代表网址</li>
+<li><code>&lt;a&gt;</code> 与 <code>&lt;/a&gt;</code> 中间的字代表链接名称</li>
+</ul>
+</li>
+<li><p>图片</p>
+<ul>
+<li><code>&lt;img src=&quot;pusheen.gif&quot; /&gt;</code></li>
+<li>不需要结束标签</li>
+<li>相对路径从html所在文件夹开始</li>
+</ul>
+</li>
+<li><p>列表  </p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>&lt;ul&gt;</code> 是无序号列表， <code>&lt;ol&gt;</code> 是有序号列表  </li>
+<li><code>&lt;li&gt;</code> 是列表内容</li>
+</ul>
+</li>
+</ul>
+<h3 id="与"><a href="#与" class="headerlink" title="&lt;div&gt; 与 &lt;span&gt;"></a><code>&lt;div&gt;</code> 与 <code>&lt;span&gt;</code></h3><ul>
+<li><code>div</code> ：一种框架，没有实际含义（因此用得太多会降低可读性）。</li>
+<li><code>span</code> ：内联元素，用于在文本中进行小范围样式修改。</li>
+</ul>
+<p><del>看不懂，待补充</del></p>
 
       
     </div>
