@@ -67,10 +67,11 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Heading!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>Paragraph!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><code>&lt;!DOCTYPE html&gt;</code> ：指定网站使用最新版html（而不是随机版本）<br><code>&lt;html&gt;&lt;/html&gt;</code> ：一个html元素<br><code>&lt;head&gt;&lt;/head&gt;</code> ：存储文档的标题、样式、脚本等，描述数据属性的信息<br><code>&lt;title&gt;&lt;/title&gt;</code> ：页面标题<br><code>&lt;body&gt;&lt;/body&gt;</code> ：内容<br><code>&lt;h1&gt;&lt;/h1&gt;</code> ：一级标题<br><code>&lt;p&gt;&lt;/p&gt;</code> ：段落  </p>
-<p>搭建好的网页效果如下图：  </p>
+<p>搭建好的网页效果如下图：</p>
+<p><img src="/MIT%20web.lab/html%20basic.png" alt="web page">  </p>
 <h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tagname</span> <span class="attr">abc</span>=<span class="string">&quot;xyz&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tagname</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>其中，上面一行为开场标签（opening tag），下一行为结束标签（closing tag）。 <code>abc</code> 为属性（attribute）， <code>xyz</code> 为这个属性的值（value）。</p>
-<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>以下列出了各种常用的html标签。具体使用见GitHub。</p>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>以下列出了各种常用的html标签。</p>
 <ul>
 <li><p>链接  </p>
 <ul>
@@ -78,6 +79,7 @@
 <li><code>href</code> 后边代表网址</li>
 <li><code>&lt;a&gt;</code> 与 <code>&lt;/a&gt;</code> 中间的字代表链接名称</li>
 </ul>
+<p>  <img src="/MIT%20web.lab/link.png" alt="link"></p>
 </li>
 <li><p>图片</p>
 <ul>
@@ -100,7 +102,13 @@
 <li><code>div</code> ：一种框架，没有实际含义（因此用得太多会降低可读性）。</li>
 <li><code>span</code> ：内联元素，用于在文本中进行小范围样式修改。</li>
 </ul>
-<p><del>看不懂，待补充</del></p>
+<br>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><del>span 看不懂，待补充</del></p>
 <h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>ppt上的原文是，html是 <strong>the language your web browser use to describe the content and structure of web pages</strong>，而css是 <strong>the rules that tell your web browser how stuff looks</strong>。<br>更言简意赅的，总结中提到<strong>html &#x3D; nested boxes</strong>，<strong>css &#x3D; a list of descriptions</strong>。  </p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    <span class="attribute">font-family</span>: Arial;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">24pt</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -121,8 +129,14 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.info</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    <span class="attribute">font-family</span>: Arial;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">24pt</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>一个元素只能拥有一个 <code>id</code> ，但是可以拥有多个 <code>class</code> 。另外，所有 <code>id</code> 不能重名，但 <code>class</code> 可以。<br>这门课中的建议是只用 <code>class</code> 。</p>
-<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>css的优先级可参考下面这张图：  </p>
-<h3 id="结合-html-与-css"><a href="#结合-html-与-css" class="headerlink" title="结合 html 与 css"></a>结合 html 与 css</h3>
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>css的优先级可参考这张幻灯片：  </p>
+<p><img src="/MIT%20web.lab/css%20hierarchy.png" alt="css hierarchy"></p>
+<h3 id="结合-html-与-css"><a href="#结合-html-与-css" class="headerlink" title="结合 html 与 css"></a>结合 html 与 css</h3><p>这门课提供的方式是使用外部样式表：使用 <code>&lt;link&gt;</code> 引入外部的css文件。  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">herf</span>=<span class="string">&quot;style.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;myClass&quot;</span>&gt;</span>Heading!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中， <code>&lt;rel&gt;</code> 定义了当前文档与被链接文档的关系， <code>&lt;herf&gt;</code> 指定了URL或路径。  </p>
+<p>还有数种其它方式，但这门课只推荐这种。  </p>
+
       
     </div>
     <footer>
