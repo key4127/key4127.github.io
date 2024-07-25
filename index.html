@@ -132,13 +132,22 @@
 
 <p>一个元素只能拥有一个 <code>id</code> ，但是可以拥有多个 <code>class</code> 。另外，所有 <code>id</code> 不能重名，但 <code>class</code> 可以。<br>这门课中的建议是只用 <code>class</code> 。</p>
 <h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>css的优先级可参考这张幻灯片：  </p>
-<p><img src="/MIT%20web.lab/css%20hierarchy.png" alt="css hierarchy"></p>
+<div class="borderImg">
+    ![css hierarchy](/MIT%20web.lab/css%20hierarchy.png)
+</div>
+
 <h3 id="结合-html-与-css"><a href="#结合-html-与-css" class="headerlink" title="结合 html 与 css"></a>结合 html 与 css</h3><p>这门课提供的方式是使用外部样式表：使用 <code>&lt;link&gt;</code> 引入外部的css文件。  </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">herf</span>=<span class="string">&quot;style.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;myClass&quot;</span>&gt;</span>Heading!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>其中， <code>&lt;rel&gt;</code> 定义了当前文档与被链接文档的关系， <code>&lt;herf&gt;</code> 指定了URL或路径。  </p>
 <p>还有数种其它方式，但这门课只推荐这种。  </p>
-
+<style>
+.borderImg {
+    border: 4px solid black;
+    padding: 10px;
+    margin: 10px 0;
+}
+</style>
       
     </div>
     <footer>
