@@ -181,11 +181,12 @@ article .gallery:hover .control {
   filter: none;
 }
 article .gallery img {
-  display: block;
   min-width: 100%;
   max-width: 100%;
   height: auto;
-  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 0;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
@@ -392,7 +393,11 @@ article .entry h5,
 article .entry h6 {
   font-weight: normal;
 }
-article .entry img,
+article .entry img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
 article .entry video {
   max-width: 100%;
   height: auto;
