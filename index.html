@@ -82,11 +82,36 @@
 
 <h3 id="step-4"><a href="#step-4" class="headerlink" title="step 4"></a>step 4</h3><p>googlefont网站似乎改版了，使用方式和ppt中提到的不一样。  </p>
 <p>这里我使用的是 <code>Jetbrains Mono</code> 字体（不过 <code>reset</code> 后还是会回到ppt的字体）  </p>
-<p>进入网站<br><img src="/MIT%20web.lab/font1.png" alt="font1"></p>
-<p>搜索 <code>Jetbrains</code><br><img src="/MIT%20web.lab/font2.png" alt="font2">  </p>
-<p>选中，点击右上角 <code>Get font</code><br><img src="/MIT%20web.lab/font3.png" alt="font3"></p>
-<p>点击右侧 <code>Get embed code</code><br><img src="/MIT%20web.lab/font4.png" alt="font4"></p>
-<p>在右侧 <code>web</code> 下选择 <code>@import</code>，上面是 <code>import</code> 格式，下面是使用格式。<br><img src="/MIT%20web.lab/font5.png" alt="font5"></p>
+<p>进入网站  </p>
+<p><img src="/MIT%20web.lab/font1.png" alt="font1"></p>
+<p>搜索 <code>Jetbrains</code>  </p>
+<p><img src="/MIT%20web.lab/font2.png" alt="font2">  </p>
+<p>选中，点击右上角 <code>Get font</code>  </p>
+<p><img src="/MIT%20web.lab/font3.png" alt="font3"></p>
+<p>点击右侧 <code>Get embed code</code>  </p>
+<p><img src="/MIT%20web.lab/font4.png" alt="font4"></p>
+<p>在右侧 <code>web</code> 下选择 <code>@import</code>，上面是 <code>import</code> 格式，下面是使用格式。  </p>
+<p><img src="/MIT%20web.lab/font5.png" alt="font5">  </p>
+<h3 id="step-5"><a href="#step-5" class="headerlink" title="step 5"></a>step 5</h3><p>添加导航工具条（navBar）。  </p>
+<p>在css中，可以这样定义变量：  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--primary</span>: <span class="number">#396dff</span>;</span><br><span class="line">    <span class="attr">--grey</span>: <span class="number">#f7f7f7</span>;</span><br><span class="line">    <span class="attr">--white</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>变量名必须由 <code>--</code> 开始。<br>使用 <code>var(primary)</code> 可以获取变量值。  </p>
+<h3 id="step-6"><a href="#step-6" class="headerlink" title="step 6"></a>step 6</h3><p>通过设置背景色调整navBar样式。  </p>
+<h3 id="step-7"><a href="#step-7" class="headerlink" title="step 7"></a>step 7</h3><p>在css中，所有元素都被一系列 <code>box</code> 包裹着。  </p>
+<p><img src="/MIT%20web.lab/box%20model.png" alt="box model">  </p>
+<p>在类中设置 <code>margin</code> 为0。<br>关于 <code>margin</code> 的多个参数见ppt。  </p>
+<h3 id="step-8-9"><a href="#step-8-9" class="headerlink" title="step 8-9"></a>step 8-9</h3><p>使用 <code>border-radius</code> 设置圆角，进一步设置圆形。  </p>
+<p>设置圆形需要宽高相等。  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.avatar</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="step-10-11"><a href="#step-10-11" class="headerlink" title="step 10-11"></a>step 10-11</h3><p>用flex设置格式（参照ppt）。  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.subContainer</span> &#123;</span><br><span class="line">    <span class="attribute">flex-grow</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">flex-basis</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="step-12-完成"><a href="#step-12-完成" class="headerlink" title="step 12 完成"></a>step 12 完成</h3><p>如果完全按照ppt样式进行，成品如下：  </p>
+<p><img src="/MIT%20web.lab/w0%25complete.png" alt="w0 complete"></p>
+<h3 id="step-13"><a href="#step-13" class="headerlink" title="step 13"></a>step 13</h3><p>一些练习，答案见 <code>w0-complete</code> 。  </p>
+<p>注意在设置线条颜色时，线条默认有黑色 <code>border</code> ，调整线条颜色可以去掉 <code>border</code> 再设置颜色或者背景颜色，也可以直接调整 <code>border-color</code> 。</p>
 
       
     </div>
