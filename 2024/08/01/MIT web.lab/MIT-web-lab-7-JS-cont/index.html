@@ -3,15 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>MIT web.lab 1&amp;2 笔记 | hexo-keyist</title>
+  <title>MIT-web.lab: 7.JS cont | hexo-keyist</title>
   <meta name="author" content="Keyist">
   
-  <meta name="description" content="为什么选择这门课因为各种原因，我迫切地希望自己掌握一些前后端的知识。但我喜欢用PPT学期，但只用chp的PPT又实在学不明白。所以我选择了这门轻量级课，作为对以后的一个预习。  
-关于这门课的具体说明可以参见csdiy：https://csdiy.wiki/Web%E5%BC%80%E5%8F%91">
+  <meta name="description" content="JS cont: arrow functions, callbacks, map, filter回顾ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。  
+此外还有一个练习：编写函数，输入一个摄氏度数组，将其在新的数组中转化为华氏度后返回。  
+官方解答：  
+1234567">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="MIT web.lab 1&amp;2 笔记"/>
+  <meta property="og:title" content="MIT-web.lab: 7.JS cont"/>
   <meta property="og:site_name" content="hexo-keyist"/>
 
   
@@ -47,28 +49,29 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-MIT web.lab/MIT-web-lab-1-Kick-off-2-Git-basics" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-MIT web.lab/MIT-web-lab-7-JS-cont" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time class="dt-published" datetime="2024-07-23T13:55:06.000Z"><a href="/2024/07/23/MIT%20web.lab/MIT-web-lab-1-Kick-off-2-Git-basics/">2024-07-23</a></time>
+        <time class="dt-published" datetime="2024-08-01T12:21:12.000Z"><a href="/2024/08/01/MIT%20web.lab/MIT-web-lab-7-JS-cont/">2024-08-01</a></time>
       
       
   
-    <h1 class="p-name title" itemprop="headline name">MIT web.lab 1&amp;2 笔记</h1>
+    <h1 class="p-name title" itemprop="headline name">MIT-web.lab: 7.JS cont</h1>
   
 
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <h2 id="为什么选择这门课"><a href="#为什么选择这门课" class="headerlink" title="为什么选择这门课"></a>为什么选择这门课</h2><p>因为各种原因，我迫切地希望自己掌握一些前后端的知识。但我喜欢用PPT学期，但只用chp的PPT又实在学不明白。所以我选择了这门轻量级课，作为对以后的一个预习。  </p>
-<p>关于这门课的具体说明可以参见csdiy：<br><a target="_blank" rel="noopener" href="https://csdiy.wiki/Web%E5%BC%80%E5%8F%91/mitweb/">https://csdiy.wiki/Web%E5%BC%80%E5%8F%91/mitweb/</a>  </p>
-<p>课程主页（我用的是2024版）：<br><a target="_blank" rel="noopener" href="https://weblab.mit.edu/schedule/">https://weblab.mit.edu/schedule/</a>  </p>
-<p>我的代码：<br><a target="_blank" rel="noopener" href="https://github.com/key4127/MIT-Web-Development-Crash-Course">https://github.com/key4127/MIT-Web-Development-Crash-Course</a>  </p>
-<h2 id="Kick-off"><a href="#Kick-off" class="headerlink" title="Kick off"></a>Kick off</h2><p>一些引入内容，略。  </p>
-<h2 id="Git-basics"><a href="#Git-basics" class="headerlink" title="Git basics"></a>Git basics</h2>
+        <h2 id="JS-cont-arrow-functions-callbacks-map-filter"><a href="#JS-cont-arrow-functions-callbacks-map-filter" class="headerlink" title="JS cont: arrow functions, callbacks, map, filter"></a>JS cont: arrow functions, callbacks, map, filter</h2><h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3><p>ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。  </p>
+<p>此外还有一个练习：编写函数，输入一个摄氏度数组，将其在新的数组中转化为华氏度后返回。  </p>
+<p>官方解答：<a href=""></a>  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">arrCtoF</span> = (<span class="params">arrC</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> arrF = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arrC.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        arrF.<span class="title function_">push</span>(arrC[i] * <span class="number">9</span> / <span class="number">5</span> + <span class="number">32</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arrF;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>从这段代码可以看出，虽然JS的数组也是引用类型，但其作用域等与C++有所不同（待补充）。</p>
+<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3>
       
     </div>
     <footer>
@@ -97,7 +100,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="https://key4127.github.io/2024/07/23/MIT%20web.lab/MIT-web-lab-1-Kick-off-2-Git-basics/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="https://key4127.github.io/2024/08/01/MIT%20web.lab/MIT-web-lab-7-JS-cont/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
