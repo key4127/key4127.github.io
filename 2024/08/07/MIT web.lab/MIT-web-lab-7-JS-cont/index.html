@@ -6,10 +6,9 @@
   <title>MIT-web.lab: 7.JS cont | hexo-keyist</title>
   <meta name="author" content="Keyist">
   
-  <meta name="description" content="JS cont: arrow functions, callbacks, map, filter回顾ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。  
-此外还有一个练习：编写函数，输入一个摄氏度数组，将其在新的数组中转化为华氏度后返回。  
-官方解答：  
-1234567">
+  <meta name="description" content="JS cont: arrow functions, callbacks, map, filter相关网址回顾ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。  
+此外还有一个练习：编写函数，输入一个摄氏度数组，将其在新的数组中转化为华氏度后返回。   
+1234567con">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -65,13 +64,22 @@
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <h2 id="JS-cont-arrow-functions-callbacks-map-filter"><a href="#JS-cont-arrow-functions-callbacks-map-filter" class="headerlink" title="JS cont: arrow functions, callbacks, map, filter"></a>JS cont: arrow functions, callbacks, map, filter</h2><h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3><p>ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。  </p>
-<p>此外还有一个练习：编写函数，输入一个摄氏度数组，将其在新的数组中转化为华氏度后返回。  </p>
-<p>官方解答：<a href=""></a>  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">arrCtoF</span> = (<span class="params">arrC</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> arrF = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arrC.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        arrF.<span class="title function_">push</span>(arrC[i] * <span class="number">9</span> / <span class="number">5</span> + <span class="number">32</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arrF;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="JS-cont-arrow-functions-callbacks-map-filter"><a href="#JS-cont-arrow-functions-callbacks-map-filter" class="headerlink" title="JS cont: arrow functions, callbacks, map, filter"></a>JS cont: arrow functions, callbacks, map, filter</h2><h3 id="相关网址"><a href="#相关网址" class="headerlink" title="相关网址"></a>相关网址</h3><h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3><p>ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。  </p>
+<p>此外还有一个练习：编写函数，输入一个摄氏度数组，将其在新的数组中转化为华氏度后返回。   </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">arrCtoF</span> = (<span class="params">arrC</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> arrF = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arrC.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        arrF.<span class="title function_">push</span>(arrC[i] * <span class="number">9</span> / <span class="number">5</span> + <span class="number">32</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arrF;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>从这段代码可以看出，虽然JS的数组也是引用类型，但其作用域等与C++有所不同（待补充）。</p>
-<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3>
+<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>回调函数是一种特殊的函数，它在使用时作为参数被传递给另一个函数并被调用。  </p>
+<p>ppt给出了一个创建并使用回调函数的例子。在下文中， <code>transformFonc</code> 是回调函数，用 <code>modifyArray</code> 使用回调函数。  </p>
+<p>根据ppt的说明， <code>modifyArray</code> 接受一个数组和回调函数 <code>transformFonc</code> 作为输入，它只需要将回调函数作用到数组上并返回结果。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">modifyArray</span> = (<span class="params">arr, transformFonc</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> newArr = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        newArr.<span class="title function_">push</span>(<span class="title function_">transformFonc</span>(arr[i]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在了解回调函数基础之后，ppt给出一个练习：利用上文practice的代码，再分别写一个华氏度转摄氏度和摄氏度转开尔文的函数。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">modifyArray</span> = (<span class="params">arr, transformFonc</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> newArr = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        newArr.<span class="title function_">push</span>(<span class="title function_">transformFonc</span>(arr[i]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">cToF</span> = (<span class="params">tempC</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> tempC * <span class="number">9</span> / <span class="number">5</span> + <span class="number">32</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">fToC</span> = (<span class="params">tempF</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> (tempF - <span class="number">32</span>) * <span class="number">5</span> / <span class="number">9</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">cToK</span> = (<span class="params">tempC</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> tempC + <span class="number">273.15</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>此外，ppt还给出另一个使用回调函数的实例，见<a href="weblab.is/callbackshint">weblab.is&#x2F;callbackshint</a>。</p>
+<h3 id="map-和-filter"><a href="#map-和-filter" class="headerlink" title="map 和 filter"></a>map 和 filter</h3><p>map和filter是两个高阶函数，它们接受一个函数作为参数，并返回一个新数组。  </p>
+
       
     </div>
     <footer>
