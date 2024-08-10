@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>MIT-web.lab: 8.Intro to React | hexo-keyist</title>
+  <meta name="author" content="Keyist">
+  
+  <meta name="description" content="React介绍react是一个开源JavaScript库，其中包含很多组件（component），每个组件是一个“fake HTML tag”。组件可以在一个文件里（抽象地）实现一系列html、css、js的功能。其中各种组件以一定结构（类似树）组织在一起。  
+  
+propsprops 代表从亲">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="MIT-web.lab: 8.Intro to React"/>
+  <meta property="og:site_name" content="hexo-keyist"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="shortcut icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
+  
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">hexo-keyist</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/null">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-MIT web.lab/MIT-web-lab-8-Intro-to-React" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2024-08-10T10:42:12.000Z"><a href="/2024/08/10/MIT%20web.lab/MIT-web-lab-8-Intro-to-React/">2024-08-10</a></time>
+      
+      
+  
+    <h1 class="p-name title" itemprop="headline name">MIT-web.lab: 8.Intro to React</h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>react是一个开源JavaScript库，其中包含很多组件（component），每个组件是一个“fake HTML tag”。组件可以在一个文件里（抽象地）实现一系列html、css、js的功能。其中各种组件以一定结构（类似树）组织在一起。  </p>
+<p><img src="/MIT%20web.lab/react%20and%20component.png" alt="react and component">  </p>
+<h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><p>props 代表从亲组件到子组件中传递的信息。react可以通过亲组件决定子组件的各种属性，它是不可变的，并且不能子到亲反向传递。  </p>
+<p><img src="/MIT%20web.lab/props.png" alt="props">  </p>
+<h3 id="state"><a href="#state" class="headerlink" title="state"></a>state</h3><p>state代表组件所维护的信息，它是可变的，可以根据程序设置或用户输入修改。  </p>
+<p>以post state为例，对于post（亲组件），它没有props，只有state，state存储了各条评论（子组件）。而子组件没有state只有props：评论发出后就不可修改，但评论数、评论如何修改可变。  </p>
+<p><img src="/MIT%20web.lab/post%20state.png" alt="post state">  </p>
+<p>更进一步地，现在要给评论添加回复功能，注意回复有默认全部隐藏&#x2F;全部显示两种状态，并且评论的内容一旦发布就不可变。那么，合理的解决方案是给评论增加state，将回复作为评论的子组件，通过state调整回复隐藏&#x2F;显示。  </p>
+<p><img src="/MIT%20web.lab/comment%20replies.png" alt="comment replies">  </p>
+<h3 id="组件结构（component-structure）"><a href="#组件结构（component-structure）" class="headerlink" title="组件结构（component structure）"></a>组件结构（component structure）</h3><p>props和state共同构成了component structure。下图是前两部分的总结：  </p>
+<p><img src="/MIT%20web.lab/component%20structure.png" alt="component structure">  </p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="https://key4127.github.io/2024/08/10/MIT%20web.lab/MIT-web-lab-8-Intro-to-React/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="as_sitesearch" value="key4127.github.io">
+  </form>
+</div>
+
+
+  
+
+  
+
+  
+  <div class="widget widget-archives">
+    <h3 class="title">归档</h3>
+    <div class="entry">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">七月 2024</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2024 Keyist
+  
+</div>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+
+
+<script src="/js/gallery.js"></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<script>
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

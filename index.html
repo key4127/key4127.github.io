@@ -45,6 +45,49 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article id="post-MIT web.lab/MIT-web-lab-8-Intro-to-React" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2024-08-10T10:42:12.000Z"><a href="/2024/08/10/MIT%20web.lab/MIT-web-lab-8-Intro-to-React/">2024-08-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2024/08/10/MIT%20web.lab/MIT-web-lab-8-Intro-to-React/">MIT-web.lab: 8.Intro to React</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>react是一个开源JavaScript库，其中包含很多组件（component），每个组件是一个“fake HTML tag”。组件可以在一个文件里（抽象地）实现一系列html、css、js的功能。其中各种组件以一定结构（类似树）组织在一起。  </p>
+<p><img src="/MIT%20web.lab/react%20and%20component.png" alt="react and component">  </p>
+<h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><p>props 代表从亲组件到子组件中传递的信息。react可以通过亲组件决定子组件的各种属性，它是不可变的，并且不能子到亲反向传递。  </p>
+<p><img src="/MIT%20web.lab/props.png" alt="props">  </p>
+<h3 id="state"><a href="#state" class="headerlink" title="state"></a>state</h3><p>state代表组件所维护的信息，它是可变的，可以根据程序设置或用户输入修改。  </p>
+<p>以post state为例，对于post（亲组件），它没有props，只有state，state存储了各条评论（子组件）。而子组件没有state只有props：评论发出后就不可修改，但评论数、评论如何修改可变。  </p>
+<p><img src="/MIT%20web.lab/post%20state.png" alt="post state">  </p>
+<p>更进一步地，现在要给评论添加回复功能，注意回复有默认全部隐藏&#x2F;全部显示两种状态，并且评论的内容一旦发布就不可变。那么，合理的解决方案是给评论增加state，将回复作为评论的子组件，通过state调整回复隐藏&#x2F;显示。  </p>
+<p><img src="/MIT%20web.lab/comment%20replies.png" alt="comment replies">  </p>
+<h3 id="组件结构（component-structure）"><a href="#组件结构（component-structure）" class="headerlink" title="组件结构（component structure）"></a>组件结构（component structure）</h3><p>props和state共同构成了component structure。下图是前两部分的总结：  </p>
+<p><img src="/MIT%20web.lab/component%20structure.png" alt="component structure">  </p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
   <article id="post-MIT web.lab/MIT-web-lab-7-JS-cont" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
@@ -522,7 +565,7 @@
   <div class="widget widget-archives">
     <h3 class="title">归档</h3>
     <div class="entry">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">七月 2024</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">七月 2024</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
