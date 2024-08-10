@@ -6,9 +6,9 @@
   <title>MIT-web.lab: 7.JS cont | hexo-keyist</title>
   <meta name="author" content="Keyist">
   
-  <meta name="description" content="JS cont: arrow functions, callbacks, map, filter相关网址回顾ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。  
+  <meta name="description" content="JS cont: arrow functions, callbacks, map, filter回顾ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。  
 此外还有一个练习：编写函数，输入一个摄氏度数组，将其在新的数组中转化为华氏度后返回。   
-1234567con">
+1234567const a">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -64,7 +64,7 @@
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <h2 id="JS-cont-arrow-functions-callbacks-map-filter"><a href="#JS-cont-arrow-functions-callbacks-map-filter" class="headerlink" title="JS cont: arrow functions, callbacks, map, filter"></a>JS cont: arrow functions, callbacks, map, filter</h2><h3 id="相关网址"><a href="#相关网址" class="headerlink" title="相关网址"></a>相关网址</h3><h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3><p>ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。  </p>
+        <h2 id="JS-cont-arrow-functions-callbacks-map-filter"><a href="#JS-cont-arrow-functions-callbacks-map-filter" class="headerlink" title="JS cont: arrow functions, callbacks, map, filter"></a>JS cont: arrow functions, callbacks, map, filter</h2><h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3><p>ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。  </p>
 <p>此外还有一个练习：编写函数，输入一个摄氏度数组，将其在新的数组中转化为华氏度后返回。   </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">arrCtoF</span> = (<span class="params">arrC</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> arrF = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arrC.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        arrF.<span class="title function_">push</span>(arrC[i] * <span class="number">9</span> / <span class="number">5</span> + <span class="number">32</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arrF;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
@@ -97,6 +97,11 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rectangles = [</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">1</span>, <span class="attr">height</span>: <span class="number">1</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">5</span>, <span class="attr">height</span>: <span class="number">10</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">6</span>, <span class="attr">height</span>: <span class="number">6</span> &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> selectedRectangles = rectangles.<span class="title function_">filter</span>(<span class="function">(<span class="params">rectangle</span>) =&gt;</span> <span class="number">2</span> * (rectangle.<span class="property">width</span> + rectangle.<span class="property">height</span>) &gt; <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
 
 <p>另外，注意回调函数中的括号不是必须的（filter的例子中就没有），但是会提高可读性。  </p>
+<h3 id="web中的回调函数"><a href="#web中的回调函数" class="headerlink" title="web中的回调函数"></a>web中的回调函数</h3><p>ppt最后举了一些例子，例如 <code>setInterval</code> 和w1里都用到了回调函数，还举了一个数据库例子（略）。  </p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>ppt最后有一行：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [exists, setExists] = <span class="title function_">useState</span>(<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+
+<p>这不是回调函数，而是对下一部分react的引入。  </p>
 
       
     </div>
