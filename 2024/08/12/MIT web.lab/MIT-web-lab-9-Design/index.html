@@ -84,11 +84,25 @@
 <p><strong>step 4：把navbar变成一个元件</strong></p>
 <p>右键选择“create component”。在创建元件后，原来的部分可以复用。  </p>
 <p><strong>step 5：在新框架中复用navbar并添加图片</strong></p>
-<p>见ppt，设置图片宽高和圆角，略。  </p>
+<p>首先如图新建页面（注意不是新建文件）</p>
+<p><img src="/MIT%20web.lab/figma%20new%20frame.png" alt="figma new frame">  </p>
+<p>然后复用原来的navbar。<br>添加图片，设置宽高、位置和圆角。  </p>
 <p><strong>step 6：更改原来的navbar</strong></p>
-<p>（见ppt，暂略）</p>
+<p><img src="/MIT%20web.lab/main%20component.png" alt="main component">  </p>
+<p><img src="/MIT%20web.lab/instance.png" alt="instance">  </p>
+<p>可以看到上图两个元件的符号不同。前一个是“元件”，对它的改变会影响到所有复用它的部分；后一个是实例，无法添加新的对象。  </p>
 <p><strong>step 7：建立component library</strong></p>
-<p>**step 8：</p>
+<p>新建页面（page），建立component library。将原来的component复制、删除，然后粘贴到component library中，则main component被移动到了这里。  </p>
+<p><img src="/MIT%20web.lab/component%20library.png" alt="component library">  </p>
+<p>然后在原来component内添加新的要素。选中component内的元素再新建，新建的部分就会被归类到component里。  </p>
+<p><img src="/MIT%20web.lab/change%20component.png" alt="change component">  </p>
+<p>更改后发现原来页面的navbar变成了更改后的样子。</p>
+<p><strong>step 8：给两个页面增加交互操作</strong></p>
+<p>按照ppt教程，选择对象，设置prototype -&gt; add interaction，在click选项下，将none改为目标页面。  </p>
+<p><img src="/MIT%20web.lab/figma%20interaction.png" alt="figma interaction">   </p>
+<p><strong>step 9：预览</strong></p>
+<p>按照上面的步骤，demo已经完成。在未选择任何对象的前提下，在右侧prototype下可以选择设备来运行demo。  </p>
+<p>除此之外，figma还提供共享、以css格式复制等功能。  </p>
 
       
     </div>
