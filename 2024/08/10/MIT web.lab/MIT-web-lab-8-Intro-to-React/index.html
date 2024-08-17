@@ -91,7 +91,7 @@ propsprops 代表从亲">
 <p>下一步是增加state。在 <code>return</code> 之前添加一行：  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [isLiked, setIsLiked] = <span class="title function_">useState</span>(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
 
-<p>这句话通过 <code>(false)</code> 将 <code>isLiked</code> 这个state初始化为false，并声明 <code>setIsLiked</code> 是用于更新 <code>isLiked</code> 状态的函数。  </p>
+<p>这句话通过 <code>(false)</code> 将 <code>isLiked</code> 这个state初始化为false，并声明 <code>setIsLiked</code> 是用于更新 <code>isLiked</code> 状态的函数。<br>使用 <code>setIsLiked(true)</code> 等类似语句可以更改 <code>isLiked</code> 状态。</p>
 <p>接下来，在 <code>return</code> 的部分添加  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;isLiked ? <span class="string">&quot;Liked&quot;</span> : <span class="string">&quot;Like&quot;</span>&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
 

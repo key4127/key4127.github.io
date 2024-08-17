@@ -62,9 +62,14 @@
     <div class="e-content entry" itemprop="articleBody">
       
         <h2 id="W2-Catbook-in-React"><a href="#W2-Catbook-in-React" class="headerlink" title="W2: Catbook in React"></a>W2: Catbook in React</h2><p>react复习部分略。  </p>
-<p>w2使用方法与w0和w1相同，用 <code>git checkout w2-starter</code> 切换到w2部分。  </p>
-<p>注意这一部分有一个client文件夹，文件夹内的src文件夹中包含了对应代码。ppt告诉我们只需要关注components文件夹中的JavaScript内容，并且只需要编辑components&#x2F;pages中的Profile.js、components&#x2F;modules中的CatHappiness.js、Navbar.js和Navbar.css四个文件。  </p>
-<p>另外，在执行 <code>npm install</code> 后，可以用 <code>npm run hotloader</code> 来运行代码，在 <a target="_blank" rel="noopener" href="http://localhost:5050/">http://localhost:5050/</a> 看到实时更新的网页。  </p>
+<p>官方库：<br><a target="_blank" rel="noopener" href="https://github.com/weblab-workshops/catbook-react">https://github.com/weblab-workshops/catbook-react</a>  </p>
+<p>官方代码（只包含相关代码，不包含其它内容，无法运行）：  </p>
+<p>我的代码：  </p>
+<p>w2使用方法与w0和w1相同，用 <code>git checkout w2-starter</code> 切换到w2部分。所以同样的，每次reset后会将原来的代码清除，但是课程鼓励我们设计自己的内容。在下面的笔记中只包含官方代码。  </p>
+<p>官方页面：  </p>
+<p>我的页面：  </p>
+<p>注意这一部分有一个client文件夹，文件夹内的src文件夹中包含了对应代码。ppt告诉我们只需要关注components文件夹中的JavaScript内容，并且只需要编辑components&#x2F;pages中的Profile.js、components&#x2F;modules中的CatHappiness.js、NavBar.js和Navbar.css四个文件。  </p>
+<p>另外，在执行 <code>npm install</code> 后，可以用 <code>npm run hotloader</code> 来运行代码，在 <a target="_blank" rel="noopener" href="http://localhost:5050/">http://localhost:5050/</a> 看到网页。  </p>
 <h3 id="npm-相关问题"><a href="#npm-相关问题" class="headerlink" title="npm 相关问题"></a>npm 相关问题</h3><p>在执行npm对应命令行时，可能出现各种报错。  </p>
 <p><code>npm install</code> <strong>卡住不动</strong> </p>
 <p>这个网上有很多教程，一般是因为访问官方网站不稳定，需要切换镜像源。我使用的镜像源是 <a target="_blank" rel="noopener" href="https://registry.npmmirror.com/">https://registry.npmmirror.com</a>，输入以下命令配置  </p>
@@ -75,6 +80,48 @@
 <p><code>npm install</code> 出现报错</p>
 <p>如果报错里出现了 <code>permission denied</code> 等类似的语句，是因为权限不足，在管理员模式下重新运行。  </p>
 <p>如果 <code>npm install hotloader</code> 成功运行，会出现 <code>&lt;i&gt; [webpack-dev-server] Loopback: http://localhost:5050/</code> 等语句。和其它的命令一样，按Ctrl^C停止运行。  </p>
+<h3 id="step-0"><a href="#step-0" class="headerlink" title="step 0"></a>step 0</h3><p>在Navbar.js和Navbar.css中实现Navbar。  </p>
+<p>注意nav标签代表navbar相关的容器。在NavBar.js中return相关内容，并且在NavBar.css中调整样式，可以参考old_index.html和old_style.css中的内容。  </p>
+<p>官方代码：  </p>
+<p>NavBar.js在return部分添加  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;nav className=<span class="string">&quot;NavBar-container&quot;</span>&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;NavBar-title&quot;</span>&gt;</span>Catbook<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/nav&gt;</span><br></pre></td></tr></table></figure>
+
+<p>NavBar.css添加</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.NavBar-container</span> &#123;</span><br><span class="line">   <span class="attribute">padding</span>: <span class="number">8px</span> <span class="number">16px</span>;</span><br><span class="line">   <span class="attribute">background-color</span>: <span class="number">#396dff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.NavBar-title</span> &#123;</span><br><span class="line">   <span class="attribute">color</span>: white;</span><br><span class="line">   <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h3><p>这部分是完成CatHappiness元件。从ppt中看出，<code>&lt;app&gt;</code> 标签包括两部分 <code>&lt;NavBar&gt;</code> 和 <code>&lt;Profile&gt;</code> ，<code>&lt;CatHappiness&gt;</code> 元件包含在 <code>&lt;Profile&gt;</code> 中。CatHappiness数值包含在 <code>&lt;Profile&gt;</code> 的state里，作为props传递给 <code>&lt;CatHappiness&gt;</code> 。  </p>
+<p>要完成这一步，要先添加catHappiness state，然后导入、实现、并且最终渲染这个元件。  </p>
+<p>这一步被具体分成四步来进行，以下是四步的官方代码（前三步改动在Profile.js中，最后一步在CatHappiness.js中）：  </p>
+<p><strong>step 1a</strong></p>
+<p>添加CatHappiness state</p>
+<p>注意源代码里没有导入 <code>useState</code>，要将第一行改为</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>然后在Profile函数里添加</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [catHappiness, setCatHappiness] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>step 1b</strong></p>
+<p>导入元件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">CatHappiness</span> <span class="keyword">from</span> <span class="string">&quot;../modules/CatHappiness.js&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>step 1c</strong></p>
+<p>添加CatHappiness元件，在return部分添加</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className=<span class="string">&quot;Profile-subContainer u-textCenter&quot;</span>&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">h4</span> <span class="attr">className</span>=<span class="string">&quot;Profile-subTitle&quot;</span>&gt;</span>Cat Happiness<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">CatHappiness</span> <span class="attr">catHappiness</span>=<span class="string">&#123;catHappiness&#125;</span> /&gt;</span></span></span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>step 1d</strong></p>
+<p>渲染CatHappiness</p>
+<p>将CatHappiness.js中的CatHappiness函数进行如下修改  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">CatHappiness</span> = (<span class="params">props</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;CatHappiness-container&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;CatHappiness-story&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">className</span>=<span class="string">&quot;CatHappiness-storyContent&quot;</span>&gt;</span>&#123;props.catHappiness&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h3><p>这一步要完成CatHappiness的更新：每次点击时CatHappiness加一。  </p>
+<p>每个 <code>&lt;div&gt;</code> 都有一个onClick属性（prop），当这个 <code>&lt;div&gt;</code> 被点击时，它会调用onClick函数。  </p>
+<p>首先实现 <code>incrementCatHappiness</code> 函数  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">incrementCatHappiness</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">setCatHappiness</span>(catHappiness + <span class="number">1</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>再在return部分修改</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className=<span class="string">&quot;Profile-avatarContainer&quot;</span> onClick=&#123;incrementCatHappiness&#125;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>官方代码完成后，使用 <code>git checkout w2-complete</code> 查看完成代码。  </p>
 
       
     </div>
@@ -206,7 +253,7 @@
 <p>下一步是增加state。在 <code>return</code> 之前添加一行：  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [isLiked, setIsLiked] = <span class="title function_">useState</span>(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
 
-<p>这句话通过 <code>(false)</code> 将 <code>isLiked</code> 这个state初始化为false，并声明 <code>setIsLiked</code> 是用于更新 <code>isLiked</code> 状态的函数。  </p>
+<p>这句话通过 <code>(false)</code> 将 <code>isLiked</code> 这个state初始化为false，并声明 <code>setIsLiked</code> 是用于更新 <code>isLiked</code> 状态的函数。<br>使用 <code>setIsLiked(true)</code> 等类似语句可以更改 <code>isLiked</code> 状态。</p>
 <p>接下来，在 <code>return</code> 的部分添加  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;isLiked ? <span class="string">&quot;Liked&quot;</span> : <span class="string">&quot;Like&quot;</span>&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
 
