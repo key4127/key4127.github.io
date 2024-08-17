@@ -45,13 +45,59 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article id="post-MIT web.lab/MIT-web-lab-10-w2-catbook-in-react" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2024-08-14T11:52:12.000Z"><a href="/2024/08/14/MIT%20web.lab/MIT-web-lab-10-w2-catbook-in-react/">2024-08-14</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2024/08/14/MIT%20web.lab/MIT-web-lab-10-w2-catbook-in-react/">MIT-web.lab: 10.w2-catbook in react</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <h2 id="W2-Catbook-in-React"><a href="#W2-Catbook-in-React" class="headerlink" title="W2: Catbook in React"></a>W2: Catbook in React</h2><p>react复习部分略。  </p>
+<p>w2使用方法与w0和w1相同，用 <code>git checkout w2-starter</code> 切换到w2部分。  </p>
+<p>注意这一部分有一个client文件夹，文件夹内的src文件夹中包含了对应代码。ppt告诉我们只需要关注components文件夹中的JavaScript内容，并且只需要编辑components&#x2F;pages中的Profile.js、components&#x2F;modules中的CatHappiness.js、Navbar.js和Navbar.css四个文件。  </p>
+<p>另外，在执行 <code>npm install</code> 后，可以用 <code>npm run hotloader</code> 来运行代码，在 <a target="_blank" rel="noopener" href="http://localhost:5050/">http://localhost:5050/</a> 看到实时更新的网页。  </p>
+<h3 id="npm-相关问题"><a href="#npm-相关问题" class="headerlink" title="npm 相关问题"></a>npm 相关问题</h3><p>在执行npm对应命令行时，可能出现各种报错。  </p>
+<p><code>npm install</code> <strong>卡住不动</strong> </p>
+<p>这个网上有很多教程，一般是因为访问官方网站不稳定，需要切换镜像源。我使用的镜像源是 <a target="_blank" rel="noopener" href="https://registry.npmmirror.com/">https://registry.npmmirror.com</a>，输入以下命令配置  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+
+<p>当然也可以用其它镜像源。  </p>
+<p>更换后，可以用 <code>npm config get registry</code> 查看换源是否成功。  </p>
+<p><code>npm install</code> 出现报错</p>
+<p>如果报错里出现了 <code>permission denied</code> 等类似的语句，是因为权限不足，在管理员模式下重新运行。  </p>
+<p>如果 <code>npm install hotloader</code> 成功运行，会出现 <code>&lt;i&gt; [webpack-dev-server] Loopback: http://localhost:5050/</code> 等语句。和其它的命令一样，按Ctrl^C停止运行。  </p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
   <article id="post-MIT web.lab/MIT-web-lab-9-Design" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time class="dt-published" datetime="2024-08-12T05:17:50.591Z"><a href="/2024/08/12/MIT%20web.lab/MIT-web-lab-9-Design/">2024-08-12</a></time>
+        <time class="dt-published" datetime="2024-08-12T05:19:12.000Z"><a href="/2024/08/12/MIT%20web.lab/MIT-web-lab-9-Design/">2024-08-12</a></time>
       
       
   
@@ -300,7 +346,7 @@
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <h2 id="w1-snake"><a href="#w1-snake" class="headerlink" title="w1: snake"></a>w1: snake</h2><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>感觉w1只能算作对JavaScript的一个练习，完成w1不代表对这个游戏有了多少了解（？）。<del>没看视频不知道有没有讲解</del><br>所以这篇博客内容分为两部分：  </p>
+        <h2 id="W1-snake"><a href="#W1-snake" class="headerlink" title="W1: snake"></a>W1: snake</h2><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>感觉w1只能算作对JavaScript的一个练习，完成w1不代表对这个游戏有了多少了解（？）。<del>没看视频不知道有没有讲解</del><br>所以这篇博客内容分为两部分：  </p>
 <ul>
 <li>ppt内容说明</li>
 <li>源代码分析</li>
@@ -691,7 +737,7 @@
   <div class="widget widget-archives">
     <h3 class="title">归档</h3>
     <div class="entry">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">七月 2024</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">七月 2024</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
