@@ -45,6 +45,161 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article id="post-MIT web.lab/MIT-web-lab-6-w1-snake" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2024-08-01T12:21:12.000Z"><a href="/2024/08/01/MIT%20web.lab/MIT-web-lab-6-w1-snake/">2024-08-01</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2024/08/01/MIT%20web.lab/MIT-web-lab-6-w1-snake/">MIT-web.lab: 6.w1-snake</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <h2 id="W1-snake"><a href="#W1-snake" class="headerlink" title="W1: snake"></a>W1: snake</h2><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>感觉w1只能算作对JavaScript的一个练习，完成w1不代表对这个游戏有了多少了解（？）。<del>没看视频不知道有没有讲解</del><br>所以这篇博客内容分为两部分：  </p>
+<ul>
+<li>ppt内容说明</li>
+<li>源代码分析</li>
+</ul>
+<h3 id="相关说明"><a href="#相关说明" class="headerlink" title="相关说明"></a>相关说明</h3><p>在step2用到了前几节课中提到的mdn文档。<br>原文档：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Learn">https://developer.mozilla.org/en-US/docs/Learn</a><br>中文版：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn">https://developer.mozilla.org/zh-CN/docs/Learn</a>  </p>
+<h3 id="ppt内容说明"><a href="#ppt内容说明" class="headerlink" title="ppt内容说明"></a>ppt内容说明</h3><p>w1与w0在同一个库中，并且使用方法相同。  </p>
+<h3 id="step-0"><a href="#step-0" class="headerlink" title="step 0"></a>step 0</h3><p>上一篇博客提到了，在JavaScript中可以直接调用 <code>setInterval</code> 函数，重复执行某一函数。<br>第一个参数是要重复执行的函数，第二个参数是间隔多少毫秒执行一次。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setInterval</span>(main, <span class="number">1000</span> / <span class="variable constant_">SNAKE_SPEED</span>);</span><br></pre></td></tr></table></figure>
+
+<p>再将 <code>.js</code> 文件链接到html，在 <code>&lt;head&gt;&lt;/head&gt;</code> 中包含  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;game.js&quot;</span> defer&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>多行可以链接多个JavaScript文件。  </p>
+<h3 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h3><p>在屏幕上绘制出蛇，让蛇自动向下移动。<br>代码的逻辑是创建 <code>snakeBody</code> 数组，数组的数据类型是包含两个坐标的对象。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> snakeBody [</span><br><span class="line"> &#123; <span class="attr">x</span>: <span class="number">11</span>, <span class="attr">y</span>: <span class="number">11</span>&#125;,</span><br><span class="line"> &#123; <span class="attr">x</span>: <span class="number">11</span>, <span class="attr">y</span>: <span class="number">10</span>&#125;,</span><br><span class="line"> &#123; <span class="attr">x</span>: <span class="number">11</span>, <span class="attr">y</span>: <span class="number">9</span>&#125;,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<p>再创建一个 <code>updateSnake</code> 函数，在 <code>update</code> 函数中调用 <code>updateSnake</code> ，再在 <code>main</code> 函数中调用 <code>update</code> 。<br>数组的数据类型是 <code>const</code> 但仍然可以改变内容，因为 <code>const</code> 只检查引用的值。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">snakeBody.<span class="title function_">pop</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//...用于快速复制数组中的内容</span></span><br><span class="line"><span class="comment">//这句话让newHead等于snakeBody的第一个元素</span></span><br><span class="line"><span class="keyword">const</span> newHead = &#123;...snakeBody[<span class="number">0</span>]&#125;;</span><br><span class="line"></span><br><span class="line">newHead.<span class="property">x</span> += <span class="number">0</span>;</span><br><span class="line">newHead.<span class="property">y</span> += <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在数组开头添加元素</span></span><br><span class="line">snakeBody.<span class="title function_">unshift</span>(newHead);</span><br></pre></td></tr></table></figure>
+
+<h3 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h3><p>这一步的目的是让蛇能根据键盘操作移动。  </p>
+<p>读取键盘需要 <code>keyboard input event listener</code> 。<br>（参考 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key">https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key</a>）  </p>
+<p><img src="/MIT%20web.lab/keyboard%20event.png" alt="keyboard event">  </p>
+<p>使用方法是</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, <span class="keyword">function</span>);</span><br></pre></td></tr></table></figure>
+
+<p>当触发 <code>keydown</code> 事件后，执行函数 <code>function</code> 。  </p>
+<p>注意键盘只能操纵蛇左右转弯。  </p>
+<p>关键部分代码如下（其它见ppt）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//inputDirection存储当前方向</span></span><br><span class="line"><span class="comment">//三个等号</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (event.<span class="property">key</span> === <span class="string">&#x27;ArrowUp&#x27;</span> &amp;&amp; inputDirection.<span class="property">x</span> !== <span class="number">0</span>) &#123;</span><br><span class="line">        inputDirection = &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: -<span class="number">1</span>&#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (event.<span class="property">key</span> === <span class="string">&#x27;ArrowDown&#x27;</span> &amp;&amp; inputDirection.<span class="property">x</span> !== <span class="number">0</span>) &#123;</span><br><span class="line">        inputDirection = &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">1</span>&#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (event.<span class="property">key</span> === <span class="string">&#x27;ArrowLeft&#x27;</span> &amp;&amp; inputDirection.<span class="property">y</span> !== <span class="number">0</span>) &#123;</span><br><span class="line">        inputDirection = &#123; <span class="attr">x</span>: -<span class="number">1</span>, <span class="attr">y</span>: <span class="number">0</span>&#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (event.<span class="property">key</span> === <span class="string">&#x27;ArrowRight&#x27;</span> &amp;&amp; inputDirection.<span class="property">y</span> !== <span class="number">0</span>) &#123;</span><br><span class="line">        inputDirection = &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">0</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="step-3"><a href="#step-3" class="headerlink" title="step 3"></a>step 3</h3><p>实现 <code>food</code> 。</p>
+<p>先将food初始化（用一个坐标来表示）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> food = &#123;<span class="attr">x</span>: <span class="number">4</span>, <span class="attr">y</span>: <span class="number">16</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>完成 <code>updateFood</code> 函数后， <code>food</code> 会像 <code>snake</code> 一样定期更新并绘制。　　</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">updateFood</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_">onSnake</span>(food)) &#123;</span><br><span class="line">        <span class="title function_">growSnake</span>();</span><br><span class="line">        food = <span class="title function_">getNewFoodPosition</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="step-4"><a href="#step-4" class="headerlink" title="step 4"></a>step 4</h3><p>当蛇撞到边界或自己时，更新 <code>isGameOver</code> 为 <code>true</code> 。<br>（这里ppt似乎有错误，初始化应该是 <code>let isGameOver = false</code> 而不是 <code>let gameOver = false</code> 。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">checkGameOver</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">snakeOutOfBounds</span>() || <span class="title function_">snakeIntersectSelf</span>();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>用 <code>clearInterval</code> 终止循环。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> gameLoop = <span class="built_in">setInterval</span>(main, <span class="number">1000</span> / <span class="variable constant_">SNAKE_SPEED</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">main</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">update</span>();</span><br><span class="line">    <span class="title function_">draw</span>();</span><br><span class="line">    <span class="keyword">if</span> (isGameOver) &#123;</span><br><span class="line">        <span class="title function_">alert</span>(<span class="string">&quot;Game Over&quot;</span>);</span><br><span class="line">        <span class="built_in">clearInterval</span>(gameLoop);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="challenge"><a href="#challenge" class="headerlink" title="challenge"></a>challenge</h3><p>在 <code>input.js</code> 中增加对R键的处理，按下R时执行 <code>resetGame()</code> 。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">resetGame</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="built_in">clearInterval</span>(gameLoop);</span><br><span class="line"></span><br><span class="line">    <span class="title function_">resetSnake</span>();</span><br><span class="line">    <span class="title function_">resetDirection</span>();</span><br><span class="line"></span><br><span class="line">    gameLoop = <span class="built_in">setInterval</span>(main, <span class="number">1000</span> / <span class="variable constant_">SNAKE_SPEED</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="源代码分析（to-do）"><a href="#源代码分析（to-do）" class="headerlink" title="源代码分析（to do）"></a>源代码分析（to do）</h3>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article id="post-MIT web.lab/MIT-web-lab-5-Intro-to-JS" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2024-07-28T15:06:12.000Z"><a href="/2024/07/28/MIT%20web.lab/MIT-web-lab-5-Intro-to-JS/">2024-07-28</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2024/07/28/MIT%20web.lab/MIT-web-lab-5-Intro-to-JS/">MIT-web.lab: 5.Intro to JS</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <h2 id="Intro-to-JS"><a href="#Intro-to-JS" class="headerlink" title="Intro to JS"></a>Intro to JS</h2><p><del>被ppt上 not related to java 逗乐了</del>  </p>
+<h3 id="数据类型与运算符"><a href="#数据类型与运算符" class="headerlink" title="数据类型与运算符"></a>数据类型与运算符</h3><p>JavaScript有五种基本的数据类型：boolean、number、string、null、undefined。<br>数字运算符与其它语言相同，允许用加号进行字符串拼接。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;hello&quot;</span> + <span class="string">&quot; world&quot;</span> = <span class="string">&quot;hello world&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>比较运算符中，等于为 &#x3D;&#x3D;&#x3D;，不等为 !&#x3D;&#x3D; 。双等号和不等号会自动类型转换后比较结果（比如 2 &#x3D;&#x3D; ‘2’）。  </p>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">greatCommonDivisor</span> = (<span class="params">a, b</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">while</span> (b !== <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> temp = b;</span><br><span class="line">        b = a % b;</span><br><span class="line">        a = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> x = <span class="number">50</span>;</span><br><span class="line"><span class="keyword">const</span> y = <span class="number">15</span>;</span><br><span class="line"><span class="keyword">const</span> gcd = <span class="title function_">greatCommonDivisor</span>(x, y);</span><br></pre></td></tr></table></figure>
+
+<h3 id="变量与常量定义"><a href="#变量与常量定义" class="headerlink" title="变量与常量定义"></a>变量与常量定义</h3><p>定义变量：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myBoolean = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">let</span> myNumber = <span class="number">12</span>;</span><br><span class="line"><span class="keyword">let</span> myString = <span class="string">&quot;Hello World!&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>var</code> 也可以定义变量，但 <code>var</code> 定义的变量作用域是全局的（或者在函数内）， <code>let</code> 的作用域在块内，为避免错误建议用 <code>let</code> 。   </p>
+<p>定义常量：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> secondsPerMinute = <span class="number">60</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Null-vs-Undefined"><a href="#Null-vs-Undefined" class="headerlink" title="Null vs. Undefined"></a>Null vs. Undefined</h3><p><code>null</code> 可赋值给一个量，代表“no value”； <code>undefined</code> 代表值未被定义。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> variable;   <span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line">variable = <span class="literal">null</span>;    <span class="comment">//null</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>使用 <code>console.log(变量)</code> 可以快速、方便地在控制台得到输出。  </p>
+<h3 id="Alert"><a href="#Alert" class="headerlink" title="Alert"></a>Alert</h3><p>使用 <code>alert(字符串)</code> 会在页面中弹出一个通知。  </p>
+<p><img src="/MIT%20web.lab/pop-up%20notification.png" alt="pop-up notification">  </p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//initialize</span></span><br><span class="line"><span class="comment">//可以有不同类型</span></span><br><span class="line"><span class="keyword">let</span> pets = [<span class="string">&quot;flower&quot;</span>, <span class="number">42</span>, <span class="literal">false</span>, <span class="string">&quot;bird&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">//replace</span></span><br><span class="line"><span class="comment">//从零开始计数</span></span><br><span class="line">pets[<span class="number">2</span>] = <span class="string">&quot;hamster&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//remove from end</span></span><br><span class="line">pets.<span class="title function_">pop</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//add to end</span></span><br><span class="line">pets.<span class="title function_">push</span>(<span class="string">&quot;rabbit&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h3><p>条件语句：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (hour &lt; <span class="number">12</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Good morning!&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (hour &lt; <span class="number">16</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Good afternoon!&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (hour &lt; <span class="number">20</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Good evening!&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Good night!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>循环：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> z = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (z &lt; <span class="number">1000</span>) &#123;</span><br><span class="line">    z = z * <span class="number">2</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(z);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pets = [<span class="string">&quot;cat&quot;</span>, <span class="string">&quot;dog&quot;</span>, <span class="string">&quot;guinea pig&quot;</span>, <span class="string">&quot;bird&quot;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; pets.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> phrase = <span class="string">&quot;I love my &quot;</span> + pets[i];</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(phrase);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pets = [<span class="string">&quot;cat&quot;</span>, <span class="string">&quot;dog&quot;</span>, <span class="string">&quot;guinea pig&quot;</span>, <span class="string">&quot;bird&quot;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> animal <span class="keyword">of</span> pets) &#123;</span><br><span class="line">    <span class="keyword">const</span> phrase = <span class="string">&quot;I love my &quot;</span> + animal;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(phrase);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myCar &#123;</span><br><span class="line">    make    : <span class="string">&quot;Ford&quot;</span>,</span><br><span class="line">    model   : <span class="string">&quot;Mustang&quot;</span>,</span><br><span class="line">    year    : <span class="string">&quot;2005&quot;</span>,</span><br><span class="line">    color   : <span class="string">&quot;red&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(myCar.<span class="property">model</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(myCar[<span class="string">&quot;color&quot;</span>]);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> make = myCar.<span class="property">make</span>;</span><br><span class="line"><span class="keyword">const</span> model = myCar.<span class="property">model</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//or</span></span><br><span class="line"><span class="keyword">const</span> &#123;make, model&#125; = myCar;</span><br></pre></td></tr></table></figure>
+
+<p>等于号（&#x3D;&#x3D;&#x3D;）检查的是引用是否相同，所以任意两个数组（对象等）永远不等。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> copyArr = [...arr];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;<span class="attr">name</span>: <span class="string">&quot;Bill Gates&quot;</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> copyObj = &#123;...obj&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>关于返回值、参数等部分见前面的介绍。  </p>
+<p>这一部分没有过多介绍，只是提到了函数可以用作参数（注意函数和函数的返回值的区别）。  </p>
+<p>另外还介绍了一下 <code>setInterval()</code> 和 <code>setTimeout()</code> 的区别：  </p>
+<p><img src="/MIT%20web.lab/interval%20and%20timeout.png" alt="interval and timeout">  </p>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>JavaScript的类在结构体里定义。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Rectangle</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">width, height</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">width</span> = width;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">height</span> = height;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getArea = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">width</span> * <span class="variable language_">this</span>.<span class="property">height</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> rect = <span class="keyword">new</span> <span class="title class_">Rectangle</span>(<span class="number">6</span>, <span class="number">8</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(rect.<span class="title function_">getArea</span>());</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
   <article id="post-MIT web.lab/MIT-web-lab-4-w0-catbook" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
@@ -296,7 +451,7 @@
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/CS61B/">CS61B</a><small>3</small></li>
+    <li><a href="/categories/CS61B/">CS61B</a><small>5</small></li>
   
     <li><a href="/categories/MIT-web-lab/">MIT-web.lab</a><small>10</small></li>
   
@@ -310,7 +465,7 @@
   <div class="widget widget-archives">
     <h3 class="title">归档</h3>
     <div class="entry">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">九月 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">七月 2024</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">九月 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">七月 2024</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
