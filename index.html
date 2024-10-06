@@ -45,6 +45,174 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article id="post-SJTU CDM/CDM-1-Propositional-Logic" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2024-10-06T11:05:06.000Z"><a href="/2024/10/06/SJTU%20CDM/CDM-1-Propositional-Logic/">2024-10-06</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2024/10/06/SJTU%20CDM/CDM-1-Propositional-Logic/">CDM 1-3 笔记</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>这篇笔记包含前三个lecture，propositional logic（命题逻辑）中的内容。  </p>
+<p><em>对应教材《数理逻辑与集合论》中1.1-1.5、2.1-2.4。考虑到笔记逻辑，propositional logic最后的重言式、矛盾式等部分放在下一篇笔记中。</em>  </p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><em>（基本与github上的README介绍内容相同）</em></p>
+<p>CDM是上海交通大学软件工程专业的离散数学课。与其它离散数学课不同，这门课不教图论（放在以后的培养计划里），但额外包含了形式化验证的内容。比起一般的离散数学，这门课特殊为计算机类专业设计，包含3个lab和一个bonus lab。   </p>
+<p>CDM（SJTU）网页：<br><a target="_blank" rel="noopener" href="https://ipads.se.sjtu.edu.cn/courses/cdm/">https://ipads.se.sjtu.edu.cn/courses/cdm/</a></p>
+<p>我的github库（暂未开放）：<br><a target="_blank" rel="noopener" href="https://github.com/key4127/CDM-SJTU">https://github.com/key4127/CDM-SJTU</a>  </p>
+<h2 id="命题"><a href="#命题" class="headerlink" title="命题"></a>命题</h2><h3 id="命题及相关基本定义"><a href="#命题及相关基本定义" class="headerlink" title="命题及相关基本定义"></a>命题及相关基本定义</h3><p>命题的定义是 “<strong>a statement that is, by itself, either true or false</strong>”。由此，不确定真假的、感叹句、祈使句、问句不是命题。命题逻辑的定义是 “<strong>a mathematical system for reasoning about propositions and how they relate to one another</strong>”。  </p>
+<p>命题逻辑公式由命题变项和命题联结词组成。命题变项代表命题，命题联结词代表命题之间的关系。命题变项有以下几个特点：一个命题变项代表一个简单命题（原子命题），用P、Q等大写字母表示、要么为真要么为假。命题联结词用于连接命题。  </p>
+<p>此外，没有联结词的命题被称简单命题（原子命题）。</p>
+<h3 id="命题联结词"><a href="#命题联结词" class="headerlink" title="命题联结词"></a>命题联结词</h3><p><strong>否定词：$\neg P$</strong><br><strong>和取词</strong></p>
+<h3 id="合式公式（WFF）"><a href="#合式公式（WFF）" class="headerlink" title="合式公式（WFF）"></a>合式公式（WFF）</h3><p>如果一个公式是 “a well-formed formula”，则这个公式是合式公式（WFF）。  </p>
+<p>合式公式的递归定义如下：  </p>
+<ol>
+<li>每个单独的命题是WFF。</li>
+<li>如果A、B是WFF，则 $\neg A$ 、 $A \land B$ 、 $A \lor B$ 、 $A \rightarrow B$ 、 $A \leftrightarrow B$ 是WFF。</li>
+<li>除1、2之外的任何公式都不是WFF。</li>
+</ol>
+<h2 id="联结词"><a href="#联结词" class="headerlink" title="联结词"></a>联结词</h2><h3 id="联结词完备性"><a href="#联结词完备性" class="headerlink" title="联结词完备性"></a>联结词完备性</h3><h3 id="相关定律"><a href="#相关定律" class="headerlink" title="相关定律"></a>相关定律</h3>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article id="post-CS61A/CS61A-1-Python-Basic" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2024-09-30T07:28:06.000Z"><a href="/2024/09/30/CS61A/CS61A-1-Python-Basic/">2024-09-30</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2024/09/30/CS61A/CS61A-1-Python-Basic/">CS61A 8/28 -&gt; 9/4 笔记</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>这篇笔记包含Welcome、Functions、Control中的内容，介绍Python（和其它语言相同的）基础。  </p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><em>（基本与github上的README介绍内容相同）</em></p>
+<p>CS61A是伯克利CS61系列的第一门课，介绍了Python、scheme和SQL，可以看作程序设计和函数式语言基础，我用这门课来学一点Python和scheme。比起其它课程，这门课可以说是对自学者非常友好，课程网站上每个lab、hw和project都有相应的评分程序。注意（不记得是从哪年开始），CS61A往年课程网站不对外展示，如果想从官方网站学习，一定要注意学期的开始和结束日期，在下一学期开始前完成，否则网站会被更新成下一学期的状态。   </p>
+<p>CS61B spring2024网页：<br><a target="_blank" rel="noopener" href="https://sp24.datastructur.es/">https://sp24.datastructur.es/</a></p>
+<p>我的github库：<br><a target="_blank" rel="noopener" href="https://github.com/key4127/CS61B">https://github.com/key4127/CS61B</a>  </p>
+<h2 id="Java-基础语法"><a href="#Java-基础语法" class="headerlink" title="Java 基础语法"></a>Java 基础语法</h2><p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello world&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> x &lt; <span class="number">10</span>:</span><br><span class="line">    <span class="built_in">print</span>(x)</span><br><span class="line">    x = x + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloNumbers</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (x &lt; <span class="number">10</span>) &#123;</span><br><span class="line">            System.out.println(x);</span><br><span class="line">            x = x + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">larger</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="keyword">if</span> (x &gt; y):</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> y</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(larger(-<span class="number">5</span>, <span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+
+<p><strong>Java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LargerDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">larger</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &gt; y) &#123;</span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> y;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(larger(-<span class="number">5</span>, <span class="number">10</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>在Java中，所有的代码必须包含在某个类里。可以在类里写一个 <code>public static void main(String[] args)</code> （即main函数）函数，代码可以通过这里运行。另外，Java用分号和大括号分隔语句，没有缩进要求。最后，作为静态类型语言，Java中所有变量、方法等必须有一个已声明的类型，这个类型不能改变。 </p>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, m</span>):</span><br><span class="line">        <span class="variable language_">self</span>.model = m</span><br><span class="line">        <span class="variable language_">self</span>.gas = <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Car</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String model;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> gas;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Car</span><span class="params">(String m)</span> &#123;</span><br><span class="line">        model = m;</span><br><span class="line">        gas = <span class="number">5</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">drive</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> gas &lt; <span class="number">5</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;Cannot drive!&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        gas -= <span class="number">5</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="variable language_">self</span>.model + <span class="string">&quot; goes vroom!&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">gasLeft</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.gas</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">addGas</span>(<span class="params">self, amount</span>):</span><br><span class="line">        <span class="variable language_">self</span>.gas += amount</span><br></pre></td></tr></table></figure>
+
+<p><strong>Java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Car</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">drive</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (gas &lt; <span class="number">5</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Cannot drive!&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        gas -= <span class="number">5</span>;</span><br><span class="line">        System.out.println(model + <span class="string">&quot; goes vroom!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">gasLeft</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> self.gas</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addGas</span><span class="params">(<span class="type">int</span> amount)</span> &#123;</span><br><span class="line">        gas = gas + amount;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>另外，Java中有 <code>this</code> 关键字，用来指向类中的内容，如 <code>this.gas</code> 。  </p>
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c1 = Car(<span class="string">&quot;Honda Civic&quot;</span>)</span><br><span class="line">c2 = Car(<span class="string">&quot;Model T&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    Car c1;</span><br><span class="line">    Car c2;</span><br><span class="line"></span><br><span class="line">    c1 = <span class="keyword">new</span> <span class="title class_">Car</span>(<span class="string">&quot;Honda Civic&quot;</span>);</span><br><span class="line">    c2 = <span class="keyword">new</span> <span class="title class_">Car</span>(<span class="string">&quot;Model T&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用对象"><a href="#使用对象" class="headerlink" title="使用对象"></a>使用对象</h3><p><strong>Python</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">···</span><br><span class="line"><span class="built_in">print</span>(c1.gasLeft())</span><br><span class="line"></span><br><span class="line">c1.drive()</span><br><span class="line"><span class="built_in">print</span>(c1.gasLeft())</span><br><span class="line"></span><br><span class="line">c1.addGas(<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(c1.gasLeft())</span><br><span class="line"></span><br><span class="line">c1.drive() <span class="comment"># Cannot drive</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c2.gasLeft())</span><br></pre></td></tr></table></figure>
+
+<p><strong>Java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="keyword">static</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    ···</span><br><span class="line">    System.out.println(c1.gasLeft());</span><br><span class="line"></span><br><span class="line">    c1.drive();</span><br><span class="line">    System.out.println(c1.gasLeft());</span><br><span class="line"></span><br><span class="line">    c1.addGas(<span class="number">1</span>);</span><br><span class="line">    System.out.println(c1.gasLeft());</span><br><span class="line"></span><br><span class="line">    c1.drive(); <span class="comment">// Cannot drive</span></span><br><span class="line"></span><br><span class="line">    System.out.print(c2.gasLeft());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在lecture2的ppt中还有一个 <code>Dog</code> 类的实现，笔记里不再重复。可以在CS61B主页或我的库中查看相关代码。  </p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article id="post-CSAPP &amp; SJTU ICS/0 Introduction" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2024-09-24T03:36:06.000Z"><a href="/2024/09/24/CSAPP%20&%20SJTU%20ICS/0%20Introduction/">2024-09-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2024/09/24/CSAPP%20&%20SJTU%20ICS/0%20Introduction/">CSAPP &amp; SJTU ICS 说明</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>这个合集包含CSAPP和上海交通大学ICS1、2的笔记。由于ICS基本上讲解的是CSAPP内容，不单列两个合集了。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
   <article id="post-CS61B/CS61B-5-Disjoint-Sets" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
@@ -55,7 +223,7 @@
       
       
   
-    <h1 class="title"><a href="/2024/09/06/CS61B/CS61B-5-Disjoint-Sets/">CS61A 12,15 笔记</a></h1>
+    <h1 class="title"><a href="/2024/09/06/CS61B/CS61B-5-Disjoint-Sets/">CS61B 12,15 笔记</a></h1>
   
 
     </header>
@@ -110,7 +278,7 @@
       
       
   
-    <h1 class="title"><a href="/2024/09/06/CS61B/CS61B-4-Asymptotics/">CS61A 12,15 笔记</a></h1>
+    <h1 class="title"><a href="/2024/09/06/CS61B/CS61B-4-Asymptotics/">CS61B 12,15 笔记</a></h1>
   
 
     </header>
@@ -143,7 +311,7 @@
       
       
   
-    <h1 class="title"><a href="/2024/09/05/CS61B/CS61B-3-Inheritance/">CS61A 8-11 笔记</a></h1>
+    <h1 class="title"><a href="/2024/09/05/CS61B/CS61B-3-Inheritance/">CS61B 8-11 笔记</a></h1>
   
 
     </header>
@@ -176,7 +344,7 @@
       
       
   
-    <h1 class="title"><a href="/2024/09/05/CS61B/CS61B-2-List-and-Array/">MIT web.lab 3-7 笔记</a></h1>
+    <h1 class="title"><a href="/2024/09/05/CS61B/CS61B-2-List-and-Array/">CS61B 3-7 笔记</a></h1>
   
 
     </header>
@@ -209,7 +377,7 @@
       
       
   
-    <h1 class="title"><a href="/2024/09/05/CS61B/CS61B-1-Java-Basic/">CS61A 1-2 笔记</a></h1>
+    <h1 class="title"><a href="/2024/09/05/CS61B/CS61B-1-Java-Basic/">CS61B 1-2 笔记</a></h1>
   
 
     </header>
@@ -413,245 +581,6 @@
 
 
 
-  <article id="post-MIT web.lab/MIT-web-lab-9-Design" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2024-08-12T05:19:12.000Z"><a href="/2024/08/12/MIT%20web.lab/MIT-web-lab-9-Design/">2024-08-12</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2024/08/12/MIT%20web.lab/MIT-web-lab-9-Design/">MIT-web.lab: 9.Design, UI/UX, Figma</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <h2 id="UI-UX"><a href="#UI-UX" class="headerlink" title="UI&#x2F;UX"></a>UI&#x2F;UX</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>这部分介绍了UI、UX、线框图以及prototyping。UI代表用户界面（色彩搭配、字体、布局等），UX代表用户体验，线框图指网站的蓝图&#x2F;框架，prototyping（原型设计）代表实验性的、可以演示功能的版本。具体的介绍省略（见PPT）。  </p>
-<p>以下是两个相关网址：  </p>
-<p>展现UI随时间的变化：<br><a target="_blank" rel="noopener" href="https://uxdesign.cc/how-visual-design-trends-have-evolved-over-the-years-730a8ed43970">https://uxdesign.cc/how-visual-design-trends-have-evolved-over-the-years-730a8ed43970</a>  </p>
-<p>新手的UI设计教程：<br><a target="_blank" rel="noopener" href="https://blog.prototypr.io/ui-design-guide-for-non-designers-beginners-ea394f3d9e41">https://blog.prototypr.io/ui-design-guide-for-non-designers-beginners-ea394f3d9e41</a>  </p>
-<h2 id="figma"><a href="#figma" class="headerlink" title="figma"></a>figma</h2><p>figma是一款基于浏览器设计的UI设计工具。  </p>
-<h3 id="相关网址"><a href="#相关网址" class="headerlink" title="相关网址"></a>相关网址</h3><p>figma官网（注册）：<br><a target="_blank" rel="noopener" href="https://www.figma.com/">https://www.figma.com/</a></p>
-<p>figma网页：<br><a target="_blank" rel="noopener" href="https://www.figma.com/file/238AmdjDNOKW9tDEMBd4WX/6.170-PS3?t=SQZyHwDJ03YgRj1q-0">https://www.figma.com/file/238AmdjDNOKW9tDEMBd4WX/6.170-PS3?t=SQZyHwDJ03YgRj1q-0</a>  </p>
-<p>figma移动端：<br><a target="_blank" rel="noopener" href="https://www.figma.com/file/CE1FIoHtLsRdReBomQ2SAR/Dashboard-App-UI-KIT-21-screens-total-(Community)?node-id=0:1&t=E7kN3ZQhKCXBUT93-0">https://www.figma.com/file/CE1FIoHtLsRdReBomQ2SAR/Dashboard-App-UI-KIT-21-screens-total-(Community)?node-id=0%3A1&t=E7kN3ZQhKCXBUT93-0</a>  </p>
-<p>这门课的figma教程：<br><a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1BJesvDGOprIPs-FtDjfRHVbBtPGYsVFW/view">https://drive.google.com/file/d/1BJesvDGOprIPs-FtDjfRHVbBtPGYsVFW/view</a>  </p>
-<h3 id="figma基础"><a href="#figma基础" class="headerlink" title="figma基础"></a>figma基础</h3><p><strong>step 1：注册</strong></p>
-<p>首先在 <a target="_blank" rel="noopener" href="https://www.figma.com/">https://www.figma.com/</a> 创建账号并创建新的design file。  </p>
-<p>可以看到figma界面由许多板块组成。  </p>
-<p><img src="/MIT%20web.lab/figma%20overview.png" alt="figma overview">  </p>
-<p><strong>step 2：创建框架</strong></p>
-<p>按照ppt的教程创建一个框架。  </p>
-<p>（点击Frame图标（类似井号），在右侧选择框架）</p>
-<p><strong>step 3：创建navbar</strong></p>
-<p>创建一个长方形、调整颜色、创建文本框，创建navbar。  </p>
-<p><strong>step 4：把navbar变成一个元件</strong></p>
-<p>右键选择“create component”。在创建元件后，原来的部分可以复用。  </p>
-<p><strong>step 5：在新框架中复用navbar并添加图片</strong></p>
-<p>首先如图新建页面（注意不是新建文件）</p>
-<p><img src="/MIT%20web.lab/figma%20new%20frame.png" alt="figma new frame">  </p>
-<p>然后复用原来的navbar。<br>添加图片，设置宽高、位置和圆角。  </p>
-<p><strong>step 6：更改原来的navbar</strong></p>
-<p><img src="/MIT%20web.lab/main%20component.png" alt="main component">  </p>
-<p><img src="/MIT%20web.lab/instance.png" alt="instance">  </p>
-<p>可以看到上图两个元件的符号不同。前一个是“元件”，对它的改变会影响到所有复用它的部分；后一个是实例，无法添加新的对象。  </p>
-<p><strong>step 7：建立component library</strong></p>
-<p>新建页面（page），建立component library。将原来的component复制、删除，然后粘贴到component library中，则main component被移动到了这里。  </p>
-<p><img src="/MIT%20web.lab/component%20library.png" alt="component library">  </p>
-<p>然后在原来component内添加新的要素。选中component内的元素再新建，新建的部分就会被归类到component里。  </p>
-<p><img src="/MIT%20web.lab/change%20component.png" alt="change component">  </p>
-<p>更改后发现原来页面的navbar变成了更改后的样子。</p>
-<p><strong>step 8：给两个页面增加交互操作</strong></p>
-<p>按照ppt教程，选择对象，设置prototype -&gt; add interaction，在click选项下，将none改为目标页面。  </p>
-<p><img src="/MIT%20web.lab/figma%20interaction.png" alt="figma interaction">   </p>
-<p><strong>step 9：预览</strong></p>
-<p>按照上面的步骤，demo已经完成。在未选择任何对象的前提下，在右侧prototype下可以选择设备来运行demo。  </p>
-<p>除此之外，figma还提供共享、以css格式复制等功能。  </p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article id="post-MIT web.lab/MIT-web-lab-8-Intro-to-React" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2024-08-10T10:42:12.000Z"><a href="/2024/08/10/MIT%20web.lab/MIT-web-lab-8-Intro-to-React/">2024-08-10</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2024/08/10/MIT%20web.lab/MIT-web-lab-8-Intro-to-React/">MIT-web.lab: 8.Intro to React</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>react是一个开源JavaScript库，其中包含很多组件（component），每个组件是一个“fake HTML tag”。组件可以在一个文件里（抽象地）实现一系列html、css、js的功能。其中各种组件以一定结构（类似树）组织在一起。  </p>
-<p><img src="/MIT%20web.lab/react%20and%20component.png" alt="react and component">  </p>
-<h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><p>props 代表从亲组件到子组件中传递的信息。react可以通过亲组件决定子组件的各种属性，它是不可变的，并且不能子到亲反向传递。  </p>
-<p><img src="/MIT%20web.lab/props.png" alt="props">  </p>
-<h3 id="state"><a href="#state" class="headerlink" title="state"></a>state</h3><p>state代表组件所维护的信息，它是可变的，可以根据程序设置或用户输入修改。  </p>
-<p>以post state为例，对于post（亲组件），它没有props，只有state，state存储了各条评论（子组件）。而子组件没有state只有props：评论发出后就不可修改，但评论数、评论如何修改可变。  </p>
-<p><img src="/MIT%20web.lab/post%20state.png" alt="post state">  </p>
-<p>更进一步地，现在要给评论添加回复功能，注意回复有默认全部隐藏&#x2F;全部显示两种状态，并且评论的内容一旦发布就不可变。那么，合理的解决方案是给评论增加state，将回复作为评论的子组件，通过state调整回复隐藏&#x2F;显示。  </p>
-<p><img src="/MIT%20web.lab/comment%20replies.png" alt="comment replies">  </p>
-<h3 id="组件结构（component-structure）"><a href="#组件结构（component-structure）" class="headerlink" title="组件结构（component structure）"></a>组件结构（component structure）</h3><p>props和state共同构成了component structure。下图是前两部分的总结：  </p>
-<p><img src="/MIT%20web.lab/component%20structure.png" alt="component structure">  </p>
-<h2 id="react-practice"><a href="#react-practice" class="headerlink" title="react practice"></a>react practice</h2><h3 id="说明与相关网址"><a href="#说明与相关网址" class="headerlink" title="说明与相关网址"></a>说明与相关网址</h3><h3 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h3><p>练习中的评论由两部分构成：评论人和评论内容。  </p>
-<p>首先，ppt带着我们创建了一个框架：  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">CommentReply</span> = (<span class="params">props</span>) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Function logic (JavaScript)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="comment">// to render</span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">CommentReply</span></span><br></pre></td></tr></table></figure>
-
-<p><code>import React, &#123; useState &#125; from &#39;react&#39;</code> 从react库中导入了React对象和useState hook（暂略）。<code>CommentReply</code> 定义了一个函数组件， <code>props</code> 作为函数参数代表组件属性， <code>return</code> 中的部分是需要渲染的内容。最后一行 <code>export default CommentReply</code> 将这个组件设置为默认导出，导出允许将函数、类等共享到另一个文件。  </p>
-<p>接下来，添加需要render的内容：  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">CommentReply</span> = (<span class="params">props</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;comment-text&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">h5</span>&gt;</span>Joyce Yoon<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>woww peak preschool energyy<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>括号中的 <code>&lt;div&gt;</code> 是需要渲染的内容。但是这段代码无法复用，解决方案是将评论中的信息通过props传递（大括号允许读取组件中变量的值）。  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">CommentReply</span> = (<span class="params">props</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;comment-text&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">h5</span>&gt;</span>&#123;props.name&#125;<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;props.content&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>另外，注意到在这段js代码里，出现了类似HTML的内容。这部分内容被称作JSX。kimi的说法是JSX是js的语法扩展，允许写入类似HTML的标记；而ppt将JSX称作“stricter version of HTML”。  </p>
-<p>从这个网站可以直观地看到HTML和JSX的差异：<br><a target="_blank" rel="noopener" href="https://transform.tools/html-to-jsx">https://transform.tools/html-to-jsx</a>  </p>
-<p>下一步是增加state。在 <code>return</code> 之前添加一行：  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [isLiked, setIsLiked] = <span class="title function_">useState</span>(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
-
-<p>这句话通过 <code>(false)</code> 将 <code>isLiked</code> 这个state初始化为false，并声明 <code>setIsLiked</code> 是用于更新 <code>isLiked</code> 状态的函数。<br>使用 <code>setIsLiked(true)</code> 等类似语句可以更改 <code>isLiked</code> 状态。</p>
-<p>接下来，在 <code>return</code> 的部分添加  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;isLiked ? <span class="string">&quot;Liked&quot;</span> : <span class="string">&quot;Like&quot;</span>&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-
-<p>按照相应条件渲染 <code>isLiked</code> （具体见w2）。</p>
-<h3 id="facebook"><a href="#facebook" class="headerlink" title="facebook"></a>facebook</h3><p>facebook的结构如下：  </p>
-<p><img src="/MIT%20web.lab/facebook%20structure.png" alt="facebook sturcture">  </p>
-<p>相关代码写在 app.js 中，可以看到facebook包含app、navbar、intro、photos、post五个部分。  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">NavBar</span> <span class="keyword">from</span> <span class="string">&quot;./NavBar&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Intro</span> <span class="keyword">from</span> <span class="string">&quot;./Intro&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Photos</span> <span class="keyword">from</span> <span class="string">&quot;./Photos&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Post</span> <span class="keyword">from</span> <span class="string">&quot;./Post&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">NavBar</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;<span class="name">Intro</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;<span class="name">Photos</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Post</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
-
-<p>在最开始的导入部分，首先导入了react库，然后从NavBar.js、Intro.js等文件导入各个组件。然后 <code>return</code> 返回一个div组件，将NavBar等包含为它的子组件，最后设置App导出。  </p>
-<p>可以看到上文中react库的两次导入使用了不同的语法：  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>在上面两行导入中，第一行只导入了react库，第二行额外导入了一个钩子。在JavaScript中，分号是可选的，第一行显示地使用了分号，第二行省略了。此外，通常来说，JavaScript中单引号和双引号没有区别。  </p>
-<p>下一步是由亲组件向子组件传递props。传递props的语法是，在亲组件 <code>return</code> 的div里写  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Post</span> name=<span class="string">&quot;Kenneth&quot;</span> text=<span class="string">&quot;Welcome to web lab!&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
-
-<p>其中 <code>Post</code> 是子组件，而 <code>name</code> 和 <code>text</code> 以及它们的内容就是props。  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">NavBar</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;<span class="name">Intro</span> <span class="attr">education</span>=<span class="string">&quot;Massachusetts Institute of Technology (MIT)&quot;</span> <span class="attr">city</span>=<span class="string">&quot;Ridgefield, Connecticut&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;<span class="name">Photos</span> <span class="attr">links</span>=<span class="string">&#123;[</span>&quot;<span class="attr">pic1.jpg</span>&quot;, &quot;<span class="attr">pic2.jpg</span>&quot;, &quot;<span class="attr">pic3.jpg</span>&quot;, &quot;<span class="attr">pic4.jpg</span>&quot;, &quot;<span class="attr">pic5.jpg</span>&quot;, &quot;<span class="attr">pic6.jpg</span>&quot;, &quot;<span class="attr">pic7.jpg</span>&quot;]&#125; /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Post</span> <span class="attr">name</span>=<span class="string">&quot;Kenneth Choi&quot;</span> <span class="attr">text</span>=<span class="string">&quot;Sign up for web lab!&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>现在App.js中的内容已经完成，下一步是利用props完成各个子组件的渲染。在亲组件中传递的props会出现在子组件的参数中。  </p>
-<p><strong>Intro.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Intro</span> = (<span class="params">props</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                Studies at <span class="tag">&lt;<span class="name">b</span>&gt;</span>&#123;props.education&#125;<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                From <span class="tag">&lt;<span class="name">b</span>&gt;</span>&#123;props.city&#125;<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Intro</span>;</span><br></pre></td></tr></table></figure>
-
-<p>其中 <code>&lt;b&gt;</code> 标签表示文本加粗。  </p>
-<p><strong>Photos.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Photos</span> = (<span class="params">props</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> myImageTags = props.<span class="property">links</span>.<span class="title function_">map</span>(<span class="function">(<span class="params">photoLink</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#123;photoLink&#125;</span> /&gt;</span></span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">h3</span>&gt;</span>Photos<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123;myImageTags&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Photos</span>;</span><br></pre></td></tr></table></figure>
-
-<p>这段代码利用map创建了一个数组，对于每个 <code>photoLink</code> 返回一个img标签。JSX用花括号引入JavaScript表达式，将其渲染到了页面上。  </p>
-<p><strong>Post.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Post</span> = (<span class="params">props</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> [isLiked, setIsLiked] = <span class="title function_">useState</span>(<span class="literal">false</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;Post&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">h3</span>&gt;</span>&#123;props.name&#125;<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;props.text&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onClick</span> = <span class="string">&#123;()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    setIsLiked(!isLiked);</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;&gt;</span></span><br><span class="line"><span class="language-xml">                &#123;isLiked ? &quot;Liked&quot; : &quot;Like&quot;&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Post</span>;</span><br></pre></td></tr></table></figure>
-
-<p>其中 <code>&lt;button&gt;</code> 的部分会在以后的课程中提及。  </p>
-<p>显然课堂上的这些练习没有完成一个完整的项目，对这个项目的完善将写在补充部分中。  </p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这两张幻灯片可以概括这节课的内容：  </p>
-<p><img src="/MIT%20web.lab/react%20recap%201.png" alt="react recap 1">  </p>
-<p><img src="/MIT%20web.lab/react%20recap%202.png" alt="react recap 2">  </p>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3>
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article id="post-MIT web.lab/MIT-web-lab-7-JS-cont" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2024-08-07T15:39:12.000Z"><a href="/2024/08/07/MIT%20web.lab/MIT-web-lab-7-JS-cont/">2024-08-07</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2024/08/07/MIT%20web.lab/MIT-web-lab-7-JS-cont/">MIT-web.lab: 7.JS cont</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <h2 id="JS-cont-arrow-functions-callbacks-map-filter"><a href="#JS-cont-arrow-functions-callbacks-map-filter" class="headerlink" title="JS cont: arrow functions, callbacks, map, filter"></a>JS cont: arrow functions, callbacks, map, filter</h2><h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3><p>ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。  </p>
-<p>此外还有一个练习：编写函数，输入一个摄氏度数组，将其在新的数组中转化为华氏度后返回。   </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">arrCtoF</span> = (<span class="params">arrC</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> arrF = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arrC.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        arrF.<span class="title function_">push</span>(arrC[i] * <span class="number">9</span> / <span class="number">5</span> + <span class="number">32</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arrF;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>从这段代码可以看出，虽然JS的数组也是引用类型，但其作用域等与C++有所不同（待补充）。  </p>
-<p>另外，（ppt后文）提到函数有一种简化写法：  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(inputs) =&gt; (output)</span><br></pre></td></tr></table></figure>
-
-<p>例如， <code>(rectangle) =&gt; (rectangle.width * rectangle.height)</code> 是一个计算长方形面积的函数。  </p>
-<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>回调函数是一种特殊的函数，它在使用时作为参数被传递给另一个函数并被调用。  </p>
-<p>ppt给出了一个创建并使用回调函数的例子。在下文中， <code>transformFonc</code> 是回调函数，用 <code>modifyArray</code> 使用回调函数。  </p>
-<p>根据ppt的说明， <code>modifyArray</code> 接受一个数组和回调函数 <code>transformFonc</code> 作为输入，它只需要将回调函数作用到数组上并返回结果。  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">modifyArray</span> = (<span class="params">arr, transformFonc</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> newArr = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        newArr.<span class="title function_">push</span>(<span class="title function_">transformFonc</span>(arr[i]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>在了解回调函数基础之后，ppt给出一个练习：利用上文practice的代码，再分别写一个华氏度转摄氏度和摄氏度转开尔文的函数。  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">modifyArray</span> = (<span class="params">arr, transformFonc</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> newArr = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        newArr.<span class="title function_">push</span>(<span class="title function_">transformFonc</span>(arr[i]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">cToF</span> = (<span class="params">tempC</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> tempC * <span class="number">9</span> / <span class="number">5</span> + <span class="number">32</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">fToC</span> = (<span class="params">tempF</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> (tempF - <span class="number">32</span>) * <span class="number">5</span> / <span class="number">9</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">cToK</span> = (<span class="params">tempC</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> tempC + <span class="number">273.15</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>此外，ppt还给出另一个使用回调函数的实例，见<a href="weblab.is/callbackshint">weblab.is&#x2F;callbackshint</a>。</p>
-<h3 id="map-和-filter"><a href="#map-和-filter" class="headerlink" title="map 和 filter"></a>map 和 filter</h3><p>map和filter是两个高阶函数，它们接受一个函数作为参数，并返回一个新数组。  </p>
-<p>map会将接收到的函数作用到原来数组上：    </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myArray = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> newArray = myArray.<span class="title function_">map</span>(<span class="function">(<span class="params">num</span>) =&gt;</span> (num * <span class="number">3</span>));</span><br><span class="line"><span class="comment">// newArray = [3, 6, 9, 12, 15]</span></span><br></pre></td></tr></table></figure>
-
-<p>filter把接收到的函数作为一个“测试”，将通过测试的元素筛选出来并形成一个新数组：  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> values = [<span class="number">3</span>, -<span class="number">6</span>, <span class="number">2</span>, <span class="number">0</span>, -<span class="number">9</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> positiveValues = values.<span class="title function_">filter</span>(<span class="function"><span class="params">x</span> =&gt;</span> x &gt; <span class="number">0</span>);</span><br><span class="line"><span class="comment">// positiveValues = [3, 2, 4]</span></span><br></pre></td></tr></table></figure>
-
-<p>ppt给map和filter分别提供了一个练习。  </p>
-<p>map练习：  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rectangles = [</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">1</span>, <span class="attr">height</span>: <span class="number">1</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">5</span>, <span class="attr">height</span>: <span class="number">10</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">6</span>, <span class="attr">height</span>: <span class="number">6</span> &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> areas = rectangles.<span class="title function_">map</span>(<span class="function">(<span class="params">rectangle</span>) =&gt;</span> (rectangle.<span class="property">width</span> * rectangle.<span class="property">height</span>));</span><br></pre></td></tr></table></figure>
-
-<p>filter练习：  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rectangles = [</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">1</span>, <span class="attr">height</span>: <span class="number">1</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">5</span>, <span class="attr">height</span>: <span class="number">10</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">6</span>, <span class="attr">height</span>: <span class="number">6</span> &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> selectedRectangles = rectangles.<span class="title function_">filter</span>(<span class="function">(<span class="params">rectangle</span>) =&gt;</span> <span class="number">2</span> * (rectangle.<span class="property">width</span> + rectangle.<span class="property">height</span>) &gt; <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
-
-<p>另外，注意回调函数中的括号不是必须的（filter的例子中就没有），但是会提高可读性。  </p>
-<h3 id="web中的回调函数"><a href="#web中的回调函数" class="headerlink" title="web中的回调函数"></a>web中的回调函数</h3><p>ppt最后举了一些例子，例如 <code>setInterval</code> 和w1里都用到了回调函数，还举了一个数据库例子（略）。  </p>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>ppt最后有一行：  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [exists, setExists] = <span class="title function_">useState</span>(<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
-
-<p>这不是回调函数，而是对下一部分react的引入。  </p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -674,7 +603,11 @@
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/CS61B/">CS61B</a><small>5</small></li>
+    <li><a href="/categories/CDM-SJTU/">CDM-SJTU</a><small>1</small></li>
+  
+    <li><a href="/categories/CS61B/">CS61B</a><small>6</small></li>
+  
+    <li><a href="/categories/CSAPP/">CSAPP</a><small>1</small></li>
   
     <li><a href="/categories/MIT-web-lab/">MIT-web.lab</a><small>10</small></li>
   
@@ -688,7 +621,7 @@
   <div class="widget widget-archives">
     <h3 class="title">归档</h3>
     <div class="entry">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">九月 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">七月 2024</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">十月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">九月 2024</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">七月 2024</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
