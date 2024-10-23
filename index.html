@@ -622,7 +622,54 @@
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>API的全称</p>
+        <h3 id="相关网址"><a href="#相关网址" class="headerlink" title="相关网址"></a>相关网址</h3><p>http(s)方法：<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods</a>  </p>
+<p>http status codes：<br><a target="_blank" rel="noopener" href="https://www.restapitutorial.com/httpstatuscodes.html">https://www.restapitutorial.com/httpstatuscodes.html</a>  </p>
+<h2 id="HTTP-HTTPS-Status-Codes"><a href="#HTTP-HTTPS-Status-Codes" class="headerlink" title="HTTP, HTTPS, Status Codes"></a>HTTP, HTTPS, Status Codes</h2><h3 id="HTTP-and-HTTPS"><a href="#HTTP-and-HTTPS" class="headerlink" title="HTTP and HTTPS"></a>HTTP and HTTPS</h3><p>HTTP（协议）是“Hypertext Transfer Protocol”（超文本传输协议）的简写，HTTPS指HTTP Secure。  </p>
+<p>HTTP request分为四部分：request target(URL) + params、http methods、headers和body。  </p>
+<ul>
+<li><p>target：</p>
+<p>  对于这样一个网址<a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=web+lab">https://www.youtube.com/results?search_query&#x3D;web+lab</a>，问号前一部分为服务器的URL，后一部分为Query params（两种参数）。</p>
+</li>
+<li><p>method：</p>
+<p>  具体的http(s) methods见上面的网址。<br>  常见的method如下：  </p>
+<ul>
+<li>GET<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>  获取数据</li>
+<li>POST<br>  &nbsp;&nbsp;&nbsp;<br>  发布数据</li>
+<li>PUT<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>  替换数据</li>
+<li>DELETE<br>  &nbsp;<br>  删除数据</li>
+</ul>
+</li>
+<li><p>request headers and body：  </p>
+<p>  request headers 为 request提供上下文，body包含具体内容。</p>
+</li>
+</ul>
+<p>此外，HTTP response 由 status codes、header 和 body三部分组成。其中，body通常为json格式。</p>
+<h3 id="Status-Codes"><a href="#Status-Codes" class="headerlink" title="Status Codes"></a>Status Codes</h3><p>如图  </p>
+<p><img src="/MIT%20web.lab/status%20codes.png" alt="status codes">  </p>
+<p>同样，更多情况见上文链接。  </p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>API的全称是“Application Program Interface”（应用程序编程接口），ppt将其介绍为“a set of endpoints a service allows you to make requests to”。通过服务器提供的API，可以安全地访问允许的数据（而不是直接在服务器上访问）。可以通过访问URL向端点发送请求。  </p>
+<h3 id="preview-of-making-requests-in-JavaScript"><a href="#preview-of-making-requests-in-JavaScript" class="headerlink" title="preview of making requests in JavaScript"></a>preview of making requests in JavaScript</h3><p>在这门课中，staff写了两个函数。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /api/getUserByNumber?phoneNumber=6172530418</span></span><br><span class="line"><span class="title function_">get</span>(<span class="string">&quot;/api/getUserByNumber&quot;</span>, &#123;</span><br><span class="line">    <span class="attr">phoneNumber</span>: <span class="string">&quot;6172530418&quot;</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">post</span>(<span class="string">&quot;/api/adduser&quot;</span>, &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;Nick Tsao&quot;</span>,</span><br><span class="line">    <span class="attr">school</span>: <span class="string">&quot;MIT&quot;</span>,</span><br><span class="line">    <span class="attr">phoneNumber</span>: <span class="string">&quot;6172530418&quot;</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>函数的返回值是一个Promise对象。  </p>
+<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><p>Promise允许异步的处理。  </p>
+<p>以下面这段代码为例：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">get</span>(<span class="string">&quot;/api/stories&quot;</span>).<span class="title function_">then</span>(<span class="function">(<span class="params">storyObjs</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">setStories</span>(storyObjs);</span><br><span class="line">&#125;).<span class="title function_">catch</span>(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;this is so sad:, &quot;</span>, err.<span class="property">message</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>其中，<code>then</code> 表示promise实现时执行后面的内容，<code>catch</code> 表示promise被拒绝时执行后面的内容。  </p>
+<p>promise不会阻塞后面语句的执行。对于这段代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">myOneSecondPromise</span>().<span class="title function_">then</span>(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Promise fullfilled with value: &#x27;</span>, value)</span><br><span class="line">&#125;).<span class="title function_">catch</span>(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Error&#x27;</span>, err)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Herro&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输入“Hello”，可能看到的输出是“Herro”在前，“Hello”在后。  </p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">f</span> = (<span class="params"><span class="built_in">Promise</span></span>) =&gt; &#123;</span><br><span class="line">    <span class="title class_">Promise</span>.<span class="title function_">then</span>(<span class="function">(<span class="params">val</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;a&#x27;</span>))</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function">(<span class="params">val</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;b&#x27;</span>))</span><br><span class="line">    .<span class="title function_">catch</span>(<span class="function">(<span class="params">err</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;error!&quot;</span>))</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> promise = <span class="comment">/* Some way of getting rejected. */</span></span><br><span class="line"><span class="title function_">f</span>(promise)</span><br></pre></td></tr></table></figure>
+
+<p>输出为“error!”。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">f</span> = (<span class="params"><span class="built_in">Promise</span></span>) =&gt; &#123;</span><br><span class="line">    <span class="title class_">Promise</span>.<span class="title function_">then</span>(<span class="function">(<span class="params">val</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;a&#x27;</span>))</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function">(<span class="params">val</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;b&#x27;</span>))</span><br><span class="line">    .<span class="title function_">catch</span>(<span class="function">(<span class="params">err</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;error!&#x27;</span>))</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> promise = <span class="comment">/* Some way of getting accepted. */</span></span><br><span class="line"><span class="title function_">f</span>(promise)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hi there!&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>输出为“‘Hi there!’，‘a’，‘b’”。</p>
 
       
     </div>
