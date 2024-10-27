@@ -225,6 +225,7 @@
 </tbody></table>
 </td>
 
+<p>联结词的结合性是左结合，优先级是 $\not &gt; \land &gt; \lor &gt; \rightarrow &gt; \leftrightarrow$ 。</p>
 <h3 id="合式公式（WFF）"><a href="#合式公式（WFF）" class="headerlink" title="合式公式（WFF）"></a>合式公式（WFF）</h3><p>如果一个公式是 “a well-formed formula”，则这个公式是合式公式（WFF）。  </p>
 <p>合式公式的递归定义如下：  </p>
 <ol>
@@ -232,7 +233,81 @@
 <li>如果A、B是WFF，则 $\neg A$ 、 $A \land B$ 、 $A \lor B$ 、 $A \rightarrow B$ 、 $A \leftrightarrow B$ 是WFF。</li>
 <li>除1、2之外的任何公式都不是WFF。</li>
 </ol>
-<h2 id="联结词"><a href="#联结词" class="headerlink" title="联结词"></a>联结词</h2><h3 id="联结词完备性"><a href="#联结词完备性" class="headerlink" title="联结词完备性"></a>联结词完备性</h3><h3 id="相关定律"><a href="#相关定律" class="headerlink" title="相关定律"></a>相关定律</h3>
+<h2 id="联结词"><a href="#联结词" class="headerlink" title="联结词"></a>联结词</h2><h3 id="联结词完备性"><a href="#联结词完备性" class="headerlink" title="联结词完备性"></a>联结词完备性</h3><p>如果一组联结词满足下面的条件，则它们是完备的：  </p>
+<ul>
+<li>每个公式都可以转换成等价公式，并且这个等价公式只使用组里的联结词。</li>
+</ul>
+<p>而一个有n个变量的公式可以看作一个有n个参数的函数。如果每个这样的函数都可以转为WFF，则联结词是完备的。而如果某个函数的真值表和公式相同，则它们是等价的。</p>
+<p>如何将真值表转换为公式？以下面为例：</p>
+<table>
+<thead>
+<tr>
+<th align="center">$P$</th>
+<th align="center">$Q$</th>
+<th align="center">$g1(P, Q)$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$T$</td>
+<td align="center">$T$</td>
+<td align="center">$T$</td>
+</tr>
+<tr>
+<td align="center">$T$</td>
+<td align="center">$F$</td>
+<td align="center">$T$</td>
+</tr>
+<tr>
+<td align="center">$F$</td>
+<td align="center">$T$</td>
+<td align="center">$F$</td>
+</tr>
+<tr>
+<td align="center">$F$</td>
+<td align="center">$F$</td>
+<td align="center">$F$</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>考虑结果为T的行</p>
+<ul>
+<li><p>选出为T的每一行，析取P、Q原值：<br>  $P \land Q$ &nbsp;&nbsp;&nbsp;&nbsp;<br>  $P \land \not Q$ &nbsp;&nbsp;&nbsp;&nbsp;</p>
+</li>
+<li><p>用 $\lor$ 连接：<br>  $(P \land Q) \lor (P \land \not Q)$</p>
+</li>
+</ul>
+</li>
+<li><p>考虑结果为F的行</p>
+<ul>
+<li><p>选出为F的每一行，合取P、Q取反的值（只要有一个为真结果就不是F）：<br>  $\not P \land \not Q$ &nbsp;&nbsp;&nbsp;&nbsp;<br>  $\ not P \land Q$ &nbsp;&nbsp;&nbsp;&nbsp;</p>
+</li>
+<li><p>用 $\land$ 连接：<br>  $(\not P \land \not Q) \land (\not P \land Q)$</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>对于现有的联结词，已经知道</p>
+<p>$P \leftrightarrow Q &#x3D; (P \rightarrow Q) \land (Q \rightarrow P)$</p>
+<p>则 {$\not$, $\land$, $\lor$, $\rightarrow$}是完备的。  </p>
+<p>更近一步，可以发现  </p>
+<p>$P \rightarrow Q &#x3D; (\not P) \lor Q$</p>
+<p>由摩根定律得</p>
+<p>$P \lor Q &#x3D; \not ((\not P) \land (\not Q))$<br>$P \land Q &#x3D; \not ((\not P) \lor (\not Q))$</p>
+<p>则 {$\not$, $\land$}，{$\not$, $\lor$}是完备的。</p>
+<h3 id="相关定律"><a href="#相关定律" class="headerlink" title="相关定律"></a>相关定律</h3><p>如果两个公式的真值表相同，则它们是等值的。  </p>
+<p><strong>等值定理</strong><br>$P &#x3D; Q$ iff $P \leftrightarrow Q$ is always true.</p>
+<p><strong>摩根定理</strong><br>$\not (P \land Q) &#x3D; \not P \lor \not Q$<br>$\not (P \lor Q) &#x3D; \not P \land \not Q$</p>
+<p><strong>双重否定律</strong><br>$\not \not P &#x3D; P$</p>
+<p><strong>结合律</strong><br>$(P \land Q) \land R &#x3D; P \land (Q \land R)$<br>$(P \lor Q) \lor R &#x3D; P \lor (Q \lor R)$<br>$(P \leftrightarrow Q) \leftrightarrow R &#x3D; P \leftrightarrow (Q \leftrightarrow R)$<br><em>（对 $\rightarrow$ 不适用）</em> </p>
+<p><strong>交换律</strong><br>$P \lor Q &#x3D; Q \lor P$<br>$P \land Q &#x3D; Q \land P$<br>$P \leftrightarrow Q &#x3D; Q \leftrightarrow P$<br><em>（对 $\rightarrow$ 不适用）</em></p>
+<p><strong>等幂律</strong><br>$P \land P &#x3D; P$<br>$P \lor P &#x3D; P$<br>$P \rightarrow P &#x3D; T$<br>$P \leftrightarrow P &#x3D; T$  </p>
+<p><strong>同一律</strong><br>$P \land T &#x3D; P$<br>$P \lor F &#x3D; P$<br>$T \rightarrow P &#x3D; P$<br>$T \leftrightarrow P &#x3D; P$<br>$P \rightarrow F &#x3D; \not P$<br>$P \leftrightarrow F &#x3D; \not P$</p>
+<p><strong>补余律</strong><br>$P \land \not P &#x3D; F$<br>$P \lor \not P &#x3D; T$<br>$P \rightarrow \not P &#x3D; \not P$<br>$\not P \rightarrow P &#x3D; P$<br>$P \leftrightarrow \not P &#x3D; F$  </p>
+<p><strong>零律</strong><br>$P \land F &#x3D; F$<br>$P \lor T &#x3D; T$<br>$P \rightarrow T &#x3D; T$<br>$F \rightarrow P &#x3D; T$  </p>
+<p><strong>分配律</strong><br>$P \lor (Q_1 \land Q_2 \land … \land Q_n) &#x3D; (P \lor Q_1) \land (P \lor Q_2) \land … \land (P \lor Q_n)$<br>$P \land (Q_1 \lor Q_2 \lor … \lor Q_n) &#x3D; (P \land Q_1) \lor (P \land Q_2) \lor … \lor (P \land Q_n)$    </p>
+<p><strong>吸收律</strong><br>$P \lor (P \land Q) &#x3D; P$<br>$P \land (P \lor Q) &#x3D; P$  </p>
+
       
     </div>
     <footer>
