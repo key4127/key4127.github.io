@@ -1,79 +1,222 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"key4127.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="HTML介绍html是一种超文本标记语言。下面这张图简单诠释了html、css和js的关系和区别。          html由一系列“box”组成。以下是一个html框架：   12345678910&lt;!DOCTYPE html&gt;&lt;html&gt;    &lt;head&gt;        &lt;title&gt;Title!&lt;&#x2F;title&gt;    &lt;&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MIT-web.lab: 3.Intro to HTML&#x2F;CSS">
+<meta property="og:url" content="https://key4127.github.io/2024/07/23/MIT%20web.lab/MIT-web-lab-3-Intro-to-HTML-CSS/index.html">
+<meta property="og:site_name" content="hexo-keyist">
+<meta property="og:description" content="HTML介绍html是一种超文本标记语言。下面这张图简单诠释了html、css和js的关系和区别。          html由一系列“box”组成。以下是一个html框架：   12345678910&lt;!DOCTYPE html&gt;&lt;html&gt;    &lt;head&gt;        &lt;title&gt;Title!&lt;&#x2F;title&gt;    &lt;&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://key4127.github.io/MIT%20web.lab/html%20&amp;%20js%20&amp;%20css.png">
+<meta property="og:image" content="https://key4127.github.io/MIT%20web.lab/html%20basic.png">
+<meta property="og:image" content="https://key4127.github.io/MIT%20web.lab/html%20link.png">
+<meta property="og:image" content="https://key4127.github.io/MIT%20web.lab/html%20img.png">
+<meta property="og:image" content="https://key4127.github.io/MIT%20web.lab/html%20item.png">
+<meta property="og:image" content="https://key4127.github.io/MIT%20web.lab/css%20hierarchy.png">
+<meta property="article:published_time" content="2024-07-23T14:07:11.000Z">
+<meta property="article:modified_time" content="2024-09-05T11:25:39.461Z">
+<meta property="article:author" content="Keyist">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://key4127.github.io/MIT%20web.lab/html%20&amp;%20js%20&amp;%20css.png">
+
+
+<link rel="canonical" href="https://key4127.github.io/2024/07/23/MIT%20web.lab/MIT-web-lab-3-Intro-to-HTML-CSS/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://key4127.github.io/2024/07/23/MIT%20web.lab/MIT-web-lab-3-Intro-to-HTML-CSS/","path":"2024/07/23/MIT web.lab/MIT-web-lab-3-Intro-to-HTML-CSS/","title":"MIT-web.lab: 3.Intro to HTML/CSS"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>MIT-web.lab: 3.Intro to HTML/CSS | hexo-keyist</title>
   
-  <title>MIT-web.lab: 3.Intro to HTML/CSS | hexo-keyist</title>
-  <meta name="author" content="Keyist">
-  
-  <meta name="description" content="HTML介绍html是一种超文本标记语言。下面这张图简单诠释了html、css和js的关系和区别。        
-
-html由一系列“box”组成。以下是一个html框架：  
-12345678910&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;    &amp;lt;head&amp;gt;">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <meta property="og:title" content="MIT-web.lab: 3.Intro to HTML/CSS"/>
-  <meta property="og:site_name" content="hexo-keyist"/>
-
-  
-    <meta property="og:image" content=""/>
-  
-
-  <link rel="shortcut icon" href="/favicon.png">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
-  
-
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">hexo-keyist</a></h1>
-  <h2><a href="/"></a></h2>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">hexo-keyist</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
 </div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/null">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-  </ul>
-  <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div>
+
+
+
+
+
+
+
 </header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-MIT web.lab/MIT-web-lab-3-Intro-to-HTML-CSS" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2024-07-23T14:07:11.000Z"><a href="/2024/07/23/MIT%20web.lab/MIT-web-lab-3-Intro-to-HTML-CSS/">2024-07-23</a></time>
-      
-      
-  
-    <h1 class="p-name title" itemprop="headline name">MIT-web.lab: 3.Intro to HTML/CSS</h1>
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">1.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE"><span class="nav-number">1.3.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-div-gt-%E4%B8%8E-lt-span-gt"><span class="nav-number">1.4.</span> <span class="nav-text">&lt;div&gt; 与 &lt;span&gt;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css"><span class="nav-number">2.</span> <span class="nav-text">css</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D-1"><span class="nav-number">2.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#id-%E4%B8%8E-class"><span class="nav-number">2.2.</span> <span class="nav-text">id 与 class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">2.3.</span> <span class="nav-text">优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E5%90%88-html-%E4%B8%8E-css"><span class="nav-number">2.4.</span> <span class="nav-text">结合 html 与 css</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Keyist</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
   
 
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>html是一种超文本标记语言。下面这张图简单诠释了html、css和js的关系和区别。        </p>
-<p><img src="/MIT%20web.lab/html%20&%20js%20&%20css.png" alt="html vs. js vs. css"></p>
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://key4127.github.io/2024/07/23/MIT%20web.lab/MIT-web-lab-3-Intro-to-HTML-CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Keyist">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hexo-keyist">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="MIT-web.lab: 3.Intro to HTML/CSS | hexo-keyist">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MIT-web.lab: 3.Intro to HTML/CSS
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-07-23 22:07:11" itemprop="dateCreated datePublished" datetime="2024-07-23T22:07:11+08:00">2024-07-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-09-05 19:25:39" itemprop="dateModified" datetime="2024-09-05T19:25:39+08:00">2024-09-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/MIT-web-lab/" itemprop="url" rel="index"><span itemprop="name">MIT-web.lab</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>html是一种超文本标记语言。下面这张图简单诠释了html、css和js的关系和区别。        </p>
+<p><img src="/MIT%20web.lab/html%20&amp;%20js%20&amp;%20css.png" alt="html vs. js vs. css"></p>
 <p>html由一系列“box”组成。以下是一个html框架：  </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Heading!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>Paragraph!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p><code>&lt;!DOCTYPE html&gt;</code> ：指定网站使用最新版html（而不是随机版本）<br><code>&lt;html&gt;&lt;/html&gt;</code> ：一个html元素<br><code>&lt;head&gt;&lt;/head&gt;</code> ：存储文档的标题、样式、脚本等，描述数据属性的信息<br><code>&lt;title&gt;&lt;/title&gt;</code> ：页面标题<br><code>&lt;body&gt;&lt;/body&gt;</code> ：内容<br><code>&lt;h1&gt;&lt;/h1&gt;</code> ：一级标题<br><code>&lt;p&gt;&lt;/p&gt;</code> ：段落  </p>
 <p>搭建好的网页效果如下图：</p>
 <p><img src="/MIT%20web.lab/html%20basic.png" alt="web page">  </p>
@@ -85,177 +228,151 @@ html由一系列“box”组成。以下是一个html框架：
 <ul>
 <li><code>&lt;a href=&quot;http://weblab.mit.edu&quot;&gt;Link to web.lab!&lt;/a&gt;</code>  </li>
 <li><code>href</code> 后边代表网址</li>
-<li><code>&lt;a&gt;</code> 与 <code>&lt;/a&gt;</code> 中间的字代表链接名称</li>
+<li><p><code>&lt;a&gt;</code> 与 <code>&lt;/a&gt;</code> 中间的字代表链接名称</p>
+<p><img src="/MIT%20web.lab/html%20link.png" alt="link"></p>
+</li>
 </ul>
-<p>  <img src="/MIT%20web.lab/html%20link.png" alt="link"></p>
 </li>
 <li><p>图片</p>
 <ul>
 <li><code>&lt;img src=&quot;pusheen.gif&quot; /&gt;</code></li>
 <li>不需要结束标签</li>
-<li>相对路径从html所在文件夹开始</li>
+<li><p>相对路径从html所在文件夹开始  </p>
+<p><img src="/MIT%20web.lab/html%20img.png" alt="img"></p>
+</li>
 </ul>
-<p>  <img src="/MIT%20web.lab/html%20img.png" alt="img"></p>
 </li>
 <li><p>列表  </p>
   <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-  <br>
-
+<p>  <br></p>
 <ul>
 <li><code>&lt;ul&gt;</code> 是无序号列表， <code>&lt;ol&gt;</code> 是有序号列表  </li>
-<li><code>&lt;li&gt;</code> 是列表内容</li>
-</ul>
-<p>  <img src="/MIT%20web.lab/html%20item.png" alt="item"></p>
+<li><p><code>&lt;li&gt;</code> 是列表内容  </p>
+<p><img src="/MIT%20web.lab/html%20item.png" alt="item"></p>
 </li>
 </ul>
-<h3 id="与"><a href="#与" class="headerlink" title="&lt;div&gt; 与 &lt;span&gt;"></a><code>&lt;div&gt;</code> 与 <code>&lt;span&gt;</code></h3><ul>
-<li><code>div</code> ：一种框架，没有实际含义（因此用得太多会降低可读性）。</li>
-<li><code>span</code> ：内联元素，用于在文本中进行小范围样式修改。</li>
+</li>
 </ul>
-<br>
-
+<h3 id="lt-div-gt-与-lt-span-gt"><a href="#lt-div-gt-与-lt-span-gt" class="headerlink" title="&lt;div&gt; 与 &lt;span&gt;"></a><code>&lt;div&gt;</code> 与 <code>&lt;span&gt;</code></h3><ul>
+<li><code>div</code> ：一种框架，没有实际含义（因此用得太多会降低可读性）。</li>
+<li><code>span</code> ：内联元素，用于在文本中进行小范围样式修改。  </li>
+</ul>
+<p><br></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<br>
-
+<p><br></p>
 <p><del>span 看不懂，待补充</del></p>
-<h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>ppt上的原文是，html是 <strong>the language your web browser use to describe the content and structure of web pages</strong>，而css是 <strong>the rules that tell your web browser how stuff looks</strong>。<br>更言简意赅的，总结中提到<strong>html &#x3D; nested boxes</strong>，<strong>css &#x3D; a list of descriptions</strong>。  </p>
+<h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>ppt上的原文是，html是 <strong>the language your web browser use to describe the content and structure of web pages</strong>，而css是 <strong>the rules that tell your web browser how stuff looks</strong>。<br>更言简意赅的，总结中提到<strong>html = nested boxes</strong>，<strong>css = a list of descriptions</strong>。  </p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    <span class="attribute">font-family</span>: Arial;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">24pt</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>将这段代码写在style.css中，则对应html文件中所有 <code>&lt;div&gt;</code> 部分会变成style.css中的格式。  </p>
 <h3 id="id-与-class"><a href="#id-与-class" class="headerlink" title="id 与 class"></a><code>id</code> 与 <code>class</code></h3><p>先介绍一下 <code>id</code> 和 <code>class</code> 的用法。  </p>
 <ul>
 <li>id</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;unique&quot;</span>&gt;</span>Content<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#unique</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    <span class="attribute">font-family</span>: Arial;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">24pt</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>class</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;info&quot;</span>&gt;</span>Content<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.info</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    <span class="attribute">font-family</span>: Arial;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">24pt</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>一个元素只能拥有一个 <code>id</code> ，但是可以拥有多个 <code>class</code> 。另外，所有 <code>id</code> 不能重名，但 <code>class</code> 可以。<br>这门课中的建议是只用 <code>class</code> 。</p>
 <h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>css的优先级可参考这张幻灯片：  </p>
 <p><img src="/MIT%20web.lab/css%20hierarchy.png" alt="css hierarchy"></p>
 <h3 id="结合-html-与-css"><a href="#结合-html-与-css" class="headerlink" title="结合 html 与 css"></a>结合 html 与 css</h3><p>这门课提供的方式是使用外部样式表：使用 <code>&lt;link&gt;</code> 引入外部的css文件。  </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">herf</span>=<span class="string">&quot;style.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;myClass&quot;</span>&gt;</span>Heading!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>其中， <code>&lt;rel&gt;</code> 定义了当前文档与被链接文档的关系， <code>&lt;herf&gt;</code> 指定了URL或路径。  </p>
 <p>还有数种其它方式，但这门课只推荐这种。  </p>
 
-      
     </div>
-    <footer>
-      
-        
-  
-  <div class="categories">
-    <a href="/categories/MIT-web-lab/">MIT-web.lab</a>
-  </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
 
         
-      
-      <div class="clearfix"></div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/07/23/MIT%20web.lab/MIT-web-lab-1-Kick-off-2-Git-basics/" rel="prev" title="MIT web.lab 1&2 笔记">
+                  <i class="fa fa-angle-left"></i> MIT web.lab 1&2 笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/07/28/MIT%20web.lab/MIT-web-lab-4-w0-catbook/" rel="next" title="MIT-web.lab: 4.w0-catbook">
+                  MIT-web.lab: 4.w0-catbook <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Keyist</span>
   </div>
-</article>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
 
-
-<section id="comment">
-  <h1 class="title">留言</h1>
-
-  
-      <div id="fb-root"></div>
-<script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<div class="fb-comments" data-href="https://key4127.github.io/2024/07/23/MIT%20web.lab/MIT-web-lab-3-Intro-to-HTML-CSS/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
-      
-  
-</section>
-
-</div></div>
-    <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="as_sitesearch" value="key4127.github.io">
-  </form>
-</div>
-
-
-  
-<div class="widget tag">
-  <h3 class="title">分类</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/CDM-SJTU/">CDM-SJTU</a><small>1</small></li>
-  
-    <li><a href="/categories/CS61B/">CS61B</a><small>6</small></li>
-  
-    <li><a href="/categories/CSAPP/">CSAPP</a><small>1</small></li>
-  
-    <li><a href="/categories/MIT-web-lab/">MIT-web.lab</a><small>10</small></li>
-  
-  </ul>
-</div>
-
-
-  
-
-  
-  <div class="widget widget-archives">
-    <h3 class="title">归档</h3>
-    <div class="entry">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">十月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">九月 2024</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">七月 2024</a><span class="archive-list-count">4</span></li></ul>
     </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
   </div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-</aside>
-    <div class="clearfix"></div>
-  </div>
-  <footer id="footer" class="inner"><div class="alignleft">
+
   
-  &copy; 2024 Keyist
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
   
-</div>
-<div class="clearfix"></div></footer>
+
+
+
+
+
+
   
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-<script src="/js/jquery.imagesloaded.min.js"></script>
-
-
-<script src="/js/gallery.js"></script>
 
 
 
 
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"mhchem":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-<script>
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
 
 </body>
 </html>

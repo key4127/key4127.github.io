@@ -1,89 +1,224 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  
-  <title>MIT-web.lab: 10.w2-catbook in react | hexo-keyist</title>
-  <meta name="author" content="Keyist">
-  
-  <meta name="description" content="W2: Catbook in Reactreact复习部分略。  
-官方库：https://github.com/weblab-workshops/catbook-react  
-官方代码（只包含相关代码，不包含其它内容，无法运行）：  
-我的代码：  
-w2使用方法与w0和w1相同，用 git c">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
 
-  <meta property="og:title" content="MIT-web.lab: 10.w2-catbook in react"/>
-  <meta property="og:site_name" content="hexo-keyist"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-  
-    <meta property="og:image" content=""/>
-  
-
-  <link rel="shortcut icon" href="/favicon.png">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
-  
-
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+<link rel="stylesheet" href="/css/main.css">
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">hexo-keyist</a></h1>
-  <h2><a href="/"></a></h2>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"key4127.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="W2: Catbook in Reactreact复习部分略。   官方库：https:&#x2F;&#x2F;github.com&#x2F;weblab-workshops&#x2F;catbook-react   官方代码（只包含相关代码，不包含其它内容，无法运行）：   我的代码：   w2使用方法与w0和w1相同，用 git checkout w2-starter 切换到w2部分。所以同样的，每次reset后会将原来的代码清除">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MIT-web.lab: 10.w2-catbook in react">
+<meta property="og:url" content="https://key4127.github.io/2024/08/14/MIT%20web.lab/MIT-web-lab-10-w2-catbook-in-react/index.html">
+<meta property="og:site_name" content="hexo-keyist">
+<meta property="og:description" content="W2: Catbook in Reactreact复习部分略。   官方库：https:&#x2F;&#x2F;github.com&#x2F;weblab-workshops&#x2F;catbook-react   官方代码（只包含相关代码，不包含其它内容，无法运行）：   我的代码：   w2使用方法与w0和w1相同，用 git checkout w2-starter 切换到w2部分。所以同样的，每次reset后会将原来的代码清除">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-14T11:52:12.000Z">
+<meta property="article:modified_time" content="2024-09-05T11:26:07.790Z">
+<meta property="article:author" content="Keyist">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://key4127.github.io/2024/08/14/MIT%20web.lab/MIT-web-lab-10-w2-catbook-in-react/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://key4127.github.io/2024/08/14/MIT%20web.lab/MIT-web-lab-10-w2-catbook-in-react/","path":"2024/08/14/MIT web.lab/MIT-web-lab-10-w2-catbook-in-react/","title":"MIT-web.lab: 10.w2-catbook in react"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>MIT-web.lab: 10.w2-catbook in react | hexo-keyist</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">hexo-keyist</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
 </div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/null">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-  </ul>
-  <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div>
+
+
+
+
+
+
+
 </header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-MIT web.lab/MIT-web-lab-10-w2-catbook-in-react" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2024-08-14T11:52:12.000Z"><a href="/2024/08/14/MIT%20web.lab/MIT-web-lab-10-w2-catbook-in-react/">2024-08-14</a></time>
-      
-      
-  
-    <h1 class="p-name title" itemprop="headline name">MIT-web.lab: 10.w2-catbook in react</h1>
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#W2-Catbook-in-React"><span class="nav-number">1.</span> <span class="nav-text">W2: Catbook in React</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">npm 相关问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-0"><span class="nav-number">1.2.</span> <span class="nav-text">step 0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-1"><span class="nav-number">1.3.</span> <span class="nav-text">step 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-2"><span class="nav-number">1.4.</span> <span class="nav-text">step 2</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Keyist</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
   
 
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <h2 id="W2-Catbook-in-React"><a href="#W2-Catbook-in-React" class="headerlink" title="W2: Catbook in React"></a>W2: Catbook in React</h2><p>react复习部分略。  </p>
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://key4127.github.io/2024/08/14/MIT%20web.lab/MIT-web-lab-10-w2-catbook-in-react/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Keyist">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hexo-keyist">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="MIT-web.lab: 10.w2-catbook in react | hexo-keyist">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MIT-web.lab: 10.w2-catbook in react
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-08-14 19:52:12" itemprop="dateCreated datePublished" datetime="2024-08-14T19:52:12+08:00">2024-08-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-09-05 19:26:07" itemprop="dateModified" datetime="2024-09-05T19:26:07+08:00">2024-09-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/MIT-web-lab/" itemprop="url" rel="index"><span itemprop="name">MIT-web.lab</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="W2-Catbook-in-React"><a href="#W2-Catbook-in-React" class="headerlink" title="W2: Catbook in React"></a>W2: Catbook in React</h2><p>react复习部分略。  </p>
 <p>官方库：<br><a target="_blank" rel="noopener" href="https://github.com/weblab-workshops/catbook-react">https://github.com/weblab-workshops/catbook-react</a>  </p>
 <p>官方代码（只包含相关代码，不包含其它内容，无法运行）：  </p>
 <p>我的代码：  </p>
 <p>w2使用方法与w0和w1相同，用 <code>git checkout w2-starter</code> 切换到w2部分。所以同样的，每次reset后会将原来的代码清除，但是课程鼓励我们设计自己的内容。在下面的笔记中只包含官方代码。  </p>
 <p>官方页面：  </p>
 <p>我的页面：  </p>
-<p>注意这一部分有一个client文件夹，文件夹内的src文件夹中包含了对应代码。ppt告诉我们只需要关注components文件夹中的JavaScript内容，并且只需要编辑components&#x2F;pages中的Profile.js、components&#x2F;modules中的CatHappiness.js、NavBar.js和Navbar.css四个文件。  </p>
+<p>注意这一部分有一个client文件夹，文件夹内的src文件夹中包含了对应代码。ppt告诉我们只需要关注components文件夹中的JavaScript内容，并且只需要编辑components/pages中的Profile.js、components/modules中的CatHappiness.js、NavBar.js和Navbar.css四个文件。  </p>
 <p>另外，在执行 <code>npm install</code> 后，可以用 <code>npm run hotloader</code> 来运行代码，在 <a target="_blank" rel="noopener" href="http://localhost:5050/">http://localhost:5050/</a> 看到网页。  </p>
 <h3 id="npm-相关问题"><a href="#npm-相关问题" class="headerlink" title="npm 相关问题"></a>npm 相关问题</h3><p>在执行npm对应命令行时，可能出现各种报错。  </p>
 <p><code>npm install</code> <strong>卡住不动</strong> </p>
-<p>这个网上有很多教程，一般是因为访问官方网站不稳定，需要切换镜像源。我使用的镜像源是 <a target="_blank" rel="noopener" href="https://registry.npmmirror.com/">https://registry.npmmirror.com</a>，输入以下命令配置  </p>
+<p>这个网上有很多教程，一般是因为访问官方网站不稳定，需要切换镜像源。我使用的镜像源是 <a target="_blank" rel="noopener" href="https://registry.npmmirror.com">https://registry.npmmirror.com</a>，输入以下命令配置  </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
-
 <p>当然也可以用其它镜像源。  </p>
 <p>更换后，可以用 <code>npm config get registry</code> 查看换源是否成功。  </p>
 <p><code>npm install</code> 出现报错</p>
@@ -94,10 +229,8 @@ w2使用方法与w0和w1相同，用 git c">
 <p>官方代码：  </p>
 <p>NavBar.js在return部分添加  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;nav className=<span class="string">&quot;NavBar-container&quot;</span>&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;NavBar-title&quot;</span>&gt;</span>Catbook<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/nav&gt;</span><br></pre></td></tr></table></figure>
-
 <p>NavBar.css添加</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.NavBar-container</span> &#123;</span><br><span class="line">   <span class="attribute">padding</span>: <span class="number">8px</span> <span class="number">16px</span>;</span><br><span class="line">   <span class="attribute">background-color</span>: <span class="number">#396dff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.NavBar-title</span> &#123;</span><br><span class="line">   <span class="attribute">color</span>: white;</span><br><span class="line">   <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h3 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h3><p>这部分是完成CatHappiness元件。从ppt中看出，<code>&lt;app&gt;</code> 标签包括两部分 <code>&lt;NavBar&gt;</code> 和 <code>&lt;Profile&gt;</code> ，<code>&lt;CatHappiness&gt;</code> 元件包含在 <code>&lt;Profile&gt;</code> 中。CatHappiness数值包含在 <code>&lt;Profile&gt;</code> 的state里，作为props传递给 <code>&lt;CatHappiness&gt;</code> 。  </p>
 <p>要完成这一步，要先添加catHappiness state，然后导入、实现、并且最终渲染这个元件。  </p>
 <p>这一步被具体分成四步来进行，以下是四步的官方代码（前三步改动在Profile.js中，最后一步在CatHappiness.js中）：  </p>
@@ -105,142 +238,116 @@ w2使用方法与w0和w1相同，用 git c">
 <p>添加CatHappiness state</p>
 <p>注意源代码里没有导入 <code>useState</code>，要将第一行改为</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br></pre></td></tr></table></figure>
-
 <p>然后在Profile函数里添加</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [catHappiness, setCatHappiness] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
-
 <p><strong>step 1b</strong></p>
 <p>导入元件</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">CatHappiness</span> <span class="keyword">from</span> <span class="string">&quot;../modules/CatHappiness.js&quot;</span>;</span><br></pre></td></tr></table></figure>
-
 <p><strong>step 1c</strong></p>
 <p>添加CatHappiness元件，在return部分添加</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className=<span class="string">&quot;Profile-subContainer u-textCenter&quot;</span>&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">h4</span> <span class="attr">className</span>=<span class="string">&quot;Profile-subTitle&quot;</span>&gt;</span>Cat Happiness<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">CatHappiness</span> <span class="attr">catHappiness</span>=<span class="string">&#123;catHappiness&#125;</span> /&gt;</span></span></span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>step 1d</strong></p>
 <p>渲染CatHappiness</p>
 <p>将CatHappiness.js中的CatHappiness函数进行如下修改  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">CatHappiness</span> = (<span class="params">props</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;CatHappiness-container&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;CatHappiness-story&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">className</span>=<span class="string">&quot;CatHappiness-storyContent&quot;</span>&gt;</span>&#123;props.catHappiness&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <h3 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h3><p>这一步要完成CatHappiness的更新：每次点击时CatHappiness加一。  </p>
 <p>每个 <code>&lt;div&gt;</code> 都有一个onClick属性（prop），当这个 <code>&lt;div&gt;</code> 被点击时，它会调用onClick函数。  </p>
 <p>首先实现 <code>incrementCatHappiness</code> 函数  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">incrementCatHappiness</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">setCatHappiness</span>(catHappiness + <span class="number">1</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <p>再在return部分修改</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className=<span class="string">&quot;Profile-avatarContainer&quot;</span> onClick=&#123;incrementCatHappiness&#125;&gt;</span><br></pre></td></tr></table></figure>
-
 <p>官方代码完成后，使用 <code>git checkout w2-complete</code> 查看完成代码。  </p>
 
-      
     </div>
-    <footer>
-      
-        
-  
-  <div class="categories">
-    <a href="/categories/MIT-web-lab/">MIT-web.lab</a>
-  </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
 
         
-      
-      <div class="clearfix"></div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/08/12/MIT%20web.lab/MIT-web-lab-9-Design/" rel="prev" title="MIT-web.lab: 9.Design, UI/UX, Figma">
+                  <i class="fa fa-angle-left"></i> MIT-web.lab: 9.Design, UI/UX, Figma
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/08/18/MIT%20web.lab/MIT-web-lab-11-API-and-Promises/" rel="next" title="MIT-web.lab: 11.API and Promises">
+                  MIT-web.lab: 11.API and Promises <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Keyist</span>
   </div>
-</article>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
 
-
-<section id="comment">
-  <h1 class="title">留言</h1>
-
-  
-      <div id="fb-root"></div>
-<script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<div class="fb-comments" data-href="https://key4127.github.io/2024/08/14/MIT%20web.lab/MIT-web-lab-10-w2-catbook-in-react/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
-      
-  
-</section>
-
-</div></div>
-    <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="as_sitesearch" value="key4127.github.io">
-  </form>
-</div>
-
-
-  
-<div class="widget tag">
-  <h3 class="title">分类</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/CDM-SJTU/">CDM-SJTU</a><small>1</small></li>
-  
-    <li><a href="/categories/CS61B/">CS61B</a><small>6</small></li>
-  
-    <li><a href="/categories/CSAPP/">CSAPP</a><small>1</small></li>
-  
-    <li><a href="/categories/MIT-web-lab/">MIT-web.lab</a><small>10</small></li>
-  
-  </ul>
-</div>
-
-
-  
-
-  
-  <div class="widget widget-archives">
-    <h3 class="title">归档</h3>
-    <div class="entry">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">十月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">九月 2024</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">七月 2024</a><span class="archive-list-count">4</span></li></ul>
     </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
   </div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-</aside>
-    <div class="clearfix"></div>
-  </div>
-  <footer id="footer" class="inner"><div class="alignleft">
+
   
-  &copy; 2024 Keyist
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
   
-</div>
-<div class="clearfix"></div></footer>
+
+
+
+
+
+
   
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-<script src="/js/jquery.imagesloaded.min.js"></script>
-
-
-<script src="/js/gallery.js"></script>
 
 
 
 
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"mhchem":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-<script>
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
 
 </body>
 </html>

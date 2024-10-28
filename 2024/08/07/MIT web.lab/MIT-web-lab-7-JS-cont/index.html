@@ -1,221 +1,331 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  
-  <title>MIT-web.lab: 7.JS cont | hexo-keyist</title>
-  <meta name="author" content="Keyist">
-  
-  <meta name="description" content="JS cont: arrow functions, callbacks, map, filter回顾ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。  
-此外还有一个练习：编写函数，输入一个摄氏度数组，将其在新的数组中转化为华氏度后返回。   
-1234567const a">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
 
-  <meta property="og:title" content="MIT-web.lab: 7.JS cont"/>
-  <meta property="og:site_name" content="hexo-keyist"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-  
-    <meta property="og:image" content=""/>
-  
-
-  <link rel="shortcut icon" href="/favicon.png">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
-  
-
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+<link rel="stylesheet" href="/css/main.css">
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">hexo-keyist</a></h1>
-  <h2><a href="/"></a></h2>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"key4127.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="JS cont: arrow functions, callbacks, map, filter回顾ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。   此外还有一个练习：编写函数，输入一个摄氏度数组，将其在新的数组中转化为华氏度后返回。    1234567const arrCtoF &#x3D; (arrC) &#x3D;&gt; &#123;    const arrF &#x3D; [];">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MIT-web.lab: 7.JS cont">
+<meta property="og:url" content="https://key4127.github.io/2024/08/07/MIT%20web.lab/MIT-web-lab-7-JS-cont/index.html">
+<meta property="og:site_name" content="hexo-keyist">
+<meta property="og:description" content="JS cont: arrow functions, callbacks, map, filter回顾ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。   此外还有一个练习：编写函数，输入一个摄氏度数组，将其在新的数组中转化为华氏度后返回。    1234567const arrCtoF &#x3D; (arrC) &#x3D;&gt; &#123;    const arrF &#x3D; [];">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-07T15:39:12.000Z">
+<meta property="article:modified_time" content="2024-09-05T11:26:00.736Z">
+<meta property="article:author" content="Keyist">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://key4127.github.io/2024/08/07/MIT%20web.lab/MIT-web-lab-7-JS-cont/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://key4127.github.io/2024/08/07/MIT%20web.lab/MIT-web-lab-7-JS-cont/","path":"2024/08/07/MIT web.lab/MIT-web-lab-7-JS-cont/","title":"MIT-web.lab: 7.JS cont"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>MIT-web.lab: 7.JS cont | hexo-keyist</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">hexo-keyist</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
 </div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/null">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-  </ul>
-  <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div>
+
+
+
+
+
+
+
 </header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-MIT web.lab/MIT-web-lab-7-JS-cont" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2024-08-07T15:39:12.000Z"><a href="/2024/08/07/MIT%20web.lab/MIT-web-lab-7-JS-cont/">2024-08-07</a></time>
-      
-      
-  
-    <h1 class="p-name title" itemprop="headline name">MIT-web.lab: 7.JS cont</h1>
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-cont-arrow-functions-callbacks-map-filter"><span class="nav-number">1.</span> <span class="nav-text">JS cont: arrow functions, callbacks, map, filter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-number">1.1.</span> <span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map-%E5%92%8C-filter"><span class="nav-number">1.3.</span> <span class="nav-text">map 和 filter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web%E4%B8%AD%E7%9A%84%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="nav-number">1.4.</span> <span class="nav-text">web中的回调函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-number">1.5.</span> <span class="nav-text">最后</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Keyist</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
   
 
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <h2 id="JS-cont-arrow-functions-callbacks-map-filter"><a href="#JS-cont-arrow-functions-callbacks-map-filter" class="headerlink" title="JS cont: arrow functions, callbacks, map, filter"></a>JS cont: arrow functions, callbacks, map, filter</h2><h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3><p>ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。  </p>
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://key4127.github.io/2024/08/07/MIT%20web.lab/MIT-web-lab-7-JS-cont/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Keyist">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hexo-keyist">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="MIT-web.lab: 7.JS cont | hexo-keyist">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MIT-web.lab: 7.JS cont
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-08-07 23:39:12" itemprop="dateCreated datePublished" datetime="2024-08-07T23:39:12+08:00">2024-08-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-09-05 19:26:00" itemprop="dateModified" datetime="2024-09-05T19:26:00+08:00">2024-09-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/MIT-web-lab/" itemprop="url" rel="index"><span itemprop="name">MIT-web.lab</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="JS-cont-arrow-functions-callbacks-map-filter"><a href="#JS-cont-arrow-functions-callbacks-map-filter" class="headerlink" title="JS cont: arrow functions, callbacks, map, filter"></a>JS cont: arrow functions, callbacks, map, filter</h2><h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3><p>ppt首先回顾了JS中的函数（函数可以赋值给变量）和for循环，在此略过。  </p>
 <p>此外还有一个练习：编写函数，输入一个摄氏度数组，将其在新的数组中转化为华氏度后返回。   </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">arrCtoF</span> = (<span class="params">arrC</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> arrF = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arrC.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        arrF.<span class="title function_">push</span>(arrC[i] * <span class="number">9</span> / <span class="number">5</span> + <span class="number">32</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arrF;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <p>从这段代码可以看出，虽然JS的数组也是引用类型，但其作用域等与C++有所不同（待补充）。  </p>
 <p>另外，（ppt后文）提到函数有一种简化写法：  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(inputs) =&gt; (output)</span><br></pre></td></tr></table></figure>
-
 <p>例如， <code>(rectangle) =&gt; (rectangle.width * rectangle.height)</code> 是一个计算长方形面积的函数。  </p>
 <h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>回调函数是一种特殊的函数，它在使用时作为参数被传递给另一个函数并被调用。  </p>
 <p>ppt给出了一个创建并使用回调函数的例子。在下文中， <code>transformFonc</code> 是回调函数，用 <code>modifyArray</code> 使用回调函数。  </p>
 <p>根据ppt的说明， <code>modifyArray</code> 接受一个数组和回调函数 <code>transformFonc</code> 作为输入，它只需要将回调函数作用到数组上并返回结果。  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">modifyArray</span> = (<span class="params">arr, transformFonc</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> newArr = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        newArr.<span class="title function_">push</span>(<span class="title function_">transformFonc</span>(arr[i]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <p>在了解回调函数基础之后，ppt给出一个练习：利用上文practice的代码，再分别写一个华氏度转摄氏度和摄氏度转开尔文的函数。  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">modifyArray</span> = (<span class="params">arr, transformFonc</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> newArr = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        newArr.<span class="title function_">push</span>(<span class="title function_">transformFonc</span>(arr[i]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">cToF</span> = (<span class="params">tempC</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> tempC * <span class="number">9</span> / <span class="number">5</span> + <span class="number">32</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">fToC</span> = (<span class="params">tempF</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> (tempF - <span class="number">32</span>) * <span class="number">5</span> / <span class="number">9</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">cToK</span> = (<span class="params">tempC</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> tempC + <span class="number">273.15</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>此外，ppt还给出另一个使用回调函数的实例，见<a href="weblab.is/callbackshint">weblab.is&#x2F;callbackshint</a>。</p>
+<p>此外，ppt还给出另一个使用回调函数的实例，见<a href="weblab.is/callbackshint">weblab.is/callbackshint</a>。</p>
 <h3 id="map-和-filter"><a href="#map-和-filter" class="headerlink" title="map 和 filter"></a>map 和 filter</h3><p>map和filter是两个高阶函数，它们接受一个函数作为参数，并返回一个新数组。  </p>
 <p>map会将接收到的函数作用到原来数组上：    </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myArray = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> newArray = myArray.<span class="title function_">map</span>(<span class="function">(<span class="params">num</span>) =&gt;</span> (num * <span class="number">3</span>));</span><br><span class="line"><span class="comment">// newArray = [3, 6, 9, 12, 15]</span></span><br></pre></td></tr></table></figure>
-
 <p>filter把接收到的函数作为一个“测试”，将通过测试的元素筛选出来并形成一个新数组：  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> values = [<span class="number">3</span>, -<span class="number">6</span>, <span class="number">2</span>, <span class="number">0</span>, -<span class="number">9</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> positiveValues = values.<span class="title function_">filter</span>(<span class="function"><span class="params">x</span> =&gt;</span> x &gt; <span class="number">0</span>);</span><br><span class="line"><span class="comment">// positiveValues = [3, 2, 4]</span></span><br></pre></td></tr></table></figure>
-
 <p>ppt给map和filter分别提供了一个练习。  </p>
 <p>map练习：  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rectangles = [</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">1</span>, <span class="attr">height</span>: <span class="number">1</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">5</span>, <span class="attr">height</span>: <span class="number">10</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">6</span>, <span class="attr">height</span>: <span class="number">6</span> &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> areas = rectangles.<span class="title function_">map</span>(<span class="function">(<span class="params">rectangle</span>) =&gt;</span> (rectangle.<span class="property">width</span> * rectangle.<span class="property">height</span>));</span><br></pre></td></tr></table></figure>
-
 <p>filter练习：  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rectangles = [</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">1</span>, <span class="attr">height</span>: <span class="number">1</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">5</span>, <span class="attr">height</span>: <span class="number">10</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">width</span>: <span class="number">6</span>, <span class="attr">height</span>: <span class="number">6</span> &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> selectedRectangles = rectangles.<span class="title function_">filter</span>(<span class="function">(<span class="params">rectangle</span>) =&gt;</span> <span class="number">2</span> * (rectangle.<span class="property">width</span> + rectangle.<span class="property">height</span>) &gt; <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
-
 <p>另外，注意回调函数中的括号不是必须的（filter的例子中就没有），但是会提高可读性。  </p>
 <h3 id="web中的回调函数"><a href="#web中的回调函数" class="headerlink" title="web中的回调函数"></a>web中的回调函数</h3><p>ppt最后举了一些例子，例如 <code>setInterval</code> 和w1里都用到了回调函数，还举了一个数据库例子（略）。  </p>
 <h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>ppt最后有一行：  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [exists, setExists] = <span class="title function_">useState</span>(<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
-
 <p>这不是回调函数，而是对下一部分react的引入。  </p>
 
-      
     </div>
-    <footer>
-      
-        
-  
-  <div class="categories">
-    <a href="/categories/MIT-web-lab/">MIT-web.lab</a>
-  </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
 
         
-      
-      <div class="clearfix"></div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/08/01/MIT%20web.lab/MIT-web-lab-6-w1-snake/" rel="prev" title="MIT-web.lab: 6.w1-snake">
+                  <i class="fa fa-angle-left"></i> MIT-web.lab: 6.w1-snake
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/08/10/MIT%20web.lab/MIT-web-lab-8-Intro-to-React/" rel="next" title="MIT-web.lab: 8.Intro to React">
+                  MIT-web.lab: 8.Intro to React <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Keyist</span>
   </div>
-</article>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
 
-
-<section id="comment">
-  <h1 class="title">留言</h1>
-
-  
-      <div id="fb-root"></div>
-<script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<div class="fb-comments" data-href="https://key4127.github.io/2024/08/07/MIT%20web.lab/MIT-web-lab-7-JS-cont/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
-      
-  
-</section>
-
-</div></div>
-    <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="as_sitesearch" value="key4127.github.io">
-  </form>
-</div>
-
-
-  
-<div class="widget tag">
-  <h3 class="title">分类</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/CDM-SJTU/">CDM-SJTU</a><small>1</small></li>
-  
-    <li><a href="/categories/CS61B/">CS61B</a><small>6</small></li>
-  
-    <li><a href="/categories/CSAPP/">CSAPP</a><small>1</small></li>
-  
-    <li><a href="/categories/MIT-web-lab/">MIT-web.lab</a><small>10</small></li>
-  
-  </ul>
-</div>
-
-
-  
-
-  
-  <div class="widget widget-archives">
-    <h3 class="title">归档</h3>
-    <div class="entry">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">十月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">九月 2024</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">七月 2024</a><span class="archive-list-count">4</span></li></ul>
     </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
   </div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-</aside>
-    <div class="clearfix"></div>
-  </div>
-  <footer id="footer" class="inner"><div class="alignleft">
+
   
-  &copy; 2024 Keyist
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
   
-</div>
-<div class="clearfix"></div></footer>
+
+
+
+
+
+
   
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-<script src="/js/jquery.imagesloaded.min.js"></script>
-
-
-<script src="/js/gallery.js"></script>
 
 
 
 
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"mhchem":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-<script>
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
 
 </body>
 </html>
