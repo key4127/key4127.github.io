@@ -2,46 +2,19 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+## 说明
 
-Let's discover **Docusaurus in less than 5 minutes**.
+考虑到各种配置原因，11月我将博客从hexo改为docusaurus。  
 
-## Getting Started
+虽然这些部分名为blog，但是在docusaurus的判定里，它们其实属于tutorial；而我的“About me”才是docusaurus的blog。  
 
-Get started by **creating a new site**.
+这里（暂时）存放我的各种笔记。网站标题等为英文，笔记为中文（以后可能有英文版？）。  
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+目前包含的笔记有：  
 
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+- CS61A
+- CS61B
+- MIT web.lab
+- EECS70
+- SJTU CDM
+- CSAPP & SJTU ICS
