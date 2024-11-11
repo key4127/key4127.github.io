@@ -106,7 +106,7 @@ SAT（the satisfiablity problem，可满足性问题）是关于某个公式是�
 
 SAT使用CNF（而不是DNF）。
 
-*ppt给出的理由似乎是，将公式转为DNF可能使新式子远远长于原来的式子，事实上是指数增长，直接转为CNF也是如此。但是，公式可以被相对容易（？）地转为一个等价CNF，这个等价式不会像原来的DNF那样长。例如，对于 $(A1 \land A2 \land A3) \lor (B1 \land B2 \land B3)$ ，可以用一个新命题变项 $Z$ 将原式化为 $(Z \rightarrow A1 \land A2 \land A3) \land (\neg Z \rightarrow B1 \land B2 \land B3)$ ，这个式子最后化简的结果项数为原式两边的项数相加。*
+*ppt给出的理由似乎是，将公式转为DNF可能使新式子远远长于原来的式子，事实上是指数增长，直接转为CNF也是如此。但是，公式可以被相对容易（？）地转为一个等价CNF，这个等价式不会像原来的DNF那样长。例如，对于 $(A1 \land A2 \land A3) \lor (B1 \land B2 \land B3)$ ，可以用一个新命题变项 $Z$ 将原式化为 $(Z \rightarrow A1 \land A2 \land A3) \land (\neg Z \rightarrow B1 \land B2 \land B3)$ ，这个式子最后化简的结果项数为原式两边的项数相加。其中这里的 $Z$ 被称为开关变量。*
 
 将原式转为CNF后，使用DPLL算法。
 
