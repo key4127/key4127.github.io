@@ -18,3 +18,5 @@ sidebar_position: 1
 - EECS70
 - SJTU CDM
 - CSAPP & SJTU ICS
+
+另外，每个合集的介绍放在第一篇笔记中（至少在我学会独立出一个页面之前）。

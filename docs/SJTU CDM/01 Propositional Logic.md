@@ -125,7 +125,7 @@ CDM（SJTU）网页：
 
     - 选出为F的每一行，合取P、Q取反的值（只要有一个为真结果就不是F）：  
         $\neg P \land \neg Q$ &nbsp;&nbsp;&nbsp;&nbsp;
-        $\ not P \land Q$ &nbsp;&nbsp;&nbsp;&nbsp;
+        $\neg P \land Q$ &nbsp;&nbsp;&nbsp;&nbsp;
 
     - 用 $\land$ 连接：  
         $(\neg P \land \neg Q) \land (\neg P \land Q)$
