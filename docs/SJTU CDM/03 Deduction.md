@@ -40,24 +40,30 @@ sidebar_position: 1
 
 前提引入：  
 
-$$\begin{align}
+$$
+\begin{align}
 &\neg P \lor Q 
 \\& \neg Q \lor R  
 \\& P  
-\\& \neg P
-\end{align}$$
+\\& \neg R
+\end{align}
+$$
 
 将 $(1)$ 、 $(2)$ 归结，得到
 
-$$\begin{align}
+$$
+\begin{align}
 \neg P \lor R
-\end{align}$$
+\end{align}
+$$
 
 将 $(3)$ 、 $(5)$ 归结，得到
 
-$$\begin{align}
+$$
+\begin{align}
 R
-\end{align}$$
+\end{align}
+$$
 
 将 $(4)$ 、$(6)$ 归结，矛盾，得证。
 
