@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-这篇笔记包含lecture6-8的内容，介绍了顺序结构下的x86汇编、mov和jmp。  
+这篇笔记包含lecture6-7的内容，介绍了顺序结构下的x86汇编。  
 
 ## 顺序结构
 
