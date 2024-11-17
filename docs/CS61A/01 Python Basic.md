@@ -56,7 +56,7 @@ def make_adder(n):
 >>> 81
 ```
 
-``lambda f: lambda x: f(f(x))`` 是一个lambda函数，有一个函数作为参数，注意**冒号后面是返回值**。它的返回值是一个以x为参数的函数，即 ``(lambda f: lambda x: f(f(x)))(lambda y: y * y)`` ，在以3为参数调用这个函数。  
+``lambda f: lambda x: f(f(x))`` 是一个lambda函数，有一个函数作为参数，注意**冒号后面是返回值**。它的返回值是一个以x为参数的函数，即 ``(lambda f: lambda x: f(f(x)))(lambda y: y * y)`` 。最后以3为参数调用这个函数。  
 
 ### ``return`` 与 ``print``
 
