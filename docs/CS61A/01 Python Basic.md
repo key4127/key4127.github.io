@@ -2,229 +2,94 @@
 sidebar_position: 1
 ---
 
-这篇笔记包含Welcome、Functions、Control中的内容，介绍Python（和其它语言相同的）基础。  
+这篇笔记包含前四周的内容，介绍Python基础。由于python的递归（第四周）和其它语言没有任何区别，跳过。 
 
 ## 介绍
 
 *（基本与github上的README介绍内容相同）*
 
-CS61A是伯克利CS61系列的第一门课，介绍了Python、scheme和SQL，可以看作程序设计和函数式语言基础，我用这门课来学一点Python和scheme。比起其它课程，这门课可以说是对自学者非常友好，课程网站上每个lab、hw和project都有相应的评分程序。注意（不记得是从哪年开始），CS61A往年课程网站不对外展示，如果想从官方网站学习，一定要注意学期的开始和结束日期，在下一学期开始前完成，否则网站会被更新成下一学期的状态。   
+CS61A是伯克利CS61系列的第一门课，介绍了Python、scheme和SQL，可以看作程序设计和函数式语言基础，比起其它课程，这门课可以说是对自学者非常友好，课程网站上每个lab、hw和project都有相应的评分程序。注意（不记得是从哪年开始），CS61A往年课程网站不对外展示，如果想从官方网站学习，一定要注意学期的开始和结束日期，在下一学期开始前完成，否则网站会被更新成下一学期的状态。   
 
-CS61B spring2024网页：  
-[https://sp24.datastructur.es/](https://sp24.datastructur.es/)
+CS61A 网页：  
+[https://cs61a.org/](https://cs61a.org/)
 
 我的github库：  
-[https://github.com/key4127/CS61B](https://github.com/key4127/CS61B)  
+[https://github.com/key4127/CS61A](https://github.com/key4127/CS61A)  
 
-## Java 基础语法
+## 控制流
 
-**Python**
-
-```python
-print("hello world")
-```
-
-**Java**
-
-```java
-public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("hello world");
-    }
-}
-```
-
-
----
-
-**Python**
+### 条件
 
 ```python
-x = 0
-while x < 10:
-    print(x)
-    x = x + 1
+if x > 2:
+    print('big')
+elif x > 0:
+    print('less big')
+else:
+    print('not pos')
 ```
 
-**Java**
-
-```java
-public class HelloNumbers {
-    public static void main(String[] args) {
-        int x = 0;
-        while (x < 10) {
-            System.out.println(x);
-            x = x + 1;
-        }
-    }
-}
-```
-
----
-
-**Python**
+### 循环
 
 ```python
-def larger(x, y):
-    if (x > y):
-        return x
-    else:
-        return y
-
-print(larger(-5, 10))
+i, total = 0, 0
+while i < 3:
+    i = i + 1
+    total = total + i
 ```
 
-**Java**
+## 函数
 
-```java
-public class LargerDemo {
-    public static int larger(int x, int y) {
-        if (x > y) {
-            return x;
-        } else {
-            return y;
-        }
-    }
-
-    public static void main(String[] args) {
-        System.out.println(larger(-5, 10));
-    }
-}
-```
-
----
-
-在Java中，所有的代码必须包含在某个类里。可以在类里写一个 ``public static void main(String[] args)`` （即main函数）函数，代码可以通过这里运行。另外，Java用分号和大括号分隔语句，没有缩进要求。最后，作为静态类型语言，Java中所有变量、方法等必须有一个已声明的类型，这个类型不能改变。 
-
-## 面向对象
-
-### 构造函数
-
-**Python**
+### 高阶函数
 
 ```python
-class Car:
-    def __init__(self, m):
-        self.model = m
-        self.gas = 5
+def make_adder(n):
+    def adder(k):
+        return k + n
+    return adder
 ```
 
-**Java**
-
-```Java
-public class Car {
-    public String model;
-    public int gas;
-
-    public Car(String m) {
-        model = m;
-        gas = 5;
-    }
-}
-```
-
-### 方法
-
-**Python**
+### lambda函数
 
 ```python
-class Car:
-    def drive(self):
-        if gas < 5:
-            print("Cannot drive!")
-            return
-        gas -= 5
-        print(self.model + " goes vroom!")
-    
-    def gasLeft(self):
-        return self.gas
-    
-    def addGas(self, amount):
-        self.gas += amount
+>>> (lambda f: lambda x: f(f(x)))(lambda y: y * y)(3)
+>>> 81
 ```
 
-**Java**
+``lambda f: lambda x: f(f(x))`` 是一个lambda函数，有一个函数作为参数，注意**冒号后面是返回值**。它的返回值是一个以x为参数的函数，即 ``(lambda f: lambda x: f(f(x)))(lambda y: y * y)`` ，在以3为参数调用这个函数。  
 
-```java
-public class Car {
-    public void drive() {
-        if (gas < 5) {
-            System.out.println("Cannot drive!");
-            return;
-        }
-        gas -= 5;
-        System.out.println(model + " goes vroom!");
-    }
+### ``return`` 与 ``print``
 
-    public int gasLeft() {
-        return self.gas
-    }
-
-    public void addGas(int amount) {
-        gas = gas + amount;
-    }
-}
-```
-
-另外，Java中有 ``this`` 关键字，用来指向类中的内容，如 ``this.gas`` 。  
-
-### 创建对象
-
-**Python**
+对于这道题  
 
 ```python
-c1 = Car("Honda Civic")
-c2 = Car("Model T")
+# Lab02 Q2: Higher-Order Function
+def cake():
+    print('beets')
+    def pie():
+        print('sweets')
+        return 'cake'
+    return pie
 ```
 
-**Java**
+会发现 ``print`` 得到的是 ``beets`` ，但 ``return`` 得到的结果是 ``'cake'`` 。事实上，这与对象的 ``__str__()`` 方法和 ``__repr__()`` 方法有关，在若干周后学习。  
 
-```java
-public static void main(String[] args) {
-    Car c1;
-    Car c2;
-
-    c1 = new Car("Honda Civic");
-    c2 = new Car("Model T");
-}
-```
-
-### 使用对象
-
-**Python**
+## 环境
 
 ```python
-···
-print(c1.gasLeft())
+def f(x):
+    y = max(x * x, 3 * x)
+    def zero(t):
+        if t(x) > 0:
+            return y
+        return 0
+    return zero
 
-c1.drive()
-print(c1.gasLeft())
-
-c1.addGas(1)
-print(c1.gasLeft())
-
-c1.drive() # Cannot drive
-
-print(c2.gasLeft())
+y = 1
+while y < 10:
+    if f(y)(lambda z: z - y + 10):
+        max = y
+    y = y + 1
 ```
 
-**Java**
-
-```java
-public void static main(String[] args) {
-    ···
-    System.out.println(c1.gasLeft());
-
-    c1.drive();
-    System.out.println(c1.gasLeft());
-
-    c1.addGas(1);
-    System.out.println(c1.gasLeft());
-
-    c1.drive(); // Cannot drive
-
-    System.out.print(c2.gasLeft());
-}
-```
-
-在lecture2的ppt中还有一个 ``Dog`` 类的实现，笔记里不再重复。可以在CS61B主页或我的库中查看相关代码。  
+![diagram](./img/diagram.png)
