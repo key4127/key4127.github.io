@@ -24,8 +24,8 @@ sidebar_position: 1
 对应的汇编为
 
 ```x86asm
-movq %rax, (%rbx)
-addq $4, (%rbx)
+movq   %rax, (%rbx)
+addq   $4, (%rbx)
 ```
 
 ### 寄存器
@@ -82,11 +82,11 @@ void multstore(long x, long y, long *dest)
 
 ```x86asm
 multstore:
-    pushq %rbx
-    moveq %rdx, %rbx
-    call mult2
-    moveq %rax, (%rbx)
-    popq %rbx
+    pushq  %rbx
+    moveq  %rdx, %rbx
+    call   mult2
+    moveq  %rax, (%rbx)
+    popq   %rbx
     ret
 ```
 
@@ -107,8 +107,8 @@ long exchange(long *xp, long y)
 
 ```x86asm
 exchange:
-    moveq (%rdi), %rax
-    moveq %rsi, (%rdi)
+    moveq   (%rdi), %rax
+    moveq   %rsi, (%rdi)
     ret
 ```
 
@@ -163,11 +163,11 @@ int arith(long x, long y, long z)
 ```
 
 ```x86asm
-xorq %rsi, %rdi
-leaq (%rdx, %rdx, 2), %rax
-salq $4, %rax
-andq $252645135, %rdi
-subq %rdi, %rax
+xorq   %rsi, %rdi
+leaq   (%rdx, %rdx, 2), %rax
+salq   $4, %rax
+andq   $252645135, %rdi
+subq   %rdi, %rax
 ret
 ```
 
