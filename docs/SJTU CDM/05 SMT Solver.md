@@ -2,7 +2,8 @@
 sidebar_position: 1
 ---
 
-这篇笔记包含lecture10，SMT Slover、Symbolic Execution ppt 中的内容。  
+这篇笔记包含lecture10，SMT Slover、Symbolic Execution ppt 中的内容。
+~~lecture11暂时跳过~~  
 
 ## SMT Slover
 
