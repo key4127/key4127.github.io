@@ -80,7 +80,7 @@ $\cap \varnothing$ 未定义。
 - $A \cup (B \cup C) = (A \cup B) \cup C$
 - $A \cap (B \cap C) = (A \cap B) \cap C$
 
-等幂律（idempotent law）
+幂等律（idempotent law）
 
 - $A \cup A = A$
 - $A \cap A = A$
