@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-这篇笔记介绍lecture12、13，集合论的内容。
+这篇笔记介绍lecture12，集合论的内容。
 
 ## 计算问题
 
@@ -14,7 +14,7 @@ sidebar_position: 1
 
 集合（set）是不同对象的无序收集，这里的对象可以是任何东西，包括其它集合。如果 $a$ 是集合 $A$ 中的元素，则 $a$ 属于 $A$ ，即 $a \isin A$ ；否则，则 $a$ 不属于 $A$ ，即 $a \notin A$ 。
 
-在元素较少时，可以直接用大括号表示集合，如 $\{1,2,3,4\}$ 。许多常见集合用大写字母表示，如 $C$ 为复数集， $U$ 为考虑范围内所有元素的集合。集合还可以用set-builder notation表示，写为 $\{x|P(x)\}$ 或 $\{x:P(x)\}$ 。这里的 $P(x)$ 是一个谓词逻辑公式，这个集合表示使 $P(x)$ 为真的所有 $x$ 的集合，如 $\{x|x~is~a~prime~number\} = \{2,3,5,7,...\}$ 。  
+在元素较少时，可以直接用大括号表示集合，如 $\{1,2,3,4\}$ 。许多常见集合用大写字母表示，如 $C$ 为复数集， $U$ 为考虑范围内所有元素的集合。集合还可以用内涵表示法表示，写为 $\{x|P(x)\}$ 或 $\{x:P(x)\}$ 。这里的 $P(x)$ 是一个谓词逻辑公式，这个集合表示使 $P(x)$ 为真的所有 $x$ 的集合，如 $\{x|x~is~a~prime~number\} = \{2,3,5,7,...\}$ 。  
 
 如果集合 $A$ 与 $B$ 中的元素是完全相同的，则 $A$ 与 $B$ 相等，即 $A = B \Leftrightarrow (\forall x)(x \isin A \leftrightarrow x \isin B)$ 。如果集合 $A$ 中的每个元素都出现在集合 $B$ 中，则 $A$ 包含于 $B$ ，也称 $A$ 是 $B$ 的子集（subset），即 $A \subseteq B \Leftrightarrow (\forall x)(x \isin A \rightarrow x \isin B)$ 。如果 $A$ 是 $B$ 的子集且 $A \not = B$ ，则 $A$ 是 $B$ 的真子集（proper subset），即 $A \subset B \Leftrightarrow (A \subseteq B \land A \not = B)$ 。空集是任何集合的子集。  
 
