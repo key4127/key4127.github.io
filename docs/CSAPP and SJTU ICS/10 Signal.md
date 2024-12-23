@@ -1,0 +1,101 @@
+---
+sidebar_position: 1
+---
+
+这篇笔记介绍lecture16、17中的内容。  
+
+### 进程组
+
+每个进程都属于且仅属于一个进程组。进程组编号由一个正整数（process group ID）标记。默认情况下，子进程与父进程有相同的进程组。  
+
+```C
+// return process group PID
+pid_t getpgrp(void);
+```
+
+``getpgrp()`` 函数获取进程的进程组PID。
+
+```C
+// return 0 on success, -1 on error
+pid_t setpgid(pid_t pid, pid_t pgid);
+```
+
+``setpgid()`` 函数更改 ``pid`` 进程的进程组PID为 ``pgid`` 。如果 ``pid`` 为0，则使用当前进程的PID；如果 ``pgid`` 为0，则由 ``pid`` 指定的进程PID为 ``pgid`` 。  
+
+作业（job）是unix shell使用的抽象，用于表示进程，作为评估单个命令行的结果而创建的进程。任何时候最多有一个前台作业和零或多个后台作业。shell会为每个作业创建一个单独的进程组（进程组ID通常取自作业中一个父进程）。  
+
+![process group](./img/process%20group.png)
+
+## 信号
+
+信号是一种消息，通知操作系统某种类型的事件发生。这里的类型对应某种系统事件。系统事件分为硬件事件和软件事件。  
+
+![signal](./img/signal.png)  
+
+要将信号传递给目标进程，需要发送信号、接受信号两个步骤。  
+
+通过更新目标进程上下文中的某些state，内核向目标进程发送信号。有两种情况会导致发送信号：内核检测到系统事件，或进程调用了一个 ``kill`` 函数。  
+
+```C
+// pid - receiver process, sig - signal
+// 0 if OK, -1 on error
+int kill(pid_t pid, int sig);
+```
+
+内核会迫使目标进程对信号做出反应。进程可以忽略信号、终止，或者通过一个用户级别的名为信号处理器的程序捕获信号。  
+
+待处理信号（pending signal）指已发送但尚未接收的信号。任何时候，每个类型最多只有一个待处理信号。如果某个进程已经有了类型k的待处理信号，接下来发送到进程的类型k信号会被简单地丢弃。   
+
+进程可以选择性地阻止某些信号。被阻止的信号可以发送到目标进程，但在阻塞解除之前，这些待处理信号不会被接受。  
+
+对于每个进程，内核在待处理位向量（pending bit vector）中维护待处理信号，在阻塞位向量（blocked bit vector）中维护阻塞信号。在发送类型k的信号时，内核设置类型k的位；在接受类型k的信号时，内核清除类型k的位。
+
+### 发送信号
+
+对于 ``kill()`` 函数，如果 ``pid`` 大于0，函数向 ``pid`` 进程发送信号；否则，向进程组 ``abs(pid)`` 发送信号。  
+
+```C
+int main()
+{
+    pid_t pid;
+
+    /* child sleeps until SIGKILL signal received */
+    if ((pid = Fork()) == 0) {
+        Pause(); /* wait for a signal to arrive */
+        printf("control should never reach here!\n");
+        exit(0);
+    }
+
+    /* parent sends a SIGKILL signal to a child */
+    Kill(pid, SIGKILL);
+    exit(0);
+}
+```
+
+``kill()`` 可以向进程组发送信号。将参数 ``pid`` 改为 ``-pid`` ，会将信号发送到PID进程组中的每个进程。
+
+除了 ``kill()`` 之外，还有其它方式发送信号，如 ``alarm()`` 函数。  
+
+```C
+// return the remaining secs of last alarm, or 0 if no previous alarm
+unsigned int alarm(unsigned int secs);
+```
+
+``alarm()`` 函数安排内核在 ``secs`` 秒后向调用进程发送SIGALRM信号。如果 ``secs`` 为0，则不产生新的闹钟。这个函数会取消任何待处理闹钟，返回待处理闹钟的剩余秒数。
+
+还可以通过键盘发送信号。CTRL-c会让内核向shell发送SIGINT信号。shell接收这个信号，然后向前台所有进程组中的所有进程发送SIGINT，默认终止前台作业。CTRL-z会让内核向shell发送SIGTSTP信号，shell接收并向前台所有进程组发SIGTSTP，默认停止（挂起）前台作业。  
+
+### 接收信号
+
+接收信号的先决条件是内核准备将控制交给进程。  
+
+接收信号时，内核检查检查未阻塞的待处理信号集合。如果这个集合为空，内核将控制权交给进程的下一个指令；如果集合非空，内核选择集合中某个信号k（通常为最小k）并强制进程接收信号k。信号的接收触发进程的某些动作。进程完成动作后，控制到达进程的下一个指令。  
+
+每个信号类型都有一个预定义的默认动作，例如终止、停止、被忽略等等。SIGKILL信号的默认动作是终止进程，SIGCHLD信号的默认动作是忽略信号。通过 ``signal()`` 函数，进程可以改变信号的默认动作。SIGKILL和SIGCHLD的默认动作无法改变。  
+
+```C
+typedef void handler_t(int);
+handler_t *signal(int signum, handler_t *handler);
+```
+
+如果 ``handler`` 为SIG_IGN， ``signum`` 类型的信号会被忽略；如果 ``handler`` 为SIG_DFL， ``signum`` 类型的信号恢复到默认信号；否则将 ``signum`` 类型的信号改变为 ``handler`` 。
