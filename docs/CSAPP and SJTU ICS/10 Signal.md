@@ -98,4 +98,62 @@ typedef void handler_t(int);
 handler_t *signal(int signum, handler_t *handler);
 ```
 
-如果 ``handler`` 为SIG_IGN， ``signum`` 类型的信号会被忽略；如果 ``handler`` 为SIG_DFL， ``signum`` 类型的信号恢复到默认信号；否则将 ``signum`` 类型的信号改变为 ``handler`` 。
+如果 ``handler`` 为SIG_IGN， ``signum`` 类型的信号会被忽略；如果 ``handler`` 为SIG_DFL， ``signum`` 类型的信号恢复到默认动作；否则将 ``signum`` 类型的动作改变为 ``handler`` 。  
+
+实际使用时，程序会先设置 ``handler`` 的行为，通过 ``signal`` 函数的调用接收信号，通过它的执行处理信号。  
+
+```C
+void handler(int sig) /* SIGINT handler */
+{
+        printf("Caught SIGINT\n");
+        exit(0);
+}
+
+int main()
+{
+    /* Install the SIGINT handler */
+    if (signal(SIGINT, handler) == SIG_ERR)
+        unix_error("signal error");
+
+    pause(); /* wait for the receipt of a signal */
+
+    exit(0);
+}
+```
+
+当进程捕捉到类型 ``k`` 的信号时，为这个类型设计的handler会被调用。同样的handler可以处理不同类型的信号，这种情况下类型信号会作为参数传递给handler函数（用户态）。当handler执行返回语句的时候，控制通常会回到之前的部分（被接收信号打断的部分，内核调用），也有可能由于错误立即返回。只有函数执行结束回到内核态，才会将待处理位向量中的值清除。
+
+![signal handling control flow](./img/signal%20handling%20control%20flow.png)  
+
+### 阻塞与取消阻塞信号
+
+在执行signal handler时，还可能收到其它的信号。  
+
+内核态会隐式地阻塞信号，即阻塞任何正在被handler处理的同类型信号。通过 ``sigprocmask`` 系列函数可以显示地处理信号。  
+
+```C
+#include<signal.h>
+int sigprocmask(int how, const sigset_t *set, sigset_t *oldset)
+```
+
+这个函数可以设置被阻塞信号的集合。参数 ``how`` 为SIG_BLOCK时，将 ``set`` 添加到被阻塞的集合；为SIG_UNBLOCK时，将 ``set`` 从被阻塞集合移除；为SIG_SETMASK时，直接将被阻塞集合设置为 ``set`` 。如果 ``old_set`` 非空，先前被阻塞的集合存储在 ``old_set`` 中。  
+
+除了 ``sigprocmask`` 外还有一些其它的函数，用于设置 ``set``。  
+
+```C
+int sigemptyset(sigset_t *set);
+int sigefillset(sigset_t *set);
+int sigaddset(sigset_t *set, int signum);
+int sigdelset(sigset_t *set, int signum);
+// return 0 if OK, -1 on error
+int sigismember(const sigset_t *set, int signum);
+// 1 if member, 0 if not, -1 on error
+```
+
+## 并行错误
+
+### 教程
+
+有一些方法可以尽可能减少并行错误。  
+
+- 
