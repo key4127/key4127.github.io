@@ -136,3 +136,54 @@ main()
 异步异常又名中断，与当前运行的指令完全无关。在x86系统中，中断出现时，会先将当前指令执行完毕，处理中断，回到下一条指令继续。  
 
 中断包含IO（与外部设备相关）、重启等。IO设备可以通过给芯片上的某个引脚发信号来触发中断。CPU会打断当前的操作并转移到handler。  
+
+### 非局部跳转
+
+非局部跳转指直接从一个函数转移到另一个正在执行的函数。  
+
+```C
+// return 0 from setjmp, nonzero from long jumps
+int setjmp(jmp_buf env);
+// never returns
+void longjmp(jmp_buf env, int retval);
+```
+
+``setjmp`` 函数保存当前调用环境（如PC、栈指针、通用寄存器）到 ``env`` 以便使用 ``longjmp`` 并返回0。 ``longjmp`` 函数恢复 ``env`` 中的运行，导致最近的初始化 ``env`` 的 ``setjmp`` 返回，此时 ``setjmp`` 返回一个非零值。如果 ``savemask`` 非零，信号集也会存储在 ``env`` 中。
+
+```C
+jmp_buf buf;
+
+int error1 = 0;
+int error2 = 1;
+
+void foo(void), bar(void);
+
+int main()
+{  
+    switch (setjmp(buf)) {
+    case 0:
+        foo(); break;
+    case 1:
+        printf("Detected an error1 condition in foo\n"); break;
+    case 2:
+        printf("Detected an error2 condition in bar\n"); break;
+    default:
+        printf("Unknown error condition in foo\n");
+    } 
+    exit(0);
+}
+
+/* deeply nested function foo */
+void foo(void)
+{
+    if (error1)
+        longjmp(buf, 1);
+    bar();
+}
+
+void bar(void)
+{
+    if (error2)
+        longjmp(buf, 2);
+}
+```
