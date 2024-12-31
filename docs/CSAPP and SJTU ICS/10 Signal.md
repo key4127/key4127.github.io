@@ -152,8 +152,79 @@ int sigismember(const sigset_t *set, int signum);
 
 ## 并行错误
 
-### 教程
+### 指导原则
 
 有一些方法可以尽可能减少并行错误。  
 
-- 
+- 让信号handler尽量简单，比如设置一个值就直接返回。可以让相关的函数周期性检查这个值。  
+- 只使用异步信号安全的函数（ ``printf`` 、 ``sprintf`` 、 ``malloc`` 、 ``exit`` 都不符合要求），这些函数的中断不会干扰操作。CSAPP库中有相关的函数替代这些函数的功能（ ``write`` 、 ``_exit`` 是安全的）。  
+- 有些函数可能改变错误码。在产生错误码时要及时保存（防止被覆盖或产生其它问题）。
+- 通过阻塞所有信号来保护对共享全局数据的访问。  
+- 用 ``volatile`` 声明全局变量，不要将其放入寄存器。 ``volatile`` 会保证变量存放在一个稳定的地址。  
+- 用 ``sig_automic_t`` 声明标志，保证原子操作。 ``flag++`` 或 ``flag += 10`` 等操作是复合操作。  
+
+### 信号处理语义
+
+``read`` 、 ``write`` 、 ``wait`` 、 ``accept`` 等是慢系统调用，可能会潜在地阻塞系统很长时间；一些旧的Unix系统会在某种信号被捕获后将它的动作恢复为默认值，或者在慢系统调用中，被中断后不会回到中断的位置，而是立即返回给用户。
+
+### 自旋循环
+
+当线程尝试获取被占用的锁时，它会在循环中不断检查锁的状态，直到锁变为可用。  
+
+```C
+volatile sig_atomic_t pid;
+
+void sigchld_handler(int s)
+{
+    int olderrno = errno;
+    pid = waitpid(-1, NULL, 0);
+    errno = olderrno;
+}
+
+void sigint_handler(int s) {}
+
+int main(int argc, char **argv)
+{
+    sigset_t mask, prev;
+
+    Signal(SIGCHLD, sigchld_handler);
+    Signal(SIGINT, sigint_handler);
+    Sigemptyset(&mask);
+    Sigaddset(&mask, SIGCHLD);
+
+    while (1) {
+        Sigprocmask(SIG_BLOCK, &mask, &prev); /* Block SIGCHLD */
+        if (Fork() == 0) /* Child */
+    	    exit(0);
+        /* Parent */
+        pid = 0;
+        Sigprocmask(SIG_SETMASK, &prev, NULL);/* Unblock SIGCHLD */
+        /* Wait for SIGCHLD to be received (wasteful) */
+        while (!pid)
+            ;
+        /* Do some work after receiving SIGCHLD */
+        printf(".");
+    }
+    exit(0);
+}
+```
+
+这里的 ``while (!pid) ;`` 浪费资源。可以将 ``;`` 换成 ``pause();`` 。这里不能去除循环，因为 ``pause()`` 可能被SIGINT等中断。但是，如果SIGCHLD在 ``while`` 之后、 ``pause()`` 之前到达，会导致父进程一直处在 ``pause()`` 中。  
+
+用 ``sleep(1)`` 替换 ``pause()`` 会解决竞争问题，但是如果信号在 ``while`` 和 ``sleep`` 之间到达，程序必须等待 ``sleep`` 时间结束才能继续。使用其它睡眠函数也没有意义。睡眠时间太短会导致循环浪费资源，太长会导致程序太慢。  
+
+可以用 ``signalsuspend`` 函数来处理自旋循环。  
+
+```C
+int signalsuspend(const sigset_t *mask);
+```
+
+这个函数相当于  
+
+```C
+sigprocmask(SIG_SETMASK, &mask, &prev);
+pause();
+sigprocmask(SIG_SETMASK, &prev, NULL);
+```
+
+但保证前两行同时发生，不会被中断。具体来说，这个函数暂时改变当前被阻塞的信号集，等待信号发生。如果信号发生后的动作是终止，就立即终止，否则在handler返回后返回，并恢复调用时的阻塞集状态。将 ``pause()`` 或 ``sleep(1)`` 改为 ``signalsuspend(&prev)`` 就能解决自旋循环的问题。

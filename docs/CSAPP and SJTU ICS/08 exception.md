@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-这篇笔记介绍lecture13。
+这篇笔记介绍lecture13与lecture17中nonlocal jump的内容。
 
 ## 操作系统
 
