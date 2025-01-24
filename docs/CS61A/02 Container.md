@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 这篇笔记包含第五周、第六周Mutability的内容，另外也包含Tuples。第六周Trees的内容被我视作对列表和递归的练习，略过。

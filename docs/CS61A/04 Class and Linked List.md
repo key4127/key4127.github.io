@@ -1,5 +1,5 @@
 ---
-sidebair_position: 1
+sidebair_position: 4
 ---
 
 这篇笔记包含第七周后两次lecture到第九章的内容。第十章跳过。

@@ -1,5 +1,5 @@
 ---
-sidebar_positon: 1
+sidebar_positon: 3
 ---
 
 这篇笔记包括第六周Iterators、第七周Generators的内容。
