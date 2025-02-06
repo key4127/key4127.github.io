@@ -92,7 +92,9 @@ const sidebars = {
       "Web Dev": [
         "Web Dev/01 React Basic",
         "Web Dev/02 React Cont",
-        "Web Dev/03 Redux"
+        "Web Dev/03 Redux",
+        "Web Dev/04 React Router",
+        "Web Dev/06 Maven",
       ]
     },
     {
