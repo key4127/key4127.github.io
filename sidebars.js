@@ -95,6 +95,7 @@ const sidebars = {
         "Web Dev/03 Redux",
         "Web Dev/04 React Router",
         "Web Dev/06 Maven",
+        "Web Dev/07 Spring Boot",
       ]
     },
     {
