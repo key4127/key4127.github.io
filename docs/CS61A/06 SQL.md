@@ -4,7 +4,9 @@ sidebar_position: 6
 
 这篇笔记介绍第十三周的后两个lecture和第十四周的第一个lecture。以后的内容不再继续。
 
-只介绍一些基础的SQL语法。  
+只介绍一些基础的SQL语法。
+
+*update：似乎这里的查询都是多表查询，具体见笔记Web Dev 09。*
 
 ## SQL
 

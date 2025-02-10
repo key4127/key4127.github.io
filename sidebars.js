@@ -97,6 +97,7 @@ const sidebars = {
         "Web Dev/06 Maven",
         "Web Dev/07 HTTP",
         "Web Dev/08 Spring Boot",
+        "Web Dev/09 SQL",
       ]
     },
     {
