@@ -98,6 +98,8 @@ const sidebars = {
         "Web Dev/07 HTTP",
         "Web Dev/08 Spring Boot",
         "Web Dev/09 SQL",
+        "Web Dev/10 JDBC",
+        "Web Dev/11 MyBatis",
       ]
     },
     {
