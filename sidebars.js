@@ -89,6 +89,13 @@ const sidebars = {
       ]
     },
     {
+      "Learning Java": [
+        "Learning Java/00 Introduction",
+        "Learning Java/01 Objects, etc",
+        "Learning Java/02 Java Language Basics",
+      ]
+    },
+    {
       "Web Dev": [
         "Web Dev/01 React Basic",
         "Web Dev/02 React Cont",
