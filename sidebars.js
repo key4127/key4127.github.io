@@ -93,6 +93,7 @@ const sidebars = {
         "Learning Java/00 Introduction",
         "Learning Java/01 Objects, etc",
         "Learning Java/02 Java Language Basics",
+        "Learning Java/03 Classes and Objects",
       ]
     },
     {
