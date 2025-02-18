@@ -94,6 +94,7 @@ const sidebars = {
         "Learning Java/01 Objects, etc",
         "Learning Java/02 Java Language Basics",
         "Learning Java/03 Classes and Objects",
+        "Learning Java/04 Using Record to Model Immutable Data",
       ]
     },
     {
