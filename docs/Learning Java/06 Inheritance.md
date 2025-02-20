@@ -94,3 +94,49 @@ super.printMethod();
 super(startCadence, startSpeed, startGear); // constructor
 ```
 
+如果衍生类的构造函数没有调用基类的构造函数，则Java会在衍生类构造函数的最前面插入对基类无参构造函数的调用。如果基类没有无参构造函数，就会导致报错。  
+
+可以用 ``final`` 关键字标记方法，被标记的方法不能被重载。如果用 ``final`` 关键字标记类，则这个类不能有衍生类。  
+
+### Object 类
+
+这部分介绍了一些方法。  
+
+```Java
+String toString();
+```
+
+```Java
+boolean equals();
+```
+
+覆盖这个方法后，可以使用==运算符。如果覆盖 ``equals()`` ，必须覆盖 ``hashCode()`` 。
+
+```Java
+int hashCode()
+```
+
+这个函数返回由哈希算法生成的对象值。如果两个对象相等，则哈希值必须相等。  
+
+```Java
+getClass()
+```
+
+这个方法不能被覆盖。  
+
+如果某个类实现了 ``Cloneable`` 接口，则可以使用 ``clone()`` 函数。简单地在类后面添加 ``implements Cloneable`` 即可。如果类中包含引用，则可能需要重载 ``clone`` 函数。重载时只能选择下面两种之一的写法。  
+
+```Java
+public Object clone() throws CloneNotSupportedException
+protected Object clone() throws CloneNotSupportedException
+```
+
+``finalize()`` 方法用于回收，但是由于是否被调用和调用时机不确定等原因，不建议重载这个方法。
+
+### 抽象方法和抽象类
+
+被 ``abstract`` 关键字标记的方法和类称为抽象方法和抽象类。抽象方法即声明了但没有实现的方法。含有或可能含有抽象方法的类称为抽象类。抽象类不能被实例化，但是可以被继承。
+
+在接口中，非默认方法事实上是隐式抽象的，所以没有必要用 ``abstract`` 关键字标记接口。
+
+抽象类和接口在许多地方相似，但也有不同。例如，接口的所有默认函数都为 ``public`` ，所有字段都是 ``public static final`` 。如果需要其它类型的字段，就不能使用接口而要使用抽象类。
