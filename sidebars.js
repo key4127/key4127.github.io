@@ -98,6 +98,8 @@ const sidebars = {
         "Learning Java/05 Numbers and Strings",
         "Learning Java/06 Inheritance",
         "Learning Java/07 Interfaces",
+        "Learning Java/08 Generics",
+        
       ]
     },
     {
@@ -112,6 +114,7 @@ const sidebars = {
         "Web Dev/09 SQL",
         "Web Dev/10 JDBC",
         "Web Dev/11 MyBatis",
+        "Web Dev/12 MyBatisPlus"
       ]
     },
     {

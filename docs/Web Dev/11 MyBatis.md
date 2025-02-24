@@ -6,6 +6,8 @@ Mybatis是一个持久层框架，用于简化JDBC。
 
 使用MyBatis时，同样要引入依赖（MyBatis Framework）。然后，同样准备数据库与实体类User。最后，需要配置MyBatis信息，即在application.properties中配置数据库连接信息，包括url、数据库驱动、数据库用户名与密码。然后就可以使用MyBatis。  
 
+实体类本身并不连接数据库。MyBatis将数据库中的内容映射到实体类中。
+
 MyBatis的持久层接口规范为 ``XxxMapper`` ，也成为Mapper接口。  
 
 ```Java
