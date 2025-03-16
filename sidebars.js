@@ -114,7 +114,8 @@ const sidebars = {
         "Web Dev/09 SQL",
         "Web Dev/10 JDBC",
         "Web Dev/11 MyBatis",
-        "Web Dev/12 MyBatisPlus"
+        "Web Dev/12 MyBatisPlus",
+        "Web Dev/13 Docker",
       ]
     },
     {
