@@ -55,7 +55,8 @@ const sidebars = {
         "CSAPP and SJTU ICS/10 Signal",
         "CSAPP and SJTU ICS/11 IO",
         "CSAPP and SJTU ICS/12 Scheduling",
-        "CSAPP and SJTU ICS/13 Floating Point"
+        "CSAPP and SJTU ICS/13 Floating Point",
+        "CSAPP and SJTU ICS/19 Memory Hierarchy",
       ]
     },
     {
