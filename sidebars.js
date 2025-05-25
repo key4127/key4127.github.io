@@ -58,6 +58,7 @@ const sidebars = {
         "CSAPP and SJTU ICS/13 Floating Point",
         "CSAPP and SJTU ICS/19 Memory Hierarchy",
         "CSAPP and SJTU ICS/20 Robust IO",
+        "CSAPP and SJTU ICS/21 Network",
       ]
     },
     {
