@@ -59,6 +59,7 @@ const sidebars = {
         "CSAPP and SJTU ICS/19 Memory Hierarchy",
         "CSAPP and SJTU ICS/20 Robust IO",
         "CSAPP and SJTU ICS/21 Network",
+        "CSAPP and SJTU ICS/22 Concurrent Programming"
       ]
     },
     {
