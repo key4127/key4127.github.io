@@ -61,6 +61,7 @@ const sidebars = {
         "CSAPP and SJTU ICS/21 Network",
         "CSAPP and SJTU ICS/22 Concurrent Programming",
         "CSAPP and SJTU ICS/23 Lock",
+        "CSAPP and SJTU ICS/24 Conditional Variable",
       ]
     },
     {
