@@ -65,6 +65,17 @@ const sidebars = {
       ]
     },
     {
+      "数据结构": [
+        "数据结构/00 说明",
+        "数据结构/01 KMP"
+      ]
+    },
+    {
+      "刘知远大模型": [
+        "刘知远大模型/Lec2-3 神经网络与大模型基础"
+      ]
+    },
+    {
       "SJTU CDM": [
         "SJTU CDM/01 Propositional Logic",
         "SJTU CDM/02 SAT Solver",
