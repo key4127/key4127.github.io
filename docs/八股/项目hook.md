@@ -65,6 +65,6 @@ BigCodeBench 提升较小，你认为可能的原因是什么？是否因为训�
 
 ### 参考论文
 
-[Small Models are Valuable Plug-ins for Large Language Models]()
+[Small Models are Valuable Plug-ins for Large Language Models](https://www.baidu.com)
 
 [Enhancing the Reasoning Capabilities of Small Language Models via Solution Guidance Fine-Tuning](https://arxiv.org/pdf/2412.09906)

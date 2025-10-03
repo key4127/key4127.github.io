@@ -73,10 +73,15 @@ const sidebars = {
         "数据结构/05 Boyer-Moore投票算法"
       ]
     },
-    {
+    /*{
       "刘知远大模型": [
         "刘知远大模型/Lec2-3 神经网络与大模型基础",
         "刘知远大模型/Lec4 大模型学习方法"
+      ]
+    },*/
+    {
+      "CS285": [
+        "CS285/01-02 Introduction and Imitation Learning"
       ]
     },
     {

@@ -1,0 +1,9 @@
+---
+sidebar_position: 1
+---
+
+Lecture3的内容为PyTorch教学。  
+
+原文档网址：[tmp](https://colab.research.google.com/drive/12nQiv6aZHXNuCfAAuTjJenDWKQbIt2Mz#scrollTo=GroZ0prJgAZ0)   
+
+我的部分例子实现：[tmp](https://www.baidu.com)  
