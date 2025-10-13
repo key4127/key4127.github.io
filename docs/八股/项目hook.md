@@ -25,6 +25,8 @@
 
 “从约4万条原数据中精选出1万条左右高质量数据”——你的“精选”标准和流程是什么？
 
+
+
 Code Alpaca 和 TACO 数据集各有什幺特点和侧重？你为什么认为这两者的组合是有效的？它们之间是否存在冗余或互补？
 
 在将不同来源的数据集混合时，你是如何统一它们的提示词（Prompt）格式的？有没有针对代码生成任务设计特定的提示词模板？
@@ -48,7 +50,7 @@ Code Alpaca 和 TACO 数据集各有什幺特点和侧重？你为什么认为�
 
 BigCodeBench 提升较小，你认为可能的原因是什么？是否因为训练数据（Code Alpaca, TACO）与BigCodeBench的任务复杂性不匹配？
 
-“超过若干7B、13B等模型”，这些是哪些模型？是它们的基座模型还是指令微调后的模型？这个比较是否公平？（例如，比较的可能是对方的基础模型，而非指令微调后的模型）。这个结果说明了什么？是说明你的微调方法好，还是说明“小模型+高质量数据”的潜力巨大？
+“超过若干7B、13B等模型”，这些是哪些模型？是它们的基座模型还是指令微调后的模型？这个比较是否公平？（例如，比较的可能是对方的基础模型，而非指令微调后的模型）。这个结果说明了什么？
 
 案例分析： 能否展示一个或多个具体的例子，说明微调后的模型在哪些方面比原模型有明显改善？同时，能否展示一个模型仍然失败的案例，并分析原因？
 
@@ -68,3 +70,8 @@ BigCodeBench 提升较小，你认为可能的原因是什么？是否因为训�
 [Small Models are Valuable Plug-ins for Large Language Models](https://www.baidu.com)
 
 [Enhancing the Reasoning Capabilities of Small Language Models via Solution Guidance Fine-Tuning](https://arxiv.org/pdf/2412.09906)
+
+
+## RAG
+
+网络搜索时延：1.87s
