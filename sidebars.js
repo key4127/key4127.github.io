@@ -80,6 +80,11 @@ const sidebars = {
       ]
     },*/
     {
+      "西湖大学 强化学习": [
+        "西湖大学 强化学习/01 基本概念",
+      ]
+    },
+    {
       "CS285": [
         "CS285/01-02 Introduction and Imitation Learning"
       ]
