@@ -13,7 +13,7 @@ import rehypeKatex from 'rehype-katex';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Welcome to Keyist\'s blog',
+  title: 'key4127',
   tagline: '',
   favicon: 'img/cat-programming-32x32.png',
 
