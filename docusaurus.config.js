@@ -76,6 +76,23 @@ const config = {
     ],
   ],
 
+plugins: [
+  [
+    '@docusaurus/plugin-content-docs',
+    /** @type {import('@docusaurus/plugin-content-docs').Options} */
+    {
+      id: 'toy', // 唯一ID
+      path: 'toy', // 文档路径
+      routeBasePath: 'toy', // URL
+      // sidebarPath: './sidebars-second.js',
+      editUrl:
+        'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex],
+    },
+  ],
+],
+
   stylesheets: [
     {
       href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
@@ -102,9 +119,18 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Blog',
+            label: 'Note',
           },
-          {to: '/blog', label: 'About Me', position: 'left'},
+          {
+            to: '/toy/intro',
+            label: 'Toy',
+            position: 'left',
+          },
+          {
+            to: '/blog', 
+            label: 'About Me', 
+            position: 'left'
+          },
           {
             href: 'https://github.com/key4127',
             label: 'GitHub',
@@ -119,8 +145,12 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Note',
                 to: '/docs/intro',
+              },
+              {
+                label: 'Toy',
+                to: '/toy/intro',
               },
               {
                 label: 'About Me',
