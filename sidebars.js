@@ -65,6 +65,11 @@ const sidebars = {
       ]
     },
     {
+      "SJTU CSE": [
+        "SJTU CSE/01 File System",
+      ]
+    },
+    {
       "数据结构": [
         "数据结构/00 说明",
         "数据结构/01 KMP",
