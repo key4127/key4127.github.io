@@ -67,6 +67,7 @@ const sidebars = {
     {
       "SJTU CSE": [
         "SJTU CSE/01 File System",
+        "SJTU CSE/02 Distrubted System",
       ]
     },
     {
