@@ -67,7 +67,8 @@ const sidebars = {
     {
       "SJTU CSE": [
         "SJTU CSE/01 File System",
-        "SJTU CSE/02 Distrubted System",
+        "SJTU CSE/02 Distributed File System",
+        "SJTU CSE/04 Consistency",
       ]
     },
     {
