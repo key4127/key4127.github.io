@@ -70,7 +70,7 @@ const sidebars = {
         "SJTU CSE/02 Distributed File System",
         "SJTU CSE/04 Consistency",
         "SJTU CSE/05 Automicity",
-        "SJTU CES/06 Before or After and OCC",
+        "SJTU CSE/06 Before or After and OCC",
       ]
     },
     {
