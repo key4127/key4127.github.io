@@ -71,6 +71,7 @@ const sidebars = {
         "SJTU CSE/04 Consistency",
         "SJTU CSE/05 Automicity",
         "SJTU CSE/06 Before or After and OCC",
+        "SJTU CSE/07 Transaction",
       ]
     },
     {
