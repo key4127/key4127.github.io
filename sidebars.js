@@ -172,7 +172,7 @@ const sidebars = {
     },
     {
       "杂项": [
-        "杂项/01 STL.md"
+        "杂项/01 C++ Basic"
       ]
     }
   ],
