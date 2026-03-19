@@ -11,8 +11,8 @@
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.7106c70e.css">
-<script src="/assets/js/runtime~main.94bbbefa.js" defer="defer"></script>
-<script src="/assets/js/main.4067a22b.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.4c3455df.js" defer="defer"></script>
+<script src="/assets/js/main.f1765b58.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -74,7 +74,8 @@ c5.3,-9.3,12,-14,20,-14
 H400000v40H845.2724
 s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
 c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
-M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1828em"><span></span></span></span></span></span></span></span></span>的目的是防止点积结果过大，导致softmax结果趋近于0或1。Softmax得到的结果为注意力权重，代表在生成每个token的新表示时，应该给予序列中其他所有token的关注度。在和V相乘后，最终的输出向量不仅包含自身的信息，还融合了整个序列中所有相关 token 的信息。</p>
+M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1828em"><span></span></span></span></span></span></span></span></span>的目的是防止点积结果过大，导致softmax结果趋近于0或1。<strong>除此之外，还有保持方差为1的作用。</strong>
+Softmax得到的结果为注意力权重，代表在生成每个token的新表示时，应该给予序列中其他所有token的关注度。在和V相乘后，最终的输出向量不仅包含自身的信息，还融合了整个序列中所有相关 token 的信息。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="多头自注意力">多头自注意力<a href="#多头自注意力" class="hash-link" aria-label="Direct link to 多头自注意力" title="Direct link to 多头自注意力" translate="no">​</a></h3>
 <p>多头注意力是自注意力的扩展。它不是只计算一次注意力，而是将 Q、K、V 映射到多个不同的子空间中，分别计算多个独立的注意力结果，最后将这些结果拼接起来，再通过一个线性层进行整合。不同头关注句子中不同的信息（语法/语义），提高了模型稳定性。</p>
 <p>具体来说，Q、K、V被投影成h个更小的向量，模型并行地对每组Q、K、V进行运算。结束后得到h个输出矩阵，拼接后得到最终矩阵。</p>
