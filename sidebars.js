@@ -23,6 +23,13 @@ const sidebars = {
   tutorialSidebar: [
     'intro',
     {
+      "强化学习": [
+        "强化学习/00 说明",
+        "强化学习/01 基础算法",
+        "强化学习/02 深度强化学习"
+      ]
+    },
+    {
       "CS61A": [
         "CS61A/01 Python Basic",
         "CS61A/02 Container",
