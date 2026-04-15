@@ -92,6 +92,20 @@ plugins: [
     },
   ],
   [
+  '@docusaurus/plugin-content-docs',
+  /** @type {import('@docusaurus/plugin-content-docs').Options} */
+  {
+    id: 'diary', // 唯一ID
+    path: 'diary', // 文档路径
+    routeBasePath: 'diary', // URL
+    // sidebarPath: './sidebars-second.js',
+    editUrl:
+      'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
+  },
+  ],
+  [
     '@docusaurus/plugin-content-docs',
     /** @type {import('@docusaurus/plugin-content-docs').Options} */
     {
@@ -147,6 +161,11 @@ plugins: [
             position: 'left',
           },
           {
+            to: '/diary/intro',
+            label: 'Diary',
+            position: 'left'
+          },
+          {
             to: '/blog', 
             label: 'About Me', 
             position: 'left'
@@ -175,6 +194,10 @@ plugins: [
               {
                 label: 'Toy',
                 to: '/toy/intro',
+              },
+              {
+                label: 'Diary',
+                to: '/diary/intro'
               },
               {
                 label: 'About Me',
