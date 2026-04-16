@@ -1,2 +1,31 @@
-# ClawWorm: Self-Propagating Attacks across LLM Agent Ecosystems
+# ClawWorm
 
+论文：ClawWorm: Self-Propagating Attacks across LLM Agent Ecosystems
+arxiv：[https://arxiv.org/abs/2603.15727](https://arxiv.org/abs/2603.15727)
+
+--- 
+
+论文实现了针对openclaw的worm病毒，有自我复制、永久持久化等能力，且无需服务器访问，以及对应的架构防御策略。
+
+攻击针对/利用的架构内容：
+- 上下文
+- 工作区文件
+- skill
+- 工具
+
+大概的感染流程：
+1. 设计一个恶意skill包
+2. 通过直接对话感染第一个agent
+3. agent向其它agent推荐包，感染其它智能体（这与openclaw的实现和生态有关，不同agent可以出现在同一个群聊、聊天室等）
+
+建议：
+- 上下文权限隔离，标明不同来源的上下文
+- 验证配置文件完整性
+- 
+
+想法：感觉安全问题主要聚焦在几个维度
+1. skill等内容没有足够的审查，这个可能是新兴技术的必然问题
+2. agent过于信任工具/权限过高。如果agent写入文件都需要确认，自然无法感染自己的配置文件。不过从这里开始，或许可以通过memory感染，因为对话大概率会被存储；这可能需要更复杂的隔离措施，估计要看看cc怎么搞
+3. 上下文没有权限隔离，这个感觉更偏向设计问题。不过不知道用户信息的权限是如何设置的；openclaw的一大问题在与可以与其它agent很方便地交互，而其它agent的用户对这些问题很难感知
+4. 对于同样的一套恶意skill配置流程，
+5. 单纯的完整性验证会不会治标不治本？如果文件被感染，验证代码是否会感染（当然，验证代码感染的成本更高）
