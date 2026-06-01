@@ -1,7 +1,7 @@
 # AXPO
 
 论文：Agent Explorative Policy Optimization for Multimodal Agentic Reasoning  
-arxiv：[https://arxiv.org/abs/2605.27366](https://arxiv.org/abs/2605.27366)
+arxiv：[https://arxiv.org/abs/2605.28774](https://arxiv.org/abs/2605.28774)
 
 ---
 
