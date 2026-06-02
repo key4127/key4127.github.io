@@ -1,7 +1,7 @@
 # Focal Loss
 
 论文：Focal Loss for Dense Object Detection: Focal Loss  
-arxiv：[]()
+arxiv：[https://arxiv.org/abs/1708.02002](https://arxiv.org/abs/1708.02002)
 
 ---
 
