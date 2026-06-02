@@ -1,7 +1,7 @@
 # MemFactory
 
 论文：MemFactory: Unified Inference & Training Framework for Agent Memory    
-arxiv：[]()
+arxiv：[https://arxiv.org/abs/2603.29493](https://arxiv.org/abs/2603.29493)
 
 ---
 
