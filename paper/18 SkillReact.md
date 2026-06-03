@@ -1,7 +1,7 @@
 # SkillReact
 
 论文：When Safe Skills Collide: Measuring Compositional Risk in Agent Skill Ecosystems    
-arxiv：[https://arxiv.org/abs/2603.29493](https://arxiv.org/abs/2603.29493)
+arxiv：[https://arxiv.org/abs/2606.00448](https://arxiv.org/abs/2606.00448)
 
 ---
 
