@@ -1,0 +1,129 @@
+.blogIndex {
+  display: grid;
+  gap: 2rem;
+}
+
+.header {
+  align-items: center;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1.1fr) minmax(220px, 0.9fr);
+}
+
+.eyebrow {
+  color: var(--ifm-color-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  font-size: 2.25rem;
+  letter-spacing: 0;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.headerImage {
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  box-shadow: var(--ifm-global-shadow-lw);
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.postList {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  color: inherit;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  min-height: 150px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: var(--ifm-global-shadow-lw);
+  color: inherit;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.mediaWrap {
+  background: var(--ifm-color-emphasis-100);
+  min-height: 150px;
+}
+
+.media {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.cardBody {
+  align-content: center;
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+}
+
+.meta {
+  color: var(--ifm-color-emphasis-600);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  gap: 0.5rem;
+}
+
+.meta time + span::before {
+  content: "/";
+  margin-right: 0.5rem;
+}
+
+.card h2 {
+  font-size: 1.35rem;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.card p {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.empty {
+  border: 1px dashed var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+  padding: 1.25rem;
+}
+
+@media screen and (max-width: 780px) {
+  .header,
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 1.9rem;
+  }
+}

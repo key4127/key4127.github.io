@@ -8,6 +8,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import {siteFeatures} from './src/data/siteFeatures.js';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -54,21 +55,7 @@ const config = {
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -105,6 +92,23 @@ plugins: [
     rehypePlugins: [rehypeKatex],
   },
   ],
+  ...(siteFeatures.blog
+    ? [
+        [
+          '@docusaurus/plugin-content-docs',
+          /** @type {import('@docusaurus/plugin-content-docs').Options} */
+          {
+            id: 'blog',
+            path: 'blog',
+            routeBasePath: 'blog',
+            editUrl:
+              'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            remarkPlugins: [remarkMath],
+            rehypePlugins: [rehypeKatex],
+          },
+        ],
+      ]
+    : []),
   [
     '@docusaurus/plugin-content-docs',
     /** @type {import('@docusaurus/plugin-content-docs').Options} */
@@ -165,9 +169,18 @@ plugins: [
             label: 'Diary',
             position: 'left'
           },
+          ...(siteFeatures.blog
+            ? [
+                {
+                  to: '/blog/intro',
+                  label: 'Blog',
+                  position: 'left',
+                },
+              ]
+            : []),
           {
-            to: '/blog', 
-            label: 'About Me', 
+            to: '/about',
+            label: 'About Me',
             position: 'left'
           },
           {
@@ -199,9 +212,17 @@ plugins: [
                 label: 'Diary',
                 to: '/diary/intro'
               },
+              ...(siteFeatures.blog
+                ? [
+                    {
+                      label: 'Blog',
+                      to: '/blog/intro',
+                    },
+                  ]
+                : []),
               {
                 label: 'About Me',
-                to: '/blog',
+                to: '/about',
               }
             ],
           },
