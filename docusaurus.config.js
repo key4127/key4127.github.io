@@ -115,7 +115,7 @@ plugins: [
     {
       id: 'reading',          // 唯一 ID
       path: 'reading',        // 存放文档的文件夹（相对于项目根目录）
-      routeBasePath: 'reading', // 访问 URL 的基础路径（例如 /paper/intro）
+      routeBasePath: 'reading', // 访问 URL 的基础路径（例如 /reading/intro）
       // 可选：独立侧边栏配置文件
       // sidebarPath: './sidebars-paper.js',
       editUrl:
@@ -201,8 +201,8 @@ plugins: [
                 to: '/docs/intro',
               },
               {
-                label: 'Paper',
-                to: '/paper/intro'
+                label: 'Reading',
+                to: '/reading/intro'
               },
               {
                 label: 'Toy',
