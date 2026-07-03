@@ -113,9 +113,9 @@ plugins: [
     '@docusaurus/plugin-content-docs',
     /** @type {import('@docusaurus/plugin-content-docs').Options} */
     {
-      id: 'paper',          // 唯一 ID
-      path: 'paper',        // 存放文档的文件夹（相对于项目根目录）
-      routeBasePath: 'paper', // 访问 URL 的基础路径（例如 /paper/intro）
+      id: 'reading',          // 唯一 ID
+      path: 'reading',        // 存放文档的文件夹（相对于项目根目录）
+      routeBasePath: 'reading', // 访问 URL 的基础路径（例如 /paper/intro）
       // 可选：独立侧边栏配置文件
       // sidebarPath: './sidebars-paper.js',
       editUrl:
@@ -155,8 +155,8 @@ plugins: [
             label: 'Note',
           },
           {
-            to: '/paper/intro',
-            label: 'Paper',
+            to: '/reading/intro',
+            label: 'Reading',
             position: 'left'
           },
           {

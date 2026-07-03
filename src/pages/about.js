@@ -11,9 +11,9 @@ const sections = [
     description: 'Course notes and technical references collected while learning.',
   },
   {
-    title: 'Paper',
-    href: '/paper/intro',
-    description: 'Reading notes for papers, benchmarks, and agent systems.',
+    title: 'Reading',
+    href: '/reading/intro',
+    description: 'Reading notes for papers, blogs, and etc.',
   },
   {
     title: 'Toy',
