@@ -1,7 +1,7 @@
 # SWE-chat
 
-论文：When Safe Skills Collide: Measuring Compositional Risk in Agent Skill Ecosystems    
-arxiv：[https://arxiv.org/abs/2606.00448](https://arxiv.org/abs/2606.00448)
+论文：SWE-chat: Coding Agent Interactions From Real Users in the Wild    
+arxiv：[https://arxiv.org/abs/2604.20779](https://arxiv.org/abs/2604.20779)
 
 ---
 
